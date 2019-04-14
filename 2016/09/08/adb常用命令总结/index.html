@@ -1,0 +1,974 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,adb,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://oi2uynp9t.bkt.clouddn.com/image/icon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="总结常用的adb命令">
+<meta name="keywords" content="Android,adb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="adb常用命令总结">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/adb常用命令总结/index.html">
+<meta property="og:site_name" content="violin的小窝">
+<meta property="og:description" content="总结常用的adb命令">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg">
+<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="adb常用命令总结">
+<meta name="twitter:description" content="总结常用的adb命令">
+<meta name="twitter:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/08/adb常用命令总结/">
+
+
+
+
+
+  <title> adb常用命令总结 | violin的小窝 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6debfd27647939545d16988c03b81be9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">violin的小窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/08/adb常用命令总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="violin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://oi2uynp9t.bkt.clouddn.com/image/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="violin的小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                adb常用命令总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-08T10:58:08+08:00">
+                2016-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg" rel="gallery_cjuh19qf8001iag9fqiexkzfk" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <blockquote>
+<p>总结常用的adb命令</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="adb服务的开启与关闭"><a href="#adb服务的开启与关闭" class="headerlink" title="adb服务的开启与关闭"></a>adb服务的开启与关闭</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//开启服务</span><br><span class="line">adb start-server</span><br><span class="line">//关闭服务</span><br><span class="line">adb stop-server</span><br></pre></td></tr></table></figure>
+<h2 id="查看当前的机器列表"><a href="#查看当前的机器列表" class="headerlink" title="查看当前的机器列表"></a>查看当前的机器列表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
+<h2 id="程序的安装"><a href="#程序的安装" class="headerlink" title="程序的安装"></a>程序的安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install [apk 所在目录]</span><br></pre></td></tr></table></figure>
+<h2 id="查看设备WIFI的MAC地址"><a href="#查看设备WIFI的MAC地址" class="headerlink" title="查看设备WIFI的MAC地址"></a>查看设备WIFI的MAC地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell cat /sys/class/net/wlan0/address</span><br></pre></td></tr></table></figure>
+<h2 id="指定目标设备"><a href="#指定目标设备" class="headerlink" title="指定目标设备"></a>指定目标设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb -s &apos;serialNumber&apos; </span><br><span class="line">adb -d 指定当前唯一通过USB连接的Android设备</span><br><span class="line">adb -e 指定当前唯一运行的虚拟设备</span><br></pre></td></tr></table></figure>
+<h2 id="进入手机"><a href="#进入手机" class="headerlink" title="进入手机"></a>进入手机</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure>
+<h2 id="切换到指定目录"><a href="#切换到指定目录" class="headerlink" title="切换到指定目录"></a>切换到指定目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd data/data/包名/shared_prefs</span><br><span class="line">ls 查看当前目录下的文件</span><br></pre></td></tr></table></figure>
+<h2 id="查看相应包名的清单信息"><a href="#查看相应包名的清单信息" class="headerlink" title="查看相应包名的清单信息"></a>查看相应包名的清单信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys package[pkname]</span><br></pre></td></tr></table></figure>
+<h2 id="安装应用"><a href="#安装应用" class="headerlink" title="安装应用"></a>安装应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb install [-lrtsdg] [apk 路径]</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-l</td>
+<td>将应用安装到保护目录/mnt/asec</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>允许覆盖安装</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>允许安装 AndroidManifest.xml 里 application 指定 android:testOnly=”true” 的应用</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>将应用安装到sdcard</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>允许覆盖降级安装</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>授予所有运行时权限</td>
+</tr>
+</tbody>
+</table>
+<p>如果包的签名咩有问题，在部分机器（如Lenovo K920）上扔会遇到<code>[INSTALL_FAILED_VERIFICATION_FAILURE]</code>安装失败的情况。解决方法如下：</p>
+<ol>
+<li>将安装包复制到手机安装目录 <code>adb push [xx.apk] /data/local/tmp/xx</code></li>
+<li>安装apk <code>adb shell pm install /data/local/tmp/xx</code></li>
+</ol>
+<h2 id="卸载应用"><a href="#卸载应用" class="headerlink" title="卸载应用"></a>卸载应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall [pkname]</span><br></pre></td></tr></table></figure>
+<h2 id="将设备文件拖到本地"><a href="#将设备文件拖到本地" class="headerlink" title="将设备文件拖到本地"></a>将设备文件拖到本地</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull [手机文件目录] [电脑文件目录]</span><br></pre></td></tr></table></figure>
+<h2 id="将本地文件拖到设备"><a href="#将本地文件拖到设备" class="headerlink" title="将本地文件拖到设备"></a>将本地文件拖到设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb push [电脑文件路径] [手机文件目录]</span><br></pre></td></tr></table></figure>
+<h2 id="清空应用缓存"><a href="#清空应用缓存" class="headerlink" title="清空应用缓存"></a>清空应用缓存</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm clear  [pkname]</span><br></pre></td></tr></table></figure>
+<h2 id="查看debug包的沙盒数据"><a href="#查看debug包的沙盒数据" class="headerlink" title="查看debug包的沙盒数据"></a>查看debug包的沙盒数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">run-as [pkname]</span><br></pre></td></tr></table></figure>
+<h2 id="获取屏幕的分辨率"><a href="#获取屏幕的分辨率" class="headerlink" title="获取屏幕的分辨率"></a>获取屏幕的分辨率</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm size//屏幕分辨率</span><br><span class="line">adb shell wm density//屏幕密度</span><br></pre></td></tr></table></figure>
+<h2 id="查看安装的程序"><a href="#查看安装的程序" class="headerlink" title="查看安装的程序"></a>查看安装的程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm list packages </span><br><span class="line">//添加过滤参数</span><br><span class="line">adb shell pm list packages -s//获取系统应用</span><br><span class="line">adb shell pm list packages -3//第三方应用</span><br><span class="line">adb shell pm list packages &apos;过滤字段&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="传输文件"><a href="#传输文件" class="headerlink" title="传输文件"></a>传输文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb push &lt;要发送的文件路径&gt;  &lt;发送到的路径&gt;</span><br><span class="line">adb push test.text  sdcard/Movies</span><br></pre></td></tr></table></figure>
+<h2 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 截屏并保存到电脑的当前目录</span><br><span class="line">adb exec-out screencap -p &gt; picture_name.png</span><br><span class="line"></span><br><span class="line">// 截屏并保存到当前设备</span><br><span class="line">adb shell screencap -p /sdcard/sc.png</span><br></pre></td></tr></table></figure>
+<h2 id="模拟屏幕滑动"><a href="#模拟屏幕滑动" class="headerlink" title="模拟屏幕滑动"></a>模拟屏幕滑动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell input swipe [startX、startY、endX、endY、durationTime(ms)]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/adb/" rel="tag"># adb</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/19/CheckBox和RadioButton自定义图标的问题/" rel="next" title="CheckBox和RadioButton自定义图标的问题">
+                <i class="fa fa-chevron-left"></i> CheckBox和RadioButton自定义图标的问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/13/日常小总结/" rel="prev" title="日常小总结">
+                日常小总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="http://oi2uynp9t.bkt.clouddn.com/image/icon.png" alt="violin">
+          <p class="site-author-name" itemprop="name">violin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/violinlin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#adb服务的开启与关闭"><span class="nav-number">1.</span> <span class="nav-text">adb服务的开启与关闭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前的机器列表"><span class="nav-number">2.</span> <span class="nav-text">查看当前的机器列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序的安装"><span class="nav-number">3.</span> <span class="nav-text">程序的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看设备WIFI的MAC地址"><span class="nav-number">4.</span> <span class="nav-text">查看设备WIFI的MAC地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定目标设备"><span class="nav-number">5.</span> <span class="nav-text">指定目标设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入手机"><span class="nav-number">6.</span> <span class="nav-text">进入手机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换到指定目录"><span class="nav-number">7.</span> <span class="nav-text">切换到指定目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看相应包名的清单信息"><span class="nav-number">8.</span> <span class="nav-text">查看相应包名的清单信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装应用"><span class="nav-number">9.</span> <span class="nav-text">安装应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载应用"><span class="nav-number">10.</span> <span class="nav-text">卸载应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将设备文件拖到本地"><span class="nav-number">11.</span> <span class="nav-text">将设备文件拖到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将本地文件拖到设备"><span class="nav-number">12.</span> <span class="nav-text">将本地文件拖到设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清空应用缓存"><span class="nav-number">13.</span> <span class="nav-text">清空应用缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看debug包的沙盒数据"><span class="nav-number">14.</span> <span class="nav-text">查看debug包的沙盒数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取屏幕的分辨率"><span class="nav-number">15.</span> <span class="nav-text">获取屏幕的分辨率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看安装的程序"><span class="nav-number">16.</span> <span class="nav-text">查看安装的程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传输文件"><span class="nav-number">17.</span> <span class="nav-text">传输文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕截图"><span class="nav-number">18.</span> <span class="nav-text">屏幕截图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟屏幕滑动"><span class="nav-number">19.</span> <span class="nav-text">模拟屏幕滑动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">violin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
