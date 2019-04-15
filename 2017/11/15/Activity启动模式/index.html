@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="Activity启动模式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_33.JPG-blog">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture2.jpg">
+<meta property="og:updated_time" content="2019-04-15T04:57:22.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Activity启动模式">
 <meta name="twitter:description" content="Activity启动模式">
-<meta name="twitter:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_33.JPG-blog">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture2.jpg">
 
 
 
@@ -406,8 +406,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_33.JPG-blog" rel="gallery_cjuhuuoou000blw9fa893paqh" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://oi2uynp9t.bkt.clouddn.com/IMG_33.JPG-blog" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture2.jpg" rel="gallery_cjuhvg2vr0008pt9flr4dzrf3" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture2.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -420,7 +420,7 @@
       
         <h1 id="Activity启动模式"><a href="#Activity启动模式" class="headerlink" title="Activity启动模式"></a>Activity启动模式</h1><a id="more"></a>
 <h2 id="清单文件中配置启动模式launchMode"><a href="#清单文件中配置启动模式launchMode" class="headerlink" title="清单文件中配置启动模式launchMode"></a>清单文件中配置启动模式<code>launchMode</code></h2><p><a href="https://developer.android.google.cn/guide/topics/manifest/activity-element.html#lmode" target="_blank" rel="noopener">官方文档</a></p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/activity/launchmode.png" alt="launch mode"></p>
+<p><img src="/img/launchmode.png" alt="launch mode"></p>
 <h3 id="singleTask"><a href="#singleTask" class="headerlink" title="singleTask"></a>singleTask</h3><blockquote>
 <p>设置A Activity的启动模式为<code>singleTask</code>,启动顺序为<code>A--&gt;B--&gt;C--&gt;A</code>各Activity的生命周期如下: 按照启动顺序，各个界面依次调用<code>onCreate()</code>方法。当从<code>C</code>启动到<code>A</code>时，<code>B</code>界面走了<code>onDestory()</code>方法，<code>A</code>界面不会重新创建，走了<code>onNewIntent()</code>方法，随后<code>C</code>界面销毁走<code>onDestory()</code>方法</p>
 </blockquote>

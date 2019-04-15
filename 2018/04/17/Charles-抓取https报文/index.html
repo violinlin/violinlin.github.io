@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="为了适配ios和Android两端的开发需求，后台将原来的接口升级为了https接口，这里记录下配置Charles抓取https接口协议报文的方法。使用下面方法请保证可以正常抓取http请求报文。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_50.JPG-blog">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture8.jpg">
+<meta property="og:updated_time" content="2019-04-15T04:57:22.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Charles--抓取https报文">
 <meta name="twitter:description" content="为了适配ios和Android两端的开发需求，后台将原来的接口升级为了https接口，这里记录下配置Charles抓取https接口协议报文的方法。使用下面方法请保证可以正常抓取http请求报文。">
-<meta name="twitter:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_50.JPG-blog">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture8.jpg">
 
 
 
@@ -384,8 +384,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_50.JPG-blog" rel="gallery_cjuhuuopi0010lw9fgtk9jwbi" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://oi2uynp9t.bkt.clouddn.com/IMG_50.JPG-blog" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture8.jpg" rel="gallery_cjuhvg2wg000ypt9fbzr2ed4h" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture8.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -401,41 +401,41 @@
 <h2 id="在pc端安装Charles的根证书"><a href="#在pc端安装Charles的根证书" class="headerlink" title="在pc端安装Charles的根证书"></a>在pc端安装<code>Charles</code>的根证书</h2><blockquote>
 <p>Help–&gt;SSL Proxying –&gt; Install Charles Root Certificate</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_help_proxy_setting.png" alt></p>
+<p><img src="/img/https_help_proxy_setting.png" alt></p>
 <blockquote>
 <p>在钥匙串中将证书添加信任</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_charles_proxy_ca.png" alt></p>
+<p><img src="/img/https_charles_proxy_ca.png" alt></p>
 <h2 id="在客户端安装Charles证书"><a href="#在客户端安装Charles证书" class="headerlink" title="在客户端安装Charles证书"></a>在客户端安装<code>Charles</code>证书</h2><blockquote>
 <p>请保证<code>Charles</code>可以正常抓取手机上的http报文，这里以小米5安装证书为例。<br>Help–&gt;SSL Proxying –&gt; Install Charles Root Certificate……mobile Device or RemoteBrower</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_help_device.png" alt></p>
+<p><img src="/img/https_help_device.png" alt></p>
 <blockquote>
 <p>获取证书的下载链接，在手机浏览器中输入链接下载证书</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_client_crt.png" alt></p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_android_down_crt.png" alt></p>
+<p><img src="/img/https_client_crt.png" alt></p>
+<p><img src="/img/https_android_down_crt.png" alt></p>
 <blockquote>
 <p>在手机上安装证书<br>设置–&gt;更多设置–&gt;系统安全–&gt; 从存储设备安装  选取刚刚下载的证书安装(名称可以随便取)</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_android_crt_install.png" alt></p>
+<p><img src="/img/https_android_crt_install.png" alt></p>
 <h3 id="证书安装失败问题"><a href="#证书安装失败问题" class="headerlink" title="证书安装失败问题"></a>证书安装失败问题</h3><blockquote>
 <p>最开始我是通过小米5自带的浏览器下载证书，并且直接安装的，但是提示下面错误</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_android_crt_error.png" alt></p>
+<p><img src="/img/https_android_crt_error.png" alt></p>
 <blockquote>
 <p>最终问题解决是通过UC浏览器下载证书，并通过上面的方式安装。</p>
 </blockquote>
 <h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><blockquote>
 <p>在Proxy–&gt; SSL Proxying Settins中添加抓取连接的代理</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_proxy.png" alt></p>
+<p><img src="/img/https_proxy.png" alt></p>
 <blockquote>
 <p>以抓取简书的接口为例,在<code>Host</code>中配置域名，在<code>port</code>中配置端口。通常http的默认端口为80，https的默认端口为443。</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_ssl_proxying_settings.png" alt></p>
+<p><img src="/img/https_ssl_proxying_settings.png" alt></p>
 <blockquote>
-<p>抓取日志如下<br><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/charles/https_charles_jiansu.png" alt></p>
+<p>抓取日志如下<br><img src="/img/https_charles_jiansu.png" alt></p>
 </blockquote>
 
       

@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="今天运营同学要帮忙打渠道包做首发推广，渠道平台要求首发得按要求替换应用图标和闪屏界面。本来做好了挨个打包的准备，后来找到种渠道包替换资源的方法。AS真心强大啊。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_14.JPG">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture10.jpg">
+<meta property="og:updated_time" content="2019-04-15T04:57:22.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android渠道打包">
 <meta name="twitter:description" content="今天运营同学要帮忙打渠道包做首发推广，渠道平台要求首发得按要求替换应用图标和闪屏界面。本来做好了挨个打包的准备，后来找到种渠道包替换资源的方法。AS真心强大啊。">
-<meta name="twitter:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_14.JPG">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture10.jpg">
 
 
 
@@ -384,8 +384,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_14.JPG" rel="gallery_cjuhuuopc000rlw9f4v6gntfu" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://oi2uynp9t.bkt.clouddn.com/IMG_14.JPG" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_cjuhvg2w7000lpt9fo397xbb7" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture10.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -404,9 +404,9 @@
 <p> 如果清单文件中配置了统计渠道字段，替换相应平台的渠道号</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta-data</span><br><span class="line">          android:name=&quot;CHANEL&quot;</span><br><span class="line">          android:value=&quot;$&#123;CHANEL&#125;&quot; /&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">productFlavors &#123;</span><br><span class="line">       baidu &#123;</span><br><span class="line">           manifestPlaceholders=[CHANEL:&quot;baidu&quot;]</span><br><span class="line">       &#125;</span><br><span class="line">       yingyongbao &#123;</span><br><span class="line">           manifestPlaceholders=[CHANEL:&quot;yingyongbao&quot;]</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-替换渠道资源文件"><a href="#2-替换渠道资源文件" class="headerlink" title="2. 替换渠道资源文件"></a>2. 替换渠道资源文件</h2><p>在<code>app/src</code>目录下创建渠道包名，例如创建<code>baidu</code>,该目录和<code>main</code>目录同级。在目录下创建<code>main</code>中对应的资源文件，在打渠道包时资源会自动进行替换。下面对应用图标做了替换。<br><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/chanelAndroidChanel.png" alt="enter image description here"></p>
+<h2 id="2-替换渠道资源文件"><a href="#2-替换渠道资源文件" class="headerlink" title="2. 替换渠道资源文件"></a>2. 替换渠道资源文件</h2><p>在<code>app/src</code>目录下创建渠道包名，例如创建<code>baidu</code>,该目录和<code>main</code>目录同级。在目录下创建<code>main</code>中对应的资源文件，在打渠道包时资源会自动进行替换。下面对应用图标做了替换。<br><img src="/img/chanelAndroidChanel.png" alt="enter image description here"></p>
 <h2 id="3-打包"><a href="#3-打包" class="headerlink" title="3. 打包"></a>3. 打包</h2><p>通过<code>build/Generate Signed APK</code> 打渠道包，可以全选，也可以打单个渠道。</p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/chanelandroid_chanel_pack.png" alt="enter image description here"></p>
+<p><img src="/img/chanelandroid_chanel_pack.png" alt="enter image description here"></p>
 
       
     </div>

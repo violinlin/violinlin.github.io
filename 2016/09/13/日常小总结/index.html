@@ -94,12 +94,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="此篇博客用于日常的知识点的总结，不定时更新。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture9.jpg">
+<meta property="og:updated_time" content="2019-04-15T05:00:20.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常小总结">
 <meta name="twitter:description" content="此篇博客用于日常的知识点的总结，不定时更新。">
-<meta name="twitter:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture9.jpg">
 
 
 
@@ -383,8 +383,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg" rel="gallery_cjuhuuoqj002klw9fuptufva7" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture9.jpg" rel="gallery_cjuhvg2xe002hpt9ffk7bbs62" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture9.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -442,7 +442,7 @@
 <h3 id="关闭软键盘方法"><a href="#关闭软键盘方法" class="headerlink" title="关闭软键盘方法"></a>关闭软键盘方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);</span><br><span class="line">       //关闭软键盘</span><br><span class="line">       imm.hideSoftInputFromWindow(view.getWindowToken(), 0);</span><br></pre></td></tr></table></figure>
 <h2 id="bitmap标签图片拉伸问题"><a href="#bitmap标签图片拉伸问题" class="headerlink" title="bitmap标签图片拉伸问题"></a>bitmap标签图片拉伸问题</h2><p>在xml文件中引入<code>bitmap</code>标签，默认情况下<code>bitmap</code>引入的图片资源会根据所在的控件大小进行强制拉伸，为了避免这种情况可以通过<code>gravity</code>属性设置图片不拉伸</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">    &lt;item &gt;</span><br><span class="line">        &lt;bitmap</span><br><span class="line">            android:gravity=&quot;top|fill_horizontal&quot;</span><br><span class="line">            android:src=&quot;@drawable/bg_home&quot;</span><br><span class="line">             /&gt;</span><br><span class="line">    &lt;/item&gt;</span><br><span class="line"></span><br><span class="line">&lt;/layer-list&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/bitmap/gravity/bitmap_gravity.png" alt></p>
+<p><img src="/img/bitmap_gravity.png" alt></p>
 <h2 id="错误：Error-Execution-failed-for-task-39-app-transformClassesWithDexForDebug-39"><a href="#错误：Error-Execution-failed-for-task-39-app-transformClassesWithDexForDebug-39" class="headerlink" title="错误：Error:Execution failed for task &#39;:app:transformClassesWithDexForDebug&#39;."></a>错误：<code>Error:Execution failed for task &#39;:app:transformClassesWithDexForDebug&#39;.</code></h2><blockquote>
 <p>第三方依赖jar包重复依赖造成的问题</p>
 </blockquote>

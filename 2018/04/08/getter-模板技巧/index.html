@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="通常在处理bean类的时候，我们会通过AS的模板功能添加setter()和getter()方法,这种操作相当方便。但有些时候不能适应我们所有的需求，下面记录下适应具体需求时的一些修改。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_44.JPG-blog">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture10.jpg">
+<meta property="og:updated_time" content="2019-04-15T04:57:22.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="getter()模板技巧">
 <meta name="twitter:description" content="通常在处理bean类的时候，我们会通过AS的模板功能添加setter()和getter()方法,这种操作相当方便。但有些时候不能适应我们所有的需求，下面记录下适应具体需求时的一些修改。">
-<meta name="twitter:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_44.JPG-blog">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture10.jpg">
 
 
 
@@ -384,8 +384,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_44.JPG-blog" rel="gallery_cjuhuuopy001nlw9f47niwffw" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://oi2uynp9t.bkt.clouddn.com/IMG_44.JPG-blog" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_cjuhvg2wx001opt9flxv0kcx0" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture10.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -406,7 +406,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private String mName;</span><br><span class="line"></span><br><span class="line">   public String getmName() &#123;</span><br><span class="line">       return mName;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>避免方法名携带前缀字段可以尝试用下面的方法</p>
 <p>进入AS的<code>Preferences</code>界面，<code>Editor--&gt;Code Style--&gt;Java</code>,在’Name Prefix’中添加前缀字段，例如’m’</p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/as/getter.png" alt></p>
+<p><img src="/img/getter.png" alt></p>
 <p>重新生成’get’方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">private String mName;</span><br><span class="line"></span><br><span class="line">   public String getName() &#123;</span><br><span class="line">       return mName;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Getter-模板修改–自动处理-null-判断"><a href="#Getter-模板修改–自动处理-null-判断" class="headerlink" title="Getter 模板修改–自动处理 null 判断"></a>Getter 模板修改–自动处理 null 判断</h2><blockquote>
@@ -417,10 +417,10 @@
 <p>修改生成<code>get</code>的模板方法如下</p>
 <ol>
 <li><p>进入生成<code>get</code>方法的弹窗界面，点击右上角进入模板编辑界面</p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/as/getter_select.png" alt></p>
+<p><img src="/img/getter_select.png" alt></p>
 </li>
 <li><p>新建代码模板,修改模板代码如下(可以复制原来模板中的内容主要修改了<code>$(name){…}</code>中的return规则)</p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/as/getter_templete.png" alt></p>
+<p><img src="/img/getter_templete.png" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#if($field.modifierStatic)</span><br><span class="line">static ##</span><br><span class="line">#end</span><br><span class="line">$field.type ##</span><br><span class="line">#set($name = $StringUtil.capitalizeWithJavaBeanConvention($StringUtil.sanitizeJavaIdentifier($helper.getPropertyName($field, $project))))</span><br><span class="line">#if ($field.boolean &amp;&amp; $field.primitive)</span><br><span class="line">  #if ($StringUtil.startsWithIgnoreCase($name, &apos;is&apos;))</span><br><span class="line">    #set($name = $StringUtil.decapitalize($name))</span><br><span class="line">  #else</span><br><span class="line">    is##</span><br><span class="line">#end</span><br><span class="line">#else</span><br><span class="line">  get##</span><br><span class="line">#end</span><br><span class="line">$&#123;name&#125;() &#123;</span><br><span class="line">  #if ($field.string)</span><br><span class="line">     return $field.name == null ? &quot;&quot; : $field.name;</span><br><span class="line">  #else </span><br><span class="line">    #if ($field.list)</span><br><span class="line">    if ($field.name == null) &#123;</span><br><span class="line">        return new ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    return $field.name;</span><br><span class="line">    #else </span><br><span class="line">    return $field.name;</span><br><span class="line">    #end</span><br><span class="line">  #end</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>

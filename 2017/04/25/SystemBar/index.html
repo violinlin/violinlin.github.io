@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="SystemBars 主要包括两个状态栏StatusBar和导航栏NavigationBar。状态栏用来显示时间、电量等系统信息，导航栏一般在无实体按键的手机上，用来代替回退、Home、和菜单键。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_16.JPG-blog">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture4.jpg">
+<meta property="og:updated_time" content="2019-04-15T05:00:20.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SystemBar">
 <meta name="twitter:description" content="SystemBars 主要包括两个状态栏StatusBar和导航栏NavigationBar。状态栏用来显示时间、电量等系统信息，导航栏一般在无实体按键的手机上，用来代替回退、Home、和菜单键。">
-<meta name="twitter:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_16.JPG-blog">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture4.jpg">
 
 
 
@@ -384,8 +384,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_16.JPG-blog" rel="gallery_cjuhuuopp001blw9fwi772wu0" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://oi2uynp9t.bkt.clouddn.com/IMG_16.JPG-blog" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture4.jpg" rel="gallery_cjuhvg2wo0019pt9fbsiuh2rb" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture4.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -415,7 +415,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">private final int HIDE_SYSBAR_FLAG = View.SYSTEM_UI_FLAG_LAYOUT_STABLE</span><br><span class="line">          | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</span><br><span class="line">          | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN</span><br><span class="line">          | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar</span><br><span class="line">          | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar</span><br><span class="line">          | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;//设置沉浸模式,系统栏自动隐藏</span><br><span class="line"></span><br><span class="line">  private final int SHOW_SYSBAR_FLAG = View.SYSTEM_UI_FLAG_LAYOUT_STABLE</span><br><span class="line">          | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION</span><br><span class="line">          | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;//显示系统栏flag,同时是布局在系统栏底部显示</span><br></pre></td></tr></table></figure>
 <p>2.3 视图动画说明</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">TranslateAnimation mShowAction;</span><br><span class="line"></span><br><span class="line">   private void showAction() &#123;</span><br><span class="line">       mShowAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF, 0.0f,</span><br><span class="line">               Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,</span><br><span class="line">               -1.0f, Animation.RELATIVE_TO_SELF, 0.0f);</span><br><span class="line">       mShowAction.setDuration(500);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   TranslateAnimation mHiddenAction;</span><br><span class="line"></span><br><span class="line">   private void hideAction() &#123;</span><br><span class="line"></span><br><span class="line">       mHiddenAction = new TranslateAnimation(Animation.RELATIVE_TO_SELF,</span><br><span class="line">               0.0f, Animation.RELATIVE_TO_SELF, 0.0f,</span><br><span class="line">               Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,</span><br><span class="line">               -1.0f);</span><br><span class="line">       mHiddenAction.setDuration(500);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/sysbar/blog_sysbar.gif" alt="效果预览"></p>
+<p><img src="/img/blog_sysbar.gif" alt="效果预览"></p>
 
       
     </div>

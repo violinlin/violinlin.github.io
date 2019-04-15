@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="在项目中我们会经常用到圆形图片的情况，但是谷歌官方并没有提供这种视图控件，通常我们使用自定义视图来实现。这个CircleImageView是我们以前项目中用到的一个实现圆形图片的控件。最近有时间所以研究了一下源码，圆形图片主要是通过BitmapShader来实现，代码也比较容易理解对刚开始研究自定义视图的同学还是很有帮助的。另外我也简单修改了源码实现圆角图片和圆形图片的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_38.JPG-blog">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture1.jpg">
+<meta property="og:updated_time" content="2019-04-15T04:57:22.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RoundImageView">
 <meta name="twitter:description" content="在项目中我们会经常用到圆形图片的情况，但是谷歌官方并没有提供这种视图控件，通常我们使用自定义视图来实现。这个CircleImageView是我们以前项目中用到的一个实现圆形图片的控件。最近有时间所以研究了一下源码，圆形图片主要是通过BitmapShader来实现，代码也比较容易理解对刚开始研究自定义视图的同学还是很有帮助的。另外我也简单修改了源码实现圆角图片和圆形图片的功能。">
-<meta name="twitter:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_38.JPG-blog">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture1.jpg">
 
 
 
@@ -406,8 +406,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_38.JPG-blog" rel="gallery_cjuhuuovs003llw9fia139wam" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://oi2uynp9t.bkt.clouddn.com/IMG_38.JPG-blog" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_cjuhvg2zb003ept9fx3hfimpw" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture1.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -447,7 +447,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> if (mIsOval) &#123;</span><br><span class="line">            // 绘制圆形</span><br><span class="line">            if (mCircleBackgroundColor != Color.TRANSPARENT) &#123;</span><br><span class="line">                canvas.drawCircle(mDrawableRect.centerX(), mDrawableRect.centerY(), mDrawableRect.width() / 2f, mCircleBackgroundPaint);</span><br><span class="line">            &#125;</span><br><span class="line">            canvas.drawCircle(mDrawableRect.centerX(), mDrawableRect.centerY(), mDrawableRect.width() / 2f, mBitmapPaint);</span><br><span class="line">            if (mBorderWidth &gt; 0) &#123;</span><br><span class="line">//                绘制圆形的半径等于圆心到画笔宽度中心的距离</span><br><span class="line">                canvas.drawCircle(mBorderRect.centerX(), mBorderRect.centerY(), mBorderRect.width() / 2f - mBorderWidth / 2f, mBorderPaint);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 绘制圆角矩形</span><br><span class="line">            if (mCircleBackgroundColor != Color.TRANSPARENT) &#123;</span><br><span class="line">                canvas.drawRoundRect(mDrawableRect, mRadius, mRadius, mCircleBackgroundPaint);</span><br><span class="line">            &#125;</span><br><span class="line">            canvas.drawRoundRect(mDrawableRect, mRadius, mRadius, mBitmapPaint);</span><br><span class="line">            if (mBorderWidth &gt; 0) &#123;</span><br><span class="line">                RectF rectF = new RectF(mBorderRect);</span><br><span class="line">                //                绘制圆角矩形的宽/高等于矩形中心到上/下画笔宽度中心的距离</span><br><span class="line">                rectF.inset(mBorderWidth / 2f, mBorderWidth / 2f);</span><br><span class="line">                canvas.drawRoundRect(rectF, mRadius, mRadius, mBorderPaint);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><p><a href="https://github.com/violinlin/ViolinDemo/blob/master/imageview/src/main/java/com/violin/imageview/RoundImageView.java" target="_blank" rel="noopener">源码地址</a></p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/roundimageview.png" alt="RoundImageView"></p>
+<p><img src="/img/roundimageview.png" alt="RoundImageView"></p>
 
       
     </div>

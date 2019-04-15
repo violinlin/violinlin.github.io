@@ -95,12 +95,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="Android中为我们提供了很多的功能强大的视图控件，但是有些时候我们需要特定效果的控件。这时我们就需要自定义View来实现需要的效果。关于自定义视图的内容很多，我也在慢慢研究，这里绘制了一个简单的钟表视图和大家一起分享学习。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg">
-<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta property="og:image" content="http://yoursite.com/img/pictures/picture2.jpg">
+<meta property="og:updated_time" content="2019-04-15T05:00:20.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义View--绘制钟表">
 <meta name="twitter:description" content="Android中为我们提供了很多的功能强大的视图控件，但是有些时候我们需要特定效果的控件。这时我们就需要自定义View来实现需要的效果。关于自定义视图的内容很多，我也在慢慢研究，这里绘制了一个简单的钟表视图和大家一起分享学习。">
-<meta name="twitter:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg">
+<meta name="twitter:image" content="http://yoursite.com/img/pictures/picture2.jpg">
 
 
 
@@ -384,8 +384,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg" rel="gallery_cjuhuuow8003tlw9fl999env7" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture21.jpg" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture2.jpg" rel="gallery_cjuhvg348003vpt9ffa8oaa23" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture2.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -516,7 +516,7 @@
 <h5 id="绘制钟表走针"><a href="#绘制钟表走针" class="headerlink" title="绘制钟表走针"></a>绘制钟表走针</h5><p>绘制时分秒指针的原理其实是相同的，这里以秒针为例，将当前表盘分成60份，获取当前时间的秒数，绘制当前时间时指针的位置（当为时针是则将表盘分为类12份）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 绘制秒针</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> canvas</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> second = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawSecLine</span><span class="params">(Canvas canvas)</span> </span>&#123;</span><br><span class="line">       second = getCurrentSec();</span><br><span class="line">       <span class="keyword">int</span> angle = second * <span class="number">6</span>;</span><br><span class="line">       <span class="keyword">float</span> endX = (<span class="keyword">float</span>) (mBounds.centerX() + (radius / <span class="number">1.2</span>) * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       <span class="keyword">float</span> endY = (<span class="keyword">float</span>) (mBounds.centerY() + -(radius / <span class="number">1.2</span>) * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       <span class="keyword">float</span> startX= (mBounds.centerX() - <span class="number">50</span> * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       <span class="keyword">float</span> startY=  (mBounds.centerY() + <span class="number">50</span> * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       mPaint.setStrokeWidth(senWidth);</span><br><span class="line">       canvas.drawLine(startX,startY, endX, endY, mPaint);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="刷新界面"><a href="#刷新界面" class="headerlink" title="刷新界面"></a>刷新界面</h5><p>每个1s重新绘制界面更新指针的位置</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">postInvalidateDelayed(<span class="number">1000</span>);<span class="comment">//每隔1s重新绘制，刷新界面</span></span><br></pre></td></tr></table></figure>
-<h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p><img src="http://7xvvky.com1.z0.glb.clouddn.com/Blog/ClockView.gif" alt="效果图"><br><a href="https://github.com/violinlin/ClockDemo.git" target="_blank" rel="noopener">Git源码下载</a></p>
+<h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p><img src="/img/ClockView.gif" alt="效果图"><br><a href="https://github.com/violinlin/ClockDemo.git" target="_blank" rel="noopener">Git源码下载</a></p>
 
       
     </div>
