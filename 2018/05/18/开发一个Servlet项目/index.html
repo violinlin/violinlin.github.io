@@ -96,7 +96,7 @@
 <meta property="og:description" content="在开发项目过程中，客户端经常会遇到以下问题：1. 开发环境未能及时部署造成的开发阻塞问题；2. 一些界面依赖后台接口动态绘制UI,需要后台配合修改数据。通常客户端会在本地写一些假数据用来展示界面，等开发环境部署后，在联调接口和优化接口请求逻辑同时得记得把假数据给移除掉。这样的话客户端会多做一些无用功。后台正式开发完之前肯定都是些假数据，但是我们可以把假数据放到服务器上而不是客户端。所以，现在的需">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oi2uynp9t.bkt.clouddn.com/IMG_51.JPG-blog">
-<meta property="og:updated_time" content="2019-04-15T01:38:00.647Z">
+<meta property="og:updated_time" content="2019-04-15T04:12:07.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发一个Servlet项目">
 <meta name="twitter:description" content="在开发项目过程中，客户端经常会遇到以下问题：1. 开发环境未能及时部署造成的开发阻塞问题；2. 一些界面依赖后台接口动态绘制UI,需要后台配合修改数据。通常客户端会在本地写一些假数据用来展示界面，等开发环境部署后，在联调接口和优化接口请求逻辑同时得记得把假数据给移除掉。这样的话客户端会多做一些无用功。后台正式开发完之前肯定都是些假数据，但是我们可以把假数据放到服务器上而不是客户端。所以，现在的需">
@@ -406,7 +406,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_51.JPG-blog" rel="gallery_cjuhu81pe002ihy9f1zg4g8c7" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="http://oi2uynp9t.bkt.clouddn.com/IMG_51.JPG-blog" rel="gallery_cjuhuuoqo002slw9fecew8tzk" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://oi2uynp9t.bkt.clouddn.com/IMG_51.JPG-blog" itemprop="contentUrl">
               </a>
             
@@ -434,12 +434,12 @@
 <h3 id="新建Java-Web项目"><a href="#新建Java-Web项目" class="headerlink" title="新建Java Web项目"></a>新建Java Web项目</h3><blockquote>
 <p>创建最简单的Servlet项目，不需要引用Spring、Struts等框架</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/servlet_create.png" alt></p>
+<p><img src="/img/servlet_create.png" alt></p>
 <h3 id="添加Tomcat依赖"><a href="#添加Tomcat依赖" class="headerlink" title="添加Tomcat依赖"></a>添加Tomcat依赖</h3><blockquote>
 <p>项目创建成功后，需要引入Tomcat的依赖。在Project Structure中进行如下操作</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/import_tom_jar.png" alt></p>
-<p> <img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/import_tom_jar2.png" alt></p>
+<p><img src="/img/import_tom_jar.png" alt></p>
+<p> <img src="/img/import_tom_jar2.png" alt></p>
 <h3 id="完善项目配置"><a href="#完善项目配置" class="headerlink" title="完善项目配置"></a>完善项目配置</h3><h4 id="新建Servlet类，处理报文逻辑"><a href="#新建Servlet类，处理报文逻辑" class="headerlink" title="新建Servlet类，处理报文逻辑"></a>新建Servlet类，处理报文逻辑</h4><blockquote>
 <p>添加好Tomcat的依赖后，在工程的’src’目录下创建自己的包名，在包底下新建一个类继承<code>HttpServlet</code>。<strong>保证上面引入Tomcat依赖成功，不然找不到<code>HttpServlet</code>类</strong></p>
 </blockquote>
@@ -451,10 +451,10 @@
 <h3 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h3><blockquote>
 <p>如上，基本的项目框架已经完善。但是想让项目通过网络访问，还差最后一步，为项目配置Tomcat服务器。</p>
 </blockquote>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/deploy_tomcat1.png" alt></p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/deploy_tomcat2.png" alt></p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/deploy_tomcat3.png" alt></p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/deploy_tomcat4.png" alt></p>
+<p><img src="/img/deploy_tomcat1.png" alt></p>
+<p><img src="/img/deploy_tomcat2.png" alt></p>
+<p><img src="/img/deploy_tomcat3.png" alt></p>
+<p><img src="/img/deploy_tomcat4.png" alt></p>
 <p>日志显示下面表示服务启动成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[2018-05-22 03:18:59,303] Artifact FirstServlet:war exploded: Artifact is deployed successfully</span><br><span class="line">[2018-05-22 03:18:59,303] Artifact FirstServlet:war exploded: Deploy took 715 milliseconds</span><br></pre></td></tr></table></figure>
 <h2 id="测试服务"><a href="#测试服务" class="headerlink" title="测试服务"></a>测试服务</h2><blockquote>
@@ -463,8 +463,8 @@
 <p>修改’FirstServlet’中的处理逻辑，处理上传报文和返回报文。这里只是做了简单处理：读取打印上传报文，添加自定义信息拼接上传报文最为回复报文返回。<br>实际可按照自己项目中的报文加解密规则处理。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class FirstServlet extends HttpServlet &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">        doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">        InputStream inputStream = req.getInputStream();</span><br><span class="line">        byte[] b = new byte[1024];</span><br><span class="line">        int l = 0;</span><br><span class="line">        ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">        while (((l = inputStream.read(b)) != -1)) &#123;</span><br><span class="line"></span><br><span class="line">            baos.write(b, 0, l);</span><br><span class="line">        &#125;</span><br><span class="line">        String request = new String(baos.toByteArray());</span><br><span class="line">        System.out.println(&quot;上传报文：&quot; + request);</span><br><span class="line"></span><br><span class="line">        resp.setContentType(&quot;text/html;charset=UTF-8&quot;);//解决返回报文中中文乱码问题</span><br><span class="line">        resp.getWriter().println(&quot;回复报文开始----------------&quot;);</span><br><span class="line">        resp.getWriter().println(request);</span><br><span class="line">        resp.getWriter().println(&quot;回复报文结束----------------&quot;);</span><br><span class="line">        resp.getWriter().close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>访问路径为：本机ip地址+8080（tomcat端口）+/firstservlet(项web.xml中<code>url-pattern</code>字段)</p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/test_servlet1.png" alt></p>
-<p><img src="http://7xvvky.com1.z0.glb.clouddn.com/blog/firstservlet/test_servlet2.png" alt></p>
+<p><img src="/img/test_servlet1.png" alt></p>
+<p><img src="/img/test_servlet2.png" alt></p>
 
       
     </div>
