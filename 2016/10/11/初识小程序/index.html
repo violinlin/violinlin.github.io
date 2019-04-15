@@ -1,0 +1,1102 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="小程序,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://oi2uynp9t.bkt.clouddn.com/image/icon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="初始小程序">
+<meta name="keywords" content="小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识小程序">
+<meta property="og:url" content="http://yoursite.com/2016/10/11/初识小程序/index.html">
+<meta property="og:site_name" content="violin的小窝">
+<meta property="og:description" content="初始小程序">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg">
+<meta property="og:updated_time" content="2018-12-03T15:58:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识小程序">
+<meta name="twitter:description" content="初始小程序">
+<meta name="twitter:image" content="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/11/初识小程序/">
+
+
+
+
+
+  <title> 初识小程序 | violin的小窝 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6debfd27647939545d16988c03b81be9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">violin的小窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/11/初识小程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="violin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://oi2uynp9t.bkt.clouddn.com/image/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="violin的小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                初识小程序
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-11T14:20:24+08:00">
+                2016-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg" rel="gallery_cjuhmv6q0003n409fr9efzzep" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://7xvvky.com1.z0.glb.clouddn.com/picture/picture10.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <blockquote>
+<p>初始小程序</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="初识小程序"><a href="#初识小程序" class="headerlink" title="初识小程序"></a>初识小程序</h1><h2 id="小程序"><a href="#小程序" class="headerlink" title="小程序"></a>小程序</h2><h3 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h3><p><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/index.html" target="_blank" rel="noopener">官方文档</a><br><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=1475052055457" target="_blank" rel="noopener">开发工具下载</a><br><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/demo/demo.zip?t=1475052046827" target="_blank" rel="noopener">官方Demo源码下载</a><br><a href="https://mp.weixin.qq.com/debug/wxadoc/design/index.html" target="_blank" rel="noopener">设计指南</a></p>
+<h3 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h3><ol>
+<li>获取小程序的AppID</li>
+<li>创建项目</li>
+<li>编写代码</li>
+<li>调试预览<h2 id="程序目录结构介绍"><a href="#程序目录结构介绍" class="headerlink" title="程序目录结构介绍"></a>程序目录结构介绍</h2></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:right">属性</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">app.js</td>
+<td style="text-align:right">脚本文件</td>
+<td style="text-align:center">监听小程序生命周期、声明全局变量、调用框架的API</td>
+</tr>
+<tr>
+<td style="text-align:left">app.json</td>
+<td style="text-align:right">配置文件</td>
+<td style="text-align:center">界面page的注册、窗口背景色设置、导航条样式、标题等</td>
+</tr>
+<tr>
+<td style="text-align:left">app.wxss</td>
+<td style="text-align:right">样式表文件</td>
+<td style="text-align:center">css小程序的公共样式表</td>
+</tr>
+<tr>
+<td style="text-align:left">page</td>
+<td style="text-align:right">界面文件夹</td>
+<td style="text-align:center">每个界面的具体配置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="app-js"><a href="#app-js" class="headerlink" title="app.js"></a>app.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">App(&#123;</span><br><span class="line">  onLaunch: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="comment">// Do something initial when launch.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  onShow: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// Do something when show.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  onHide: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// Do something when hide.</span></span><br><span class="line">  &#125;,</span><br><span class="line">  globalData: <span class="string">'I am global data'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h3><p><strong>.json文件中不支持注释</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//界面注册默认第一个为启动页</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pages"</span>: [</span><br><span class="line">    <span class="string">"pages/index/index"</span>,</span><br><span class="line">    <span class="string">"pages/logs/index"</span></span><br><span class="line">  ],</span><br><span class="line">  //窗口背景，标题等设置</span><br><span class="line">  "window": &#123;</span><br><span class="line">    "navigationBarTitleText": "Demo"</span><br><span class="line">  &#125;,</span><br><span class="line">  //导航栏设置（2-5个）</span><br><span class="line">  "tabBar": &#123;</span><br><span class="line">    "list": [&#123;</span><br><span class="line">      "pagePath": "pages/index/index",</span><br><span class="line">      "text": "首页"</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      "pagePath": "pages/logs/logs",</span><br><span class="line">      "text": "日志"</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  //网络设置</span><br><span class="line">  "networkTimeout": &#123;</span><br><span class="line">    "request": 10000,</span><br><span class="line">    "downloadFile": 10000</span><br><span class="line">  &#125;,</span><br><span class="line">  //调试模式</span><br><span class="line">  "debug": true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="app-wxss"><a href="#app-wxss" class="headerlink" title="app.wxss"></a>app.wxss</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**index.wxss**/</span></span><br><span class="line"><span class="selector-class">.userinfo</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="page目录结构介绍"><a href="#page目录结构介绍" class="headerlink" title="page目录结构介绍"></a>page目录结构介绍</h3><p><strong>page由四个同名不同后缀的文件组成</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:right">属性</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">.js</td>
+<td style="text-align:right">脚本文件</td>
+<td style="text-align:center">页面的初始化、声明周期函数、事件处理</td>
+</tr>
+<tr>
+<td style="text-align:left">.json</td>
+<td style="text-align:right">配置文件</td>
+<td style="text-align:center">页面配置文件，非必须重写app.json</td>
+</tr>
+<tr>
+<td style="text-align:left">.wxss</td>
+<td style="text-align:right">样式表文件</td>
+<td style="text-align:center">页面样式文件，非必须重写app.wxss</td>
+</tr>
+<tr>
+<td style="text-align:left">.wxml</td>
+<td style="text-align:right">页面结构文件</td>
+<td style="text-align:center">使用组件绘制界面</td>
+</tr>
+</tbody>
+</table>
+<h4 id="js"><a href="#js" class="headerlink" title=".js"></a>.js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">//data 将会以 JSON 的形式由逻辑层传至渲染层.wxml</span><br><span class="line">  data:&#123;</span><br><span class="line">    // text:&quot;这是一个页面&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  onLoad:function(options)&#123;</span><br><span class="line">    // 页面初始化 options为页面跳转所带来的参数</span><br><span class="line">  &#125;,</span><br><span class="line">  onReady:function()&#123;</span><br><span class="line">    // 页面渲染完成</span><br><span class="line">  &#125;,</span><br><span class="line">  onShow:function()&#123;</span><br><span class="line">    // 页面显示</span><br><span class="line">  &#125;,</span><br><span class="line">  onHide:function()&#123;</span><br><span class="line">    // 页面隐藏</span><br><span class="line">  &#125;,</span><br><span class="line">  onUnload:function()&#123;</span><br><span class="line">    // 页面关闭</span><br><span class="line">  &#125;</span><br><span class="line">   // 监听按键点击</span><br><span class="line">    onSearchClick: function (event) &#123;</span><br><span class="line">        var that=this;</span><br><span class="line">        saveSearchHistory(that,this.data.searchText);</span><br><span class="line">        toSearchResult(this.data.searchText);</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//跳转搜索结果页</span><br><span class="line">function toSearchResult(searchtext) &#123;</span><br><span class="line">    wx.navigateTo(&#123;</span><br><span class="line">        url:&apos;../searchresultpanel/searchresultpanel?text=&apos;+searchtext</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="json"><a href="#json" class="headerlink" title=".json"></a>.json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//重写导航标题</span><br><span class="line">&#123;</span><br><span class="line">      <span class="attr">"navigationBarTitleText"</span>: <span class="string">"WeXin"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="wxss"><a href="#wxss" class="headerlink" title=".wxss"></a>.wxss</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**index.wxss**/</span></span><br><span class="line"><span class="selector-class">.userinfo</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="wxml"><a href="#wxml" class="headerlink" title=".wxml"></a>.wxml</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--数据绑定使用 Mustache 语法（双大括号）将变量包起来，同时可以进行逻辑运算--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123;message&#125;&#125; <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--条件渲染--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;condition&#125;&#125;"</span>&gt;</span> True <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--列表渲染--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;items&#125;&#125;"</span>&gt;</span></span><br><span class="line">  &#123;&#123;index&#125;&#125;: &#123;&#123;item.message&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="js的模块化"><a href="#js的模块化" class="headerlink" title="js的模块化"></a>js的模块化</h3><blockquote>
+<p>我们可以将一些公共的代码抽离成为一个单独的 js 文件，作为一个模块。模块只有通过 module.exports 才能对外暴露接口。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// common.js</span><br><span class="line">function sayHello(name) &#123;</span><br><span class="line">  console.log(&apos;Hello &apos; + name + &apos;!&apos;)</span><br><span class="line">&#125;</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  sayHello: sayHello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在需要使用这些模块的文件中，使用 require(path) 将公共代码引入。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var common = require(&apos;common.js&apos;)</span><br><span class="line">Page(&#123;</span><br><span class="line">  helloMINA: function() &#123;</span><br><span class="line">    common.sayHello(&apos;MINA&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="wxml的引用"><a href="#wxml的引用" class="headerlink" title="wxml的引用"></a>wxml的引用</h3><blockquote>
+<p>WXML 提供两种文件引用方式import和include。</p>
+</blockquote>
+<h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><blockquote>
+<p>import 有作用域的概念，即只会 import 目标文件中定义的 template，而不会 import 目标文件 import 的 template。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在 item.wxml 中定义了一个叫item的template：</span><br><span class="line"></span><br><span class="line">&lt;!-- item.wxml --&gt;</span><br><span class="line">&lt;template name=&quot;item&quot;&gt;</span><br><span class="line">  &lt;text&gt;&#123;&#123;text&#125;&#125;&lt;/text&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">在 index.wxml 中引用了 item.wxml，就可以使用item模板：</span><br><span class="line"></span><br><span class="line">&lt;import src=&quot;item.wxml&quot;/&gt;</span><br><span class="line">&lt;template is=&quot;item&quot; data=&quot;&#123;&#123;text: &apos;forbar&apos;&#125;&#125;&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="include"><a href="#include" class="headerlink" title="include"></a>include</h4><blockquote>
+<p>include可以将目标文件除了<code>&lt;template/&gt;</code>的整个代码引入，相当于是拷贝到include位置.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.wxml --&gt;</span><br><span class="line">&lt;include src=&quot;header.wxml&quot;/&gt;</span><br><span class="line">&lt;view&gt; body &lt;/view&gt;</span><br><span class="line">&lt;include src=&quot;footer.wxml&quot;/&gt;</span><br><span class="line">&lt;!-- header.wxml --&gt;</span><br><span class="line">&lt;view&gt; header &lt;/view&gt;</span><br><span class="line">&lt;!-- footer.wxml --&gt;</span><br><span class="line">&lt;view&gt; footer &lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="wxss样式的导入"><a href="#wxss样式的导入" class="headerlink" title="wxss样式的导入"></a>wxss样式的导入</h3><blockquote>
+<p>使用@import语句可以导入外联样式表，@import后跟需要导入的外联样式表的相对路径，用;表示语句结束。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/** common.wxss **/</span><br><span class="line">.small-p &#123;</span><br><span class="line">  padding:5px;</span><br><span class="line">&#125;</span><br><span class="line">/** app.wxss **/</span><br><span class="line">@import &quot;common.wxss&quot;;</span><br><span class="line">.middle-p &#123;</span><br><span class="line">  padding:15px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="接口和组件"><a href="#接口和组件" class="headerlink" title="接口和组件"></a>接口和组件</h2><blockquote>
+<p>接口和组件参考<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/index.html" target="_blank" rel="noopener">官方文档</a>和<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/demo/demo.zip?t=1475052046827" target="_blank" rel="noopener">官方Demo源码</a></p>
+</blockquote>
+<h2 id="开发工具介绍"><a href="#开发工具介绍" class="headerlink" title="开发工具介绍"></a>开发工具介绍</h2><h3 id="调试模块"><a href="#调试模块" class="headerlink" title="调试模块"></a>调试模块</h3><h4 id="Wxml-pannel"><a href="#Wxml-pannel" class="headerlink" title="Wxml pannel"></a>Wxml pannel</h4><blockquote>
+<p>Wxml panel 用于帮助开发者开发 Wxml 转化后的界面。在这里可以看到真实的页面结构以及结构对应的 wxss 属性，同时可以通过修改对应 wxss 属性，在模拟器中实时看到修改的情况。通过调试模块左上角的选择器，还可以快速找到页面中组件对应的 wxml 代码。</p>
+</blockquote>
+<p><img src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/devtools/wxml.gif?t=1475052055259" alt></p>
+<h4 id="Sources-pannel"><a href="#Sources-pannel" class="headerlink" title="Sources pannel"></a>Sources pannel</h4><blockquote>
+<p>Sources panel 用于显示当前项目的脚本文件，同浏览器开发不同，微信小程序框架会对脚本文件进行编译的工作，所以在 Sources panel 中开发者看到的文件是经过处理之后的脚本文件，开发者的代码都会被包裹在 define 函数中，并且对于 Page 代码，在尾部会有 require 的主动调用。<br><img src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/devtools/sources.png?t=1475052055259" alt></p>
+</blockquote>
+<h4 id="Network-pannel"><a href="#Network-pannel" class="headerlink" title="Network pannel"></a>Network pannel</h4><blockquote>
+<p>Netwrok Pannle 用于观察和显示 request 和 socket 的请求情况<br><img src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/devtools/network.png?t=1475052055259" alt></p>
+</blockquote>
+<h4 id="Appdata-pannel"><a href="#Appdata-pannel" class="headerlink" title="Appdata pannel"></a>Appdata pannel</h4><blockquote>
+<p>Appdata panel 用于显示当前项目当前时刻 appdata 具体数据，实时地反馈项目数据情况，可以在此处编辑数据，并及时地反馈到界面上。</p>
+</blockquote>
+<p><img src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/devtools/appdata.gif?t=1475052055259" alt></p>
+<h4 id="Storage-pannel"><a href="#Storage-pannel" class="headerlink" title="Storage pannel"></a>Storage pannel</h4><blockquote>
+<p>Storage panel 用于显示当前项目的使用 wx.setStorage 或者 wx.setStorageSync 后的数据存储情况。<br><img src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/devtools/storage.gif?t=1475052055259" alt></p>
+</blockquote>
+<h4 id="Console-pannel"><a href="#Console-pannel" class="headerlink" title="Console pannel"></a>Console pannel</h4><blockquote>
+<p>输入和调试代码，错误日志的显示<br><img src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/devtools/console1.gif?t=1475052055259" alt></p>
+</blockquote>
+<h2 id="开发中遇到的问题总结"><a href="#开发中遇到的问题总结" class="headerlink" title="开发中遇到的问题总结"></a>开发中遇到的问题总结</h2><h3 id="js代码的引入"><a href="#js代码的引入" class="headerlink" title="js代码的引入"></a>js代码的引入</h3><p><code>../</code>类似于<code>cd ..</code>返回上一层目录<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> netUtils = <span class="built_in">require</span>(<span class="string">'../../../utils/netUtils.js'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="布局问题"><a href="#布局问题" class="headerlink" title="布局问题"></a>布局问题</h3><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">flex布局介绍</a></p>
+<h3 id="事件的响应处理和传值"><a href="#事件的响应处理和传值" class="headerlink" title="事件的响应处理和传值"></a>事件的响应处理和传值</h3><p><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/event.html?t=1475052055756" target="_blank" rel="noopener">事件详解介绍</a></p>
+<h4 id="事件列表"><a href="#事件列表" class="headerlink" title="事件列表"></a>事件列表</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:right">触发条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">touchstart</td>
+<td style="text-align:right">手指触摸</td>
+</tr>
+<tr>
+<td style="text-align:left">touchmove</td>
+<td style="text-align:right">手指触摸后移动</td>
+</tr>
+<tr>
+<td style="text-align:left">touchcancel</td>
+<td style="text-align:right">手指触摸动作被打断，如来电提醒，弹窗</td>
+</tr>
+<tr>
+<td style="text-align:left">touchend</td>
+<td style="text-align:right">手指触摸动作结束</td>
+</tr>
+<tr>
+<td style="text-align:left">tap</td>
+<td style="text-align:right">手指触摸后离开</td>
+</tr>
+<tr>
+<td style="text-align:left">longtap</td>
+<td style="text-align:right">手指触摸后，超过350ms再离开</td>
+</tr>
+</tbody>
+</table>
+<h4 id="事件分类"><a href="#事件分类" class="headerlink" title="事件分类"></a>事件分类</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">事件</th>
+<th style="text-align:right">声明方法</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">冒泡事件</td>
+<td style="text-align:right">bind+事件</td>
+<td style="text-align:center">当一个组件上的事件被触发后，该事件会向父节点传递</td>
+</tr>
+<tr>
+<td style="text-align:left">非冒泡事件</td>
+<td style="text-align:right">catch+事件</td>
+<td style="text-align:center">当一个组件上的事件被触发后，该事件不会向父节点传递</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data的数据设置"><a href="#data的数据设置" class="headerlink" title="data的数据设置"></a>data的数据设置</h3><blockquote>
+<ol>
+<li>直接修改 this.data 无效，无法改变页面的状态，还会造成数据不一致。</li>
+<li>单次设置的数据不能超过1024kB，请尽量避免一次设置过多的数据。</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">that.setData(&#123;</span><br><span class="line">                categoryList: that.data.categoryList.concat(categoryList),</span><br><span class="line">                hideLoading: true,</span><br><span class="line">                isLoadingMore:false</span><br><span class="line">            &#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小程序/" rel="tag"># 小程序</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/21/AndroidStudio的Gradle插件版本更新简介/" rel="next" title="AndroidStudio的Gradle插件版本更新简介">
+                <i class="fa fa-chevron-left"></i> AndroidStudio的Gradle插件版本更新简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/23/Charles-修改返回报文/" rel="prev" title="Charles--修改返回报文">
+                Charles--修改返回报文 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="http://oi2uynp9t.bkt.clouddn.com/image/icon.png" alt="violin">
+          <p class="site-author-name" itemprop="name">violin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/violinlin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识小程序"><span class="nav-number">1.</span> <span class="nav-text">初识小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序"><span class="nav-number">1.1.</span> <span class="nav-text">小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源链接"><span class="nav-number">1.1.1.</span> <span class="nav-text">资源链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发步骤"><span class="nav-number">1.1.2.</span> <span class="nav-text">开发步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序目录结构介绍"><span class="nav-number">1.2.</span> <span class="nav-text">程序目录结构介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#app-js"><span class="nav-number">1.2.1.</span> <span class="nav-text">app.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#app-json"><span class="nav-number">1.2.2.</span> <span class="nav-text">app.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#app-wxss"><span class="nav-number">1.2.3.</span> <span class="nav-text">app.wxss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#page目录结构介绍"><span class="nav-number">1.2.4.</span> <span class="nav-text">page目录结构介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#json"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">.json</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wxss"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">.wxss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wxml"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">.wxml</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化"><span class="nav-number">1.3.</span> <span class="nav-text">模块化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js的模块化"><span class="nav-number">1.3.1.</span> <span class="nav-text">js的模块化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wxml的引用"><span class="nav-number">1.3.2.</span> <span class="nav-text">wxml的引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#import"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#include"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">include</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wxss样式的导入"><span class="nav-number">1.3.3.</span> <span class="nav-text">wxss样式的导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口和组件"><span class="nav-number">1.4.</span> <span class="nav-text">接口和组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发工具介绍"><span class="nav-number">1.5.</span> <span class="nav-text">开发工具介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调试模块"><span class="nav-number">1.5.1.</span> <span class="nav-text">调试模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Wxml-pannel"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">Wxml pannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sources-pannel"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">Sources pannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Network-pannel"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">Network pannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Appdata-pannel"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">Appdata pannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Storage-pannel"><span class="nav-number">1.5.1.5.</span> <span class="nav-text">Storage pannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Console-pannel"><span class="nav-number">1.5.1.6.</span> <span class="nav-text">Console pannel</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发中遇到的问题总结"><span class="nav-number">1.6.</span> <span class="nav-text">开发中遇到的问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js代码的引入"><span class="nav-number">1.6.1.</span> <span class="nav-text">js代码的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局问题"><span class="nav-number">1.6.2.</span> <span class="nav-text">布局问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件的响应处理和传值"><span class="nav-number">1.6.3.</span> <span class="nav-text">事件的响应处理和传值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件列表"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">事件列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件分类"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">事件分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data的数据设置"><span class="nav-number">1.6.4.</span> <span class="nav-text">data的数据设置</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">violin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
