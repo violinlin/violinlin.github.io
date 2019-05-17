@@ -1,0 +1,1047 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="面试,总结,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="violin的小窝" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/pictures/icon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="JAVA 篇 有事没事刷点题">
+<meta name="keywords" content="面试,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结">
+<meta property="og:url" content="blog.androidhuilin.wang/2019/04/24/面试总结/index.html">
+<meta property="og:site_name" content="violin的小窝">
+<meta property="og:description" content="JAVA 篇 有事没事刷点题">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="/img/pictures/picture1.jpg">
+<meta property="og:updated_time" content="2019-05-17T03:34:04.264Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试总结">
+<meta name="twitter:description" content="JAVA 篇 有事没事刷点题">
+<meta name="twitter:image" content="/img/pictures/picture1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="blog.androidhuilin.wang/2019/04/24/面试总结/">
+
+
+
+
+
+  <title> 面试总结 | violin的小窝 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6debfd27647939545d16988c03b81be9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">violin的小窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="blog.androidhuilin.wang/2019/04/24/面试总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huilin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/pictures/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="violin的小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                面试总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T14:31:11+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_cjvrizavz002qnp4oaxpx7e8b" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture1.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h2 id="JAVA-篇"><a href="#JAVA-篇" class="headerlink" title="JAVA 篇"></a>JAVA 篇</h2><blockquote>
+<p>有事没事刷点题</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="HashMap-原理分析"><a href="#HashMap-原理分析" class="headerlink" title="HashMap 原理分析"></a>HashMap 原理分析</h3><p><a href="https://www.cnblogs.com/chengxiao/p/6059914.html#!comments" target="_blank" rel="noopener">HashMap实现原理及源码分析</a></p>
+<h3 id="类加载过程"><a href="#类加载过程" class="headerlink" title="类加载过程"></a>类加载过程</h3><p><a href="https://www.cnblogs.com/wanghang-learning/p/9275183.html" target="_blank" rel="noopener">JAVA对象的初始化过程</a></p>
+<ol>
+<li>类加载 <blockquote>
+<p>一个java对象在初始化前会进行类加载，在JVM中生成Class对象 </p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果该类有父类，则先加载父类 </span><br><span class="line">    1. 初始化类静态成员</span><br><span class="line">    2. 执行类静态代码块</span><br><span class="line"></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>创建对象<blockquote>
+<p>如果该类有父类，则创建对象时会先创建其父类的对象，外层包裹子类的属性和方法，然后返回子类的引用</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果该类有父类，先创建父类的对象。</span><br><span class="line">    1.初始化该类普通成员。　　</span><br><span class="line">    2.执行普通代码块。</span><br><span class="line">    3.调用该类构造方法。</span><br></pre></td></tr></table></figure>
+<h3 id="String、StringBuffer、StringBuilder的区别"><a href="#String、StringBuffer、StringBuilder的区别" class="headerlink" title="String、StringBuffer、StringBuilder的区别"></a>String、StringBuffer、StringBuilder的区别</h3><ul>
+<li><p>String 是用 final 修饰的类，由于它的不可变性，类似拼接、裁剪字符串等，都会产生新的对象。</p>
+</li>
+<li><p>StringBuffer 解决上面拼接对象而提供一个类，可以通过 append等方法拼接，是线程安全的，由于线程安全，效率也下降。</p>
+</li>
+<li><p>StringBuilder 跟StringBuffer 差不多，只是去掉了线程安全，所以优先使用 StringBuilder。</p>
+</li>
+</ul>
+<blockquote>
+<p> 说说String 为什么会产生新的对象？比如 String a = “1” String b = a + “2”，当执行这条指令时，会在常量池中产生一个对象指向a，而创建b时也会重新在常量池中生成b的对象；多次创建容易触发 GC，这也是为什么不建议使用 String 类去拼接的问题。</p>
+</blockquote>
+<h3 id="JAVA回收机制"><a href="#JAVA回收机制" class="headerlink" title="JAVA回收机制"></a>JAVA回收机制</h3><p><a href="https://juejin.im/post/5c31c4b26fb9a049c84f9bdd?utm_source=gold_browser_extension" target="_blank" rel="noopener">内存泄漏与排查流程</a></p>
+<h4 id="JAVA回收算法"><a href="#JAVA回收算法" class="headerlink" title="JAVA回收算法"></a>JAVA回收算法</h4><blockquote>
+<p>java中是通过GC（Garbage Collection）来进行回收内存，那jvm是如何确定一个对象能否被回收的呢？主要有下面的回收算法</p>
+</blockquote>
+<h5 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h5><blockquote>
+<p>引用计数是垃圾收集器中的早期策略。在这种方法中，堆中每个对象实例都有一个引用计数。当一个对象被创建时，且将该对象实例分配给一个变量，该变量计数设置为1。当任何其它变量被赋值为这个对象的引用时，计数加1（a = b,则b引用的对象实例的计数器+1），当一个对象实例的某个引用超过了生命周期或者被设置为一个新值时，对象实例的引用计数器减1。任何引用计数器为0的对象实例可以被当作垃圾收集。当一个对象实例被垃圾收集时，它引用的任何对象实例的引用计数器减1。</p>
+</blockquote>
+<p>缺点：<br>  无法检测出循环引用。如父对象有一个对子对象的引用，子对象反过来引用父对象。这样，他们的引用计数永远不可能为0。例如下面代码片段中，最后的Object实例已经不在我们的代码可控范围内，但其引用仍为1，此时内存便产生泄漏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object o1 = new Object()      //Object的引用+1，此时计数器为1</span><br><span class="line">Object o2;</span><br><span class="line">o2.o  = o1;   			      //Object的引用+1，此时计数器为2</span><br><span class="line">o2 = null;</span><br><span class="line">o1 = null;				      //Object的引用-1，此时计数器为1</span><br></pre></td></tr></table></figure>
+<h5 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h5><p><img src="/img/java_gc_root.png" alt></p>
+<blockquote>
+<p>可达性分析算法是现在java的主流方法，通过一系列的GC ROOT为起始点，从一个GC ROOT开始，寻找对应的引用节点，找到这个节点以后，继续寻找这个节点的引用节点，当所有的引用节点寻找完毕之后，剩余的节点则被认为是没有被引用到的节点，即无用的节点（即图中的ObjD、ObjE、ObjF）。由此可知，即时引用成环也不会导致泄漏。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">java中可作为GC Root的对象有：</span><br><span class="line"></span><br><span class="line"> 1、方法区中静态属性引用的对象</span><br><span class="line"> 2、方法区中常量引用的对象</span><br><span class="line"> 3、本地方法栈JNI中引用的对象（Native对象）</span><br><span class="line"> 4、虚拟机栈（本地变量表）中正在运行使用的引用</span><br></pre></td></tr></table></figure>
+<p><strong>但是，可达性分析算法中不可达的对象，也并非一定要被回收。当GC第一次扫过这些对象的时候，他们处于“死缓”的阶段。要真正执行死刑，至少需要经过两次标记过程。<br>如果对象经过可达性分析之后发现没有与GC<br>Roots相关联的引用链，那他会被第一次标记，并经历一次筛选，这个对象的finalize方法会被执行。如果对象没有覆盖finalize或者已经被执行过了。虚拟机也不会去执行finalize方法。Finalize是对象逃狱的最后一次机会。</strong></p>
+<h4 id="强引用、软引用、弱引用、虚引用"><a href="#强引用、软引用、弱引用、虚引用" class="headerlink" title="强引用、软引用、弱引用、虚引用"></a>强引用、软引用、弱引用、虚引用</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">引用类型</th>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">强引用</td>
+<td style="text-align:left">new</td>
+<td style="text-align:left">通常使用的创建对象的方法，new Object(),只要对象存在就不会被回收</td>
+</tr>
+<tr>
+<td style="text-align:left">软引用</td>
+<td style="text-align:left">SoftReference</td>
+<td style="text-align:left">用来描述一些有用但不是必需的对象，在内存溢出之前，系统会将这类对象GC回收,如果内存还不够，再报出内存溢出异常</td>
+</tr>
+<tr>
+<td style="text-align:left">弱引用</td>
+<td style="text-align:left">WeakReference</td>
+<td style="text-align:left">当系统发生GC前，无论内存是否够用，对象都会被回收</td>
+</tr>
+<tr>
+<td style="text-align:left">虚引用</td>
+<td style="text-align:left">PhantomReference</td>
+<td style="text-align:left">最弱的引用，虚引用不会影响对象的生存时间，只是当对象回收时收到一个系统通知</td>
+</tr>
+</tbody>
+</table>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><table>
+<thead>
+<tr>
+<th>线程池分类</th>
+<th>创建方法</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FixedThreadPool</td>
+<td>Executors.newFixedThreadPool(3)</td>
+<td>创建固定数量的核心线程，线程空闲时不会被回收，除非线程池被关闭，所有线程都处于活动状态时，新任务会进入等待状态</td>
+<td>能够快速响应外界请求</td>
+</tr>
+<tr>
+<td>CachedThreadPool</td>
+<td>Executors.newCachedThreadPool()</td>
+<td>创建数量不固定的非核心线程的线程池，如果有空闲线程则复用，否则创建新的线程，每个线程有超时时间60s</td>
+<td>适合执行大量不耗时间的任务</td>
+</tr>
+<tr>
+<td>ScheduledThreadPool</td>
+<td>Executors.newScheduledThreadPool(5)</td>
+<td>核心线程固定，非核心线程不固定，非核心线程闲置时会被回收</td>
+<td>适合执行固定周期的重复任务</td>
+</tr>
+<tr>
+<td>SingleThreadExecutor</td>
+<td>Executors.newSingleThreadExecutor()</td>
+<td>只创建一个核心线程</td>
+<td>统一所有任务到一个线程中执行，不用考虑线程同步</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/总结/" rel="tag"># 总结</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/18/开发一个Servlet项目/" rel="next" title="开发一个Servlet项目">
+                <i class="fa fa-chevron-left"></i> 开发一个Servlet项目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/08/Android插件化基本流程/" rel="prev" title="Android插件化基本流程">
+                Android插件化基本流程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2OC8yMDgwMQ=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/pictures/icon.png" alt="huilin">
+          <p class="site-author-name" itemprop="name">huilin</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/violinlin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA-篇"><span class="nav-number">1.</span> <span class="nav-text">JAVA 篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap-原理分析"><span class="nav-number">1.1.</span> <span class="nav-text">HashMap 原理分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载过程"><span class="nav-number">1.2.</span> <span class="nav-text">类加载过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String、StringBuffer、StringBuilder的区别"><span class="nav-number">1.3.</span> <span class="nav-text">String、StringBuffer、StringBuilder的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA回收机制"><span class="nav-number">1.4.</span> <span class="nav-text">JAVA回收机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JAVA回收算法"><span class="nav-number">1.4.1.</span> <span class="nav-text">JAVA回收算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#引用计数法"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">引用计数法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可达性分析算法"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">可达性分析算法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强引用、软引用、弱引用、虚引用"><span class="nav-number">1.4.2.</span> <span class="nav-text">强引用、软引用、弱引用、虚引用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程"><span class="nav-number">1.5.</span> <span class="nav-text">线程</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huilin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
