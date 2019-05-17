@@ -77,8 +77,6 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="violin的小窝" type="application/atom+xml">
-
 
 
 
@@ -98,7 +96,7 @@
 <meta property="og:description" content="JAVA 篇 有事没事刷点题">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="/img/pictures/picture1.jpg">
-<meta property="og:updated_time" content="2019-05-17T03:34:04.264Z">
+<meta property="og:updated_time" content="2019-05-17T09:01:18.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结">
 <meta name="twitter:description" content="JAVA 篇 有事没事刷点题">
@@ -386,7 +384,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_cjvrizavz002qnp4oaxpx7e8b" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_cjvrut77y002lwe4ocpjt4ond" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture1.jpg" itemprop="contentUrl">
               </a>
             
@@ -437,7 +435,7 @@
 <p>引用计数是垃圾收集器中的早期策略。在这种方法中，堆中每个对象实例都有一个引用计数。当一个对象被创建时，且将该对象实例分配给一个变量，该变量计数设置为1。当任何其它变量被赋值为这个对象的引用时，计数加1（a = b,则b引用的对象实例的计数器+1），当一个对象实例的某个引用超过了生命周期或者被设置为一个新值时，对象实例的引用计数器减1。任何引用计数器为0的对象实例可以被当作垃圾收集。当一个对象实例被垃圾收集时，它引用的任何对象实例的引用计数器减1。</p>
 </blockquote>
 <p>缺点：<br>  无法检测出循环引用。如父对象有一个对子对象的引用，子对象反过来引用父对象。这样，他们的引用计数永远不可能为0。例如下面代码片段中，最后的Object实例已经不在我们的代码可控范围内，但其引用仍为1，此时内存便产生泄漏。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object o1 = new Object()      //Object的引用+1，此时计数器为1</span><br><span class="line">Object o2;</span><br><span class="line">o2.o  = o1;   			      //Object的引用+1，此时计数器为2</span><br><span class="line">o2 = null;</span><br><span class="line">o1 = null;				      //Object的引用-1，此时计数器为1</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object o1 = <span class="keyword">new</span> Object()      <span class="comment">//Object的引用+1，此时计数器为1</span></span><br><span class="line">Object o2;</span><br><span class="line">o2.o  = o1;   			      <span class="comment">//Object的引用+1，此时计数器为2</span></span><br><span class="line">o2 = <span class="keyword">null</span>;</span><br><span class="line">o1 = <span class="keyword">null</span>;				      <span class="comment">//Object的引用-1，此时计数器为1</span></span><br></pre></td></tr></table></figure>
 <h5 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h5><p><img src="/img/java_gc_root.png" alt></p>
 <blockquote>
 <p>可达性分析算法是现在java的主流方法，通过一系列的GC ROOT为起始点，从一个GC ROOT开始，寻找对应的引用节点，找到这个节点以后，继续寻找这个节点的引用节点，当所有的引用节点寻找完毕之后，剩余的节点则被认为是没有被引用到的节点，即无用的节点（即图中的ObjD、ObjE、ObjF）。由此可知，即时引用成环也不会导致泄漏。</p>
@@ -669,13 +667,6 @@
 
         </nav>
 
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
         
 
         <div class="links-of-author motion-element">

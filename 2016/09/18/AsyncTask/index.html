@@ -77,8 +77,6 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="violin的小窝" type="application/atom+xml">
-
 
 
 
@@ -98,7 +96,7 @@
 <meta property="og:description" content="AsyncTack是对Thread+Handler良好的封装，用来执行异步任务">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="/img/pictures/picture3.jpg">
-<meta property="og:updated_time" content="2019-05-17T07:02:42.530Z">
+<meta property="og:updated_time" content="2019-05-17T08:51:14.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AsyncTask">
 <meta name="twitter:description" content="AsyncTack是对Thread+Handler良好的封装，用来执行异步任务">
@@ -408,7 +406,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvrizb0c003knp4omjzg0ajk" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvrut79f003nwe4ogtr20x1p" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture3.jpg" itemprop="contentUrl">
               </a>
             
@@ -425,7 +423,7 @@
 </blockquote>
 <a id="more"></a>
 <p>三种泛型参数类型分别代表“启动任务执行的输入参数”、“后台任务执行的进度”、“后台计算结果的类型”。在特定场合下，并不是所有类型都被使用，如果没有被使用，可以用java.lang.Void类型代替。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public abstract class AsyncTask&lt;Params, Progress, Result&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AsyncTask</span>&lt;<span class="title">Params</span>, <span class="title">Progress</span>, <span class="title">Result</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="一个异步任务的执行一般包括以下几个步骤："><a href="#一个异步任务的执行一般包括以下几个步骤：" class="headerlink" title="一个异步任务的执行一般包括以下几个步骤："></a>一个异步任务的执行一般包括以下几个步骤：</h1><ol>
 <li><p>execute(Params… params)，执行一个异步任务，需要我们在代码中调用此方法，触发异步任务的执行。</p>
 </li>
@@ -631,13 +629,6 @@
 
         </nav>
 
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
         
 
         <div class="links-of-author motion-element">

@@ -77,8 +77,6 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="violin的小窝" type="application/atom+xml">
-
 
 
 
@@ -401,7 +399,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_cjvrizatv0005np4oa7dyegdf" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_cjvrut76d000bwe4ouecw01ox" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture1.jpg" itemprop="contentUrl">
               </a>
             
@@ -423,40 +421,40 @@
 <ol>
 <li>启动App,MainActivity创建生命周期如下</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D/Activity: MainActivity	onCreate</span><br><span class="line">D/Activity: MainActivity	onStart</span><br><span class="line">D/Activity: MainActivity	onResume</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D/Activity: MainActivity	onCreate</span><br><span class="line">D/Activity: MainActivity	onStart</span><br><span class="line">D/Activity: MainActivity	onResume</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>从<code>MainActivity</code>启动<code>SecondActivity</code></li>
 </ol>
 <blockquote>
 <p>从日志可以看出<code>MainActivity</code>会先走<code>onPause()</code>方法，等<code>SecondActivity</code>界面走完创建流程，到<code>onResume()</code>之后，前一个界面才会走<code>onStop()</code>方法</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D/Activity: MainActivity	onPause</span><br><span class="line">D/Activity: SecondActivity	onCreate</span><br><span class="line">D/Activity: SecondActivity	onStart</span><br><span class="line">D/Activity: SecondActivity	onResume</span><br><span class="line">D/Activity: MainActivity	onStop</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D/Activity: MainActivity	onPause</span><br><span class="line">D/Activity: SecondActivity	onCreate</span><br><span class="line">D/Activity: SecondActivity	onStart</span><br><span class="line">D/Activity: SecondActivity	onResume</span><br><span class="line">D/Activity: MainActivity	onStop</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>从<code>SecondActivity</code>退回到<code>MainActivity</code></li>
 </ol>
 <blockquote>
 <p>当上一个界面<code>MainActivity</code>重新<code>onResume()</code>后，<code>SecondActivity</code>才会调<code>onStop(),onDestory()</code>方法</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D/Activity: SecondActivity	onPause</span><br><span class="line">D/Activity: MainActivity	onStart</span><br><span class="line">D/Activity: MainActivity	onResume</span><br><span class="line">D/Activity: SecondActivity	onStop</span><br><span class="line">D/Activity: SecondActivity	onDestroy</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D/Activity: SecondActivity	onPause</span><br><span class="line">D/Activity: MainActivity	onStart</span><br><span class="line">D/Activity: MainActivity	onResume</span><br><span class="line">D/Activity: SecondActivity	onStop</span><br><span class="line">D/Activity: SecondActivity	onDestroy</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>从日志也可以看出无论从A启动到B,还是从B退回到A,当前显示的Activity会先走<code>onPause()</code>方法，目标Activity才会走创建或者重新回到前台流程。所以<code>onPause()</code>方法中不适合做一些耗时操作，会影响下一个界面的打开。</p>
 </blockquote>
 <h1 id="Activity-启动模式"><a href="#Activity-启动模式" class="headerlink" title="Activity 启动模式"></a>Activity 启动模式</h1><p><img src="/img/launchmode.png" alt="launch mode"></p>
-<h1 id="onNewIntent方法的执行时机"><a href="#onNewIntent方法的执行时机" class="headerlink" title="onNewIntent方法的执行时机"></a>onNewIntent方法的执行时机</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当此Activity的实例已经存在，并且此时的启动模式为SingleTask和SingleInstance，另外当这个实例位于栈顶且启动模式为SingleTop时也会触发onNewInstent()。</span><br></pre></td></tr></table></figure>
+<h1 id="onNewIntent方法的执行时机"><a href="#onNewIntent方法的执行时机" class="headerlink" title="onNewIntent方法的执行时机"></a>onNewIntent方法的执行时机</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当此Activity的实例已经存在，并且此时的启动模式为SingleTask和SingleInstance，另外当这个实例位于栈顶且启动模式为SingleTop时也会触发onNewInstent()。</span><br></pre></td></tr></table></figure>
 <h1 id="Activity-启动异常"><a href="#Activity-启动异常" class="headerlink" title="Activity 启动异常"></a>Activity 启动异常</h1><blockquote>
 <p>通过隐式意图启动Activity时需要处理一些异常情况，例如目标Activity不存在、没有打开权限等。</p>
 </blockquote>
 <h2 id="Permission-Denial"><a href="#Permission-Denial" class="headerlink" title="Permission Denial"></a>Permission Denial</h2><blockquote>
 <p>打开目标Activity权限失败，例如目标Activity中设置了下面参数</p>
 </blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:exported=&quot;false&quot;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:exported=<span class="string">"false"</span></span><br></pre></td></tr></table></figure>
 <p>具体错误信息 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission Denial: starting Intent &#123; act=android.intent.action.VIEW dat=plugin:// flg=0x10200000 cmp=cn.qbzsydsq.reader/demo.ad.dy.com.appdemo.plugin.PluginActivity &#125; from ProcessRecord&#123;80c0b66 26467:com.violin.violindemo/u0a931&#125; (pid=26467, uid=10931) not exported from uid 11016</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Permission Denial: starting Intent &#123; act=android.intent.action.VIEW dat=plugin:<span class="comment">// flg=0x10200000 cmp=cn.qbzsydsq.reader/demo.ad.dy.com.appdemo.plugin.PluginActivity &#125; from ProcessRecord&#123;80c0b66 26467:com.violin.violindemo/u0a931&#125; (pid=26467, uid=10931) not exported from uid 11016</span></span><br></pre></td></tr></table></figure>
 <h2 id="No-Activity-found-to-handle-Intent"><a href="#No-Activity-found-to-handle-Intent" class="headerlink" title="No Activity found to handle Intent"></a>No Activity found to handle Intent</h2><blockquote>
 <p>手机上没有找到处理意图的目标Activity</p>
 </blockquote>
 <p>具体错误信息 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.content.ActivityNotFoundException: No Activity found to handle Intent &#123; act=android.intent.action.VIEW dat=plugi:// flg=0x10200000 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.content.ActivityNotFoundException: No Activity found to handle Intent &#123; act=android.intent.action.VIEW dat=plugi:<span class="comment">// flg=0x10200000 &#125;</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -599,7 +597,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvrizb0c003knp4omjzg0ajk" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvrut79f003nwe4ogtr20x1p" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture3.jpg" itemprop="contentUrl">
               </a>
             
@@ -762,7 +760,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvrizav8001ynp4oq683w3e8" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvrut77g001pwe4osifsmpeq" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture3.jpg" itemprop="contentUrl">
               </a>
             
@@ -776,7 +774,7 @@
       
         
           
-            <h1 id="设置TextView文字不同颜色"><a href="#设置TextView文字不同颜色" class="headerlink" title="设置TextView文字不同颜色"></a>设置TextView文字不同颜色</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text.setText(Html.fromHtml(&quot;&lt;font color=\&apos;#858585\&apos;&gt;购买前如有任何疑问，欢迎使用：&lt;/font&gt;&lt;font color=\&apos;#f02387\&apos;&gt;&lt;U&gt;购物咨询&lt;/U&gt;&lt;/font&gt;&quot;));</span><br></pre></td></tr></table></figure>
+            <h1 id="设置TextView文字不同颜色"><a href="#设置TextView文字不同颜色" class="headerlink" title="设置TextView文字不同颜色"></a>设置TextView文字不同颜色</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text.setText(Html.fromHtml(<span class="string">"&lt;font color=\'#858585\'&gt;购买前如有任何疑问，欢迎使用：&lt;/font&gt;&lt;font color=\'#f02387\'&gt;&lt;U&gt;购物咨询&lt;/U&gt;&lt;/font&gt;"</span>));</span><br></pre></td></tr></table></figure>
           
         
       
@@ -918,7 +916,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_cjvrizav90020np4o9mi027xe" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_cjvrut77d001iwe4ow6vn7f1c" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture10.jpg" itemprop="contentUrl">
               </a>
             
@@ -941,7 +939,7 @@
 <h1 id="监听键盘右下角响应按键事件"><a href="#监听键盘右下角响应按键事件" class="headerlink" title="监听键盘右下角响应按键事件"></a>监听键盘右下角响应按键事件</h1><blockquote>
 <p>以响应完成为例<code>actionId == EditorInfo.IME_ACTION_DONE</code></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editText.setOnEditorActionListener(new TextView.OnEditorActionListener() &#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) &#123;</span><br><span class="line">                        if (actionId == EditorInfo.IME_ACTION_DONE) &#123;</span><br><span class="line">                            </span><br><span class="line">                        return false;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">editText.setOnEditorActionListener(<span class="keyword">new</span> TextView.OnEditorActionListener() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onEditorAction</span><span class="params">(TextView v, <span class="keyword">int</span> actionId, KeyEvent event)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">if</span> (actionId == EditorInfo.IME_ACTION_DONE) &#123;</span><br><span class="line">                            </span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1083,7 +1081,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture6.jpg" rel="gallery_cjvrizaux001dnp4oc1q08dls" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture6.jpg" rel="gallery_cjvrut779001cwe4orfc3j4zn" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture6.jpg" itemprop="contentUrl">
               </a>
             
@@ -1224,7 +1222,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture9.jpg" rel="gallery_cjvrizavs002hnp4oh7bhoozq" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture9.jpg" rel="gallery_cjvrut77v002fwe4oixfl1rk1" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture9.jpg" itemprop="contentUrl">
               </a>
             
@@ -1363,7 +1361,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture4.jpg" rel="gallery_cjvrizauy001gnp4oo475zu06" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture4.jpg" rel="gallery_cjvrut77j001wwe4o0rtt98za" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture4.jpg" itemprop="contentUrl">
               </a>
             
@@ -1504,7 +1502,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture9.jpg" rel="gallery_cjvrizauq0013np4o623qtzii" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture9.jpg" rel="gallery_cjvrut7760017we4ok58az5n9" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture9.jpg" itemprop="contentUrl">
               </a>
             
@@ -1644,7 +1642,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture7.jpg" rel="gallery_cjvrizau4000cnp4oyw3d05am" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture7.jpg" rel="gallery_cjvrut76n000fwe4ocja5v994" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture7.jpg" itemprop="contentUrl">
               </a>
             
@@ -1783,7 +1781,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture4.jpg" rel="gallery_cjvrizats0004np4ob16c37oc" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture4.jpg" rel="gallery_cjvrut7670005we4o3jee26lc" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture4.jpg" itemprop="contentUrl">
               </a>
             
@@ -1913,13 +1911,6 @@
 
         </nav>
 
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
         
 
         <div class="links-of-author motion-element">
