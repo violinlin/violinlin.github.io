@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="blog.androidhuilin.wang/"/>
+  <link href="http://androidhuilin.wang/"/>
   <updated>2019-05-17T08:51:14.485Z</updated>
-  <id>blog.androidhuilin.wang/</id>
+  <id>http://androidhuilin.wang/</id>
   
   <author>
     <name>huilin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Android插件化基本流程</title>
-    <link href="blog.androidhuilin.wang/2019/05/08/Android%E6%8F%92%E4%BB%B6%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/"/>
-    <id>blog.androidhuilin.wang/2019/05/08/Android插件化基本流程/</id>
+    <link href="http://androidhuilin.wang/2019/05/08/Android%E6%8F%92%E4%BB%B6%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/"/>
+    <id>http://androidhuilin.wang/2019/05/08/Android插件化基本流程/</id>
     <published>2019-05-08T08:40:38.000Z</published>
     <updated>2019-05-17T08:51:14.485Z</updated>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>面试总结</title>
-    <link href="blog.androidhuilin.wang/2019/04/24/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/"/>
-    <id>blog.androidhuilin.wang/2019/04/24/面试总结/</id>
+    <link href="http://androidhuilin.wang/2019/04/24/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://androidhuilin.wang/2019/04/24/面试总结/</id>
     <published>2019-04-24T06:31:11.000Z</published>
     <updated>2019-05-17T09:01:18.555Z</updated>
     
@@ -60,16 +60,16 @@
     </summary>
     
     
-      <category term="面试" scheme="blog.androidhuilin.wang/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="http://androidhuilin.wang/tags/%E9%9D%A2%E8%AF%95/"/>
     
-      <category term="总结" scheme="blog.androidhuilin.wang/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://androidhuilin.wang/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>开发一个Servlet项目</title>
-    <link href="blog.androidhuilin.wang/2018/05/18/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAServlet%E9%A1%B9%E7%9B%AE/"/>
-    <id>blog.androidhuilin.wang/2018/05/18/开发一个Servlet项目/</id>
+    <link href="http://androidhuilin.wang/2018/05/18/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAServlet%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://androidhuilin.wang/2018/05/18/开发一个Servlet项目/</id>
     <published>2018-05-18T07:01:54.000Z</published>
     <updated>2019-05-17T09:01:18.538Z</updated>
     
@@ -83,17 +83,17 @@
     
     </summary>
     
-      <category term="Server" scheme="blog.androidhuilin.wang/categories/Server/"/>
+      <category term="Server" scheme="http://androidhuilin.wang/categories/Server/"/>
     
     
-      <category term="servlet" scheme="blog.androidhuilin.wang/tags/servlet/"/>
+      <category term="servlet" scheme="http://androidhuilin.wang/tags/servlet/"/>
     
   </entry>
   
   <entry>
     <title>Charles--抓取https报文</title>
-    <link href="blog.androidhuilin.wang/2018/04/17/Charles-%E6%8A%93%E5%8F%96https%E6%8A%A5%E6%96%87/"/>
-    <id>blog.androidhuilin.wang/2018/04/17/Charles-抓取https报文/</id>
+    <link href="http://androidhuilin.wang/2018/04/17/Charles-%E6%8A%93%E5%8F%96https%E6%8A%A5%E6%96%87/"/>
+    <id>http://androidhuilin.wang/2018/04/17/Charles-抓取https报文/</id>
     <published>2018-04-17T08:27:42.000Z</published>
     <updated>2019-04-15T04:57:22.729Z</updated>
     
@@ -106,14 +106,14 @@
     </summary>
     
     
-      <category term="Charles" scheme="blog.androidhuilin.wang/tags/Charles/"/>
+      <category term="Charles" scheme="http://androidhuilin.wang/tags/Charles/"/>
     
   </entry>
   
   <entry>
     <title>getter()模板技巧</title>
-    <link href="blog.androidhuilin.wang/2018/04/08/getter-%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/"/>
-    <id>blog.androidhuilin.wang/2018/04/08/getter-模板技巧/</id>
+    <link href="http://androidhuilin.wang/2018/04/08/getter-%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/"/>
+    <id>http://androidhuilin.wang/2018/04/08/getter-模板技巧/</id>
     <published>2018-04-08T07:52:22.000Z</published>
     <updated>2019-05-17T09:01:18.551Z</updated>
     
@@ -128,14 +128,14 @@
     </summary>
     
     
-      <category term="AndroidStudio" scheme="blog.androidhuilin.wang/tags/AndroidStudio/"/>
+      <category term="AndroidStudio" scheme="http://androidhuilin.wang/tags/AndroidStudio/"/>
     
   </entry>
   
   <entry>
     <title>build.gradle的常用配置</title>
-    <link href="blog.androidhuilin.wang/2018/03/26/build-gradle%E7%9A%84%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
-    <id>blog.androidhuilin.wang/2018/03/26/build-gradle的常用配置/</id>
+    <link href="http://androidhuilin.wang/2018/03/26/build-gradle%E7%9A%84%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
+    <id>http://androidhuilin.wang/2018/03/26/build-gradle的常用配置/</id>
     <published>2018-03-26T08:27:53.000Z</published>
     <updated>2019-05-17T09:01:18.523Z</updated>
     
@@ -149,17 +149,17 @@
     
     </summary>
     
-      <category term="Android" scheme="blog.androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="gradle" scheme="blog.androidhuilin.wang/tags/gradle/"/>
+      <category term="gradle" scheme="http://androidhuilin.wang/tags/gradle/"/>
     
   </entry>
   
   <entry>
     <title>RoundImageView</title>
-    <link href="blog.androidhuilin.wang/2018/03/14/RoundImageView/"/>
-    <id>blog.androidhuilin.wang/2018/03/14/RoundImageView/</id>
+    <link href="http://androidhuilin.wang/2018/03/14/RoundImageView/"/>
+    <id>http://androidhuilin.wang/2018/03/14/RoundImageView/</id>
     <published>2018-03-14T03:21:06.000Z</published>
     <updated>2019-05-17T09:01:18.514Z</updated>
     
@@ -173,19 +173,19 @@
     
     </summary>
     
-      <category term="Android" scheme="blog.androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
-      <category term="自定义view" scheme="blog.androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+      <category term="自定义view" scheme="http://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
     
   </entry>
   
   <entry>
     <title>布局优化</title>
-    <link href="blog.androidhuilin.wang/2018/01/02/%E5%B8%83%E5%B1%80%E4%BC%98%E5%8C%96/"/>
-    <id>blog.androidhuilin.wang/2018/01/02/布局优化/</id>
+    <link href="http://androidhuilin.wang/2018/01/02/%E5%B8%83%E5%B1%80%E4%BC%98%E5%8C%96/"/>
+    <id>http://androidhuilin.wang/2018/01/02/布局优化/</id>
     <published>2018-01-02T07:03:12.000Z</published>
     <updated>2019-05-17T09:01:18.508Z</updated>
     
@@ -199,17 +199,17 @@
     
     </summary>
     
-      <category term="Android" scheme="blog.androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>Activity启动模式</title>
-    <link href="blog.androidhuilin.wang/2017/11/15/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>blog.androidhuilin.wang/2017/11/15/Activity启动模式/</id>
+    <link href="http://androidhuilin.wang/2017/11/15/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://androidhuilin.wang/2017/11/15/Activity启动模式/</id>
     <published>2017-11-15T09:42:14.000Z</published>
     <updated>2019-05-17T08:47:59.749Z</updated>
     
@@ -221,17 +221,17 @@
     
     </summary>
     
-      <category term="Android" scheme="blog.androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Activity" scheme="blog.androidhuilin.wang/tags/Activity/"/>
+      <category term="Activity" scheme="http://androidhuilin.wang/tags/Activity/"/>
     
   </entry>
   
   <entry>
     <title>简单聊聊Android程序的运行内存</title>
-    <link href="blog.androidhuilin.wang/2017/10/09/%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8AAndroid%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E5%86%85%E5%AD%98/"/>
-    <id>blog.androidhuilin.wang/2017/10/09/简单聊聊Android程序的运行内存/</id>
+    <link href="http://androidhuilin.wang/2017/10/09/%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8AAndroid%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E5%86%85%E5%AD%98/"/>
+    <id>http://androidhuilin.wang/2017/10/09/简单聊聊Android程序的运行内存/</id>
     <published>2017-10-09T09:41:17.000Z</published>
     <updated>2019-04-15T05:00:20.754Z</updated>
     
@@ -246,14 +246,14 @@
     </summary>
     
     
-      <category term="Android扩展" scheme="blog.androidhuilin.wang/tags/Android%E6%89%A9%E5%B1%95/"/>
+      <category term="Android扩展" scheme="http://androidhuilin.wang/tags/Android%E6%89%A9%E5%B1%95/"/>
     
   </entry>
   
   <entry>
     <title>AS2.3后找不到SDKManager启动按钮解决方法</title>
-    <link href="blog.androidhuilin.wang/2017/10/09/AS2-3%E5%90%8E%E6%89%BE%E4%B8%8D%E5%88%B0SDKManager%E5%90%AF%E5%8A%A8%E6%8C%89%E9%92%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>blog.androidhuilin.wang/2017/10/09/AS2-3后找不到SDKManager启动按钮解决方法/</id>
+    <link href="http://androidhuilin.wang/2017/10/09/AS2-3%E5%90%8E%E6%89%BE%E4%B8%8D%E5%88%B0SDKManager%E5%90%AF%E5%8A%A8%E6%8C%89%E9%92%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://androidhuilin.wang/2017/10/09/AS2-3后找不到SDKManager启动按钮解决方法/</id>
     <published>2017-10-09T07:01:57.000Z</published>
     <updated>2019-04-15T04:57:22.745Z</updated>
     
@@ -268,38 +268,38 @@
     </summary>
     
     
-      <category term="AndroidStudio" scheme="blog.androidhuilin.wang/tags/AndroidStudio/"/>
+      <category term="AndroidStudio" scheme="http://androidhuilin.wang/tags/AndroidStudio/"/>
     
   </entry>
   
   <entry>
     <title>云服务器配置Tomcat</title>
-    <link href="blog.androidhuilin.wang/2017/09/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AETomcat/"/>
-    <id>blog.androidhuilin.wang/2017/09/05/云服务器配置Tomcat/</id>
+    <link href="http://androidhuilin.wang/2017/09/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AETomcat/"/>
+    <id>http://androidhuilin.wang/2017/09/05/云服务器配置Tomcat/</id>
     <published>2017-09-05T03:35:20.000Z</published>
     <updated>2019-04-15T05:00:20.760Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>在<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">Apache Tomcat</a>官网上选择适当的Tomcat版本，参考<a href="http://blog.androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/">云服务器配置JDK</a>将Tomcat的安装包上传到服务器，并解压到相应目录(可以自定义)，这里我将Tomcat的包解压到了<code>/usr/local/tomcat/tomcat8/</code>目录下</p></blockquote><a id="more"></a><h2 id="1-解压好即可直接启动"><a href="#1-解压好即可直接启动" class="headerlink" title="1. 解压好即可直接启动"></a>1. 解压好即可直接启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 启动命令</span><br><span class="line">/usr/local/tomcat/tomcat8/bin/startup.sh</span><br><span class="line">2. 关闭命令</span><br><span class="line">/usr/local/tomcat/tomcat8/bin/shutdown.sh</span><br></pre></td></tr></table></figure><p>Tomcat默认端口号是8080，如果服务器没没有开放该端口，需要使用下面方法开放端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br></pre></td></tr></table></figure><p>出现<code>success</code>表示添加成功<br>然后更新防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure><p>重启防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure><p>测试Tomcat服务是否成功，浏览器输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://[云服务器外网ip]:8080</span><br></pre></td></tr></table></figure><h2 id="2-配置启动脚本"><a href="#2-配置启动脚本" class="headerlink" title="2. 配置启动脚本"></a>2. 配置启动脚本</h2><blockquote><p>每次通过命令的全路径来启动/关闭服务也很麻烦，那么可以通过一个脚本来实现命令启动<code>Tomcat</code></p></blockquote><p>创建脚本<br>执行下面代码进入脚本编辑</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi etc/init.d/tomcat</span><br></pre></td></tr></table></figure><p>按<code>i</code>进入编辑模式，拷贝下面内容，按<code>esc</code>键退出编辑，输入<code>:wq</code>保存并退出<code>vim</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># !/bin/bash    </span><br><span class="line"># Description: start or stop the tomcat    </span><br><span class="line"># Usage:        tomcat [start|stop|restart]    </span><br><span class="line">#    </span><br><span class="line">export PATH=$PATH:$HOME/bin  </span><br><span class="line">export BASH_ENV=$HOME/.bashrc  </span><br><span class="line">export USERNAME=&quot;root&quot;  </span><br><span class="line">  </span><br><span class="line">case &quot;$1&quot; in  </span><br><span class="line">start)  </span><br><span class="line">#startup the tomcat    </span><br><span class="line">cd [tomcat安装目录]/bin  </span><br><span class="line">./startup.sh  </span><br><span class="line">;;  </span><br><span class="line">stop)  </span><br><span class="line"># stop tomcat    </span><br><span class="line">cd [tomcat安装目录]/bin</span><br><span class="line">./shutdown.sh  </span><br><span class="line">echo &quot;Tomcat Stoped&quot;  </span><br><span class="line">;;  </span><br><span class="line">restart)  </span><br><span class="line">$0 stop  </span><br><span class="line">$0 start  </span><br><span class="line">;;  </span><br><span class="line">*)  </span><br><span class="line">echo &quot;tomcat: usage: tomcat [start|stop|restart]&quot;  </span><br><span class="line">exit 1  </span><br><span class="line">esac  </span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure><p>为脚本添加执行权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/tomcat</span><br></pre></td></tr></table></figure><p>创建软连接</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd usr/bin</span><br><span class="line">ln -s /etc/init.d/tomcat</span><br></pre></td></tr></table></figure><p>配置完成后测试是否有效，输入下面命令看Tomcat启动日志</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tomcat start</span><br><span class="line">tomcat stop</span><br><span class="line">tomcat restart</span><br></pre></td></tr></table></figure><h2 id="3-修改默认端口号"><a href="#3-修改默认端口号" class="headerlink" title="3.修改默认端口号"></a>3.修改默认端口号</h2><p>切换目录到<code>[tomcat根目录]/conf</code>,编辑<code>server.xml</code>修改<code>port</code>端口,然后重启tomcat。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">               connectionTimeout=&quot;20000&quot;</span><br><span class="line">               redirectPort=&quot;8443&quot; /&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>在<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">Apache Tomcat</a>官网上选择适当的Tomcat版本，参考<a href="http://blog.androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/" target="_blank" rel="noopener">云服务器配置JDK</a>将Tomcat的安装包上传到服务器，并解压到相应目录(可以自定义)，这里我将Tomcat的包解压到了<code>/usr/local/tomcat/tomcat8/</code>目录下</p></blockquote><a id="more"></a><h2 id="1-解压好即可直接启动"><a href="#1-解压好即可直接启动" class="headerlink" title="1. 解压好即可直接启动"></a>1. 解压好即可直接启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 启动命令</span><br><span class="line">/usr/local/tomcat/tomcat8/bin/startup.sh</span><br><span class="line">2. 关闭命令</span><br><span class="line">/usr/local/tomcat/tomcat8/bin/shutdown.sh</span><br></pre></td></tr></table></figure><p>Tomcat默认端口号是8080，如果服务器没没有开放该端口，需要使用下面方法开放端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br></pre></td></tr></table></figure><p>出现<code>success</code>表示添加成功<br>然后更新防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure><p>重启防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure><p>测试Tomcat服务是否成功，浏览器输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://[云服务器外网ip]:8080</span><br></pre></td></tr></table></figure><h2 id="2-配置启动脚本"><a href="#2-配置启动脚本" class="headerlink" title="2. 配置启动脚本"></a>2. 配置启动脚本</h2><blockquote><p>每次通过命令的全路径来启动/关闭服务也很麻烦，那么可以通过一个脚本来实现命令启动<code>Tomcat</code></p></blockquote><p>创建脚本<br>执行下面代码进入脚本编辑</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi etc/init.d/tomcat</span><br></pre></td></tr></table></figure><p>按<code>i</code>进入编辑模式，拷贝下面内容，按<code>esc</code>键退出编辑，输入<code>:wq</code>保存并退出<code>vim</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># !/bin/bash    </span><br><span class="line"># Description: start or stop the tomcat    </span><br><span class="line"># Usage:        tomcat [start|stop|restart]    </span><br><span class="line">#    </span><br><span class="line">export PATH=$PATH:$HOME/bin  </span><br><span class="line">export BASH_ENV=$HOME/.bashrc  </span><br><span class="line">export USERNAME=&quot;root&quot;  </span><br><span class="line">  </span><br><span class="line">case &quot;$1&quot; in  </span><br><span class="line">start)  </span><br><span class="line">#startup the tomcat    </span><br><span class="line">cd [tomcat安装目录]/bin  </span><br><span class="line">./startup.sh  </span><br><span class="line">;;  </span><br><span class="line">stop)  </span><br><span class="line"># stop tomcat    </span><br><span class="line">cd [tomcat安装目录]/bin</span><br><span class="line">./shutdown.sh  </span><br><span class="line">echo &quot;Tomcat Stoped&quot;  </span><br><span class="line">;;  </span><br><span class="line">restart)  </span><br><span class="line">$0 stop  </span><br><span class="line">$0 start  </span><br><span class="line">;;  </span><br><span class="line">*)  </span><br><span class="line">echo &quot;tomcat: usage: tomcat [start|stop|restart]&quot;  </span><br><span class="line">exit 1  </span><br><span class="line">esac  </span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure><p>为脚本添加执行权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/init.d/tomcat</span><br></pre></td></tr></table></figure><p>创建软连接</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd usr/bin</span><br><span class="line">ln -s /etc/init.d/tomcat</span><br></pre></td></tr></table></figure><p>配置完成后测试是否有效，输入下面命令看Tomcat启动日志</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tomcat start</span><br><span class="line">tomcat stop</span><br><span class="line">tomcat restart</span><br></pre></td></tr></table></figure><h2 id="3-修改默认端口号"><a href="#3-修改默认端口号" class="headerlink" title="3.修改默认端口号"></a>3.修改默认端口号</h2><p>切换目录到<code>[tomcat根目录]/conf</code>,编辑<code>server.xml</code>修改<code>port</code>端口,然后重启tomcat。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">               connectionTimeout=&quot;20000&quot;</span><br><span class="line">               redirectPort=&quot;8443&quot; /&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;在&lt;a href=&quot;http://tomcat.apache.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Apache Tomcat&lt;/a&gt;官网上选择适当的Tomcat版本，参考&lt;a href=&quot;http://blog.androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/&quot;&gt;云服务器配置JDK&lt;/a&gt;将Tomcat的安装包上传到服务器，并解压到相应目录(可以自定义)，这里我将Tomcat的包解压到了&lt;code&gt;/usr/local/tomcat/tomcat8/&lt;/code&gt;目录下&lt;/p&gt;
+&lt;p&gt;在&lt;a href=&quot;http://tomcat.apache.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Apache Tomcat&lt;/a&gt;官网上选择适当的Tomcat版本，参考&lt;a href=&quot;http://blog.androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;云服务器配置JDK&lt;/a&gt;将Tomcat的安装包上传到服务器，并解压到相应目录(可以自定义)，这里我将Tomcat的包解压到了&lt;code&gt;/usr/local/tomcat/tomcat8/&lt;/code&gt;目录下&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
-      <category term="Server" scheme="blog.androidhuilin.wang/categories/Server/"/>
+      <category term="Server" scheme="http://androidhuilin.wang/categories/Server/"/>
     
     
-      <category term="Server" scheme="blog.androidhuilin.wang/tags/Server/"/>
+      <category term="Server" scheme="http://androidhuilin.wang/tags/Server/"/>
     
   </entry>
   
   <entry>
     <title>云服务器配置JDK</title>
-    <link href="blog.androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/"/>
-    <id>blog.androidhuilin.wang/2017/09/03/云服务器配置JDK/</id>
+    <link href="http://androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/"/>
+    <id>http://androidhuilin.wang/2017/09/03/云服务器配置JDK/</id>
     <published>2017-09-02T16:29:45.000Z</published>
     <updated>2019-04-15T05:00:20.677Z</updated>
     
@@ -313,17 +313,17 @@
     
     </summary>
     
-      <category term="Server" scheme="blog.androidhuilin.wang/categories/Server/"/>
+      <category term="Server" scheme="http://androidhuilin.wang/categories/Server/"/>
     
     
-      <category term="Server" scheme="blog.androidhuilin.wang/tags/Server/"/>
+      <category term="Server" scheme="http://androidhuilin.wang/tags/Server/"/>
     
   </entry>
   
   <entry>
     <title>WebView使用总结</title>
-    <link href="blog.androidhuilin.wang/2017/06/14/WebView%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
-    <id>blog.androidhuilin.wang/2017/06/14/WebView使用总结/</id>
+    <link href="http://androidhuilin.wang/2017/06/14/WebView%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
+    <id>http://androidhuilin.wang/2017/06/14/WebView使用总结/</id>
     <published>2017-06-14T03:19:58.000Z</published>
     <updated>2019-05-17T09:01:18.495Z</updated>
     
@@ -341,17 +341,17 @@
     
     </summary>
     
-      <category term="Android" scheme="blog.androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>ShapeTextView</title>
-    <link href="blog.androidhuilin.wang/2017/05/04/ShapeTextView/"/>
-    <id>blog.androidhuilin.wang/2017/05/04/ShapeTextView/</id>
+    <link href="http://androidhuilin.wang/2017/05/04/ShapeTextView/"/>
+    <id>http://androidhuilin.wang/2017/05/04/ShapeTextView/</id>
     <published>2017-05-04T05:46:22.000Z</published>
     <updated>2019-05-17T09:01:18.534Z</updated>
     
@@ -366,16 +366,16 @@
     </summary>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
-      <category term="自定义view" scheme="blog.androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+      <category term="自定义view" scheme="http://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
     
   </entry>
   
   <entry>
     <title>Android渠道打包</title>
-    <link href="blog.androidhuilin.wang/2017/04/27/Android%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85/"/>
-    <id>blog.androidhuilin.wang/2017/04/27/Android渠道打包/</id>
+    <link href="http://androidhuilin.wang/2017/04/27/Android%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85/"/>
+    <id>http://androidhuilin.wang/2017/04/27/Android渠道打包/</id>
     <published>2017-04-27T09:46:32.000Z</published>
     <updated>2019-05-17T08:51:14.475Z</updated>
     
@@ -390,14 +390,14 @@
     </summary>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>SystemBar</title>
-    <link href="blog.androidhuilin.wang/2017/04/25/SystemBar/"/>
-    <id>blog.androidhuilin.wang/2017/04/25/SystemBar/</id>
+    <link href="http://androidhuilin.wang/2017/04/25/SystemBar/"/>
+    <id>http://androidhuilin.wang/2017/04/25/SystemBar/</id>
     <published>2017-04-25T06:32:18.000Z</published>
     <updated>2019-05-17T09:01:18.490Z</updated>
     
@@ -412,16 +412,16 @@
     </summary>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
-      <category term="MD" scheme="blog.androidhuilin.wang/tags/MD/"/>
+      <category term="MD" scheme="http://androidhuilin.wang/tags/MD/"/>
     
   </entry>
   
   <entry>
     <title>Toolbar的使用</title>
-    <link href="blog.androidhuilin.wang/2017/04/19/Toolbar%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>blog.androidhuilin.wang/2017/04/19/Toolbar的使用/</id>
+    <link href="http://androidhuilin.wang/2017/04/19/Toolbar%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://androidhuilin.wang/2017/04/19/Toolbar的使用/</id>
     <published>2017-04-19T12:44:39.000Z</published>
     <updated>2019-05-17T09:01:18.484Z</updated>
     
@@ -436,16 +436,16 @@
     </summary>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
-      <category term="MD" scheme="blog.androidhuilin.wang/tags/MD/"/>
+      <category term="MD" scheme="http://androidhuilin.wang/tags/MD/"/>
     
   </entry>
   
   <entry>
     <title>Android 资源分包</title>
-    <link href="blog.androidhuilin.wang/2017/04/06/Android-%E8%B5%84%E6%BA%90%E5%88%86%E5%8C%85/"/>
-    <id>blog.androidhuilin.wang/2017/04/06/Android-资源分包/</id>
+    <link href="http://androidhuilin.wang/2017/04/06/Android-%E8%B5%84%E6%BA%90%E5%88%86%E5%8C%85/"/>
+    <id>http://androidhuilin.wang/2017/04/06/Android-资源分包/</id>
     <published>2017-04-06T07:36:57.000Z</published>
     <updated>2019-04-15T04:57:22.702Z</updated>
     
@@ -460,14 +460,14 @@
     </summary>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>流式布局的使用</title>
-    <link href="blog.androidhuilin.wang/2016/12/04/%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>blog.androidhuilin.wang/2016/12/04/流式布局的使用/</id>
+    <link href="http://androidhuilin.wang/2016/12/04/%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://androidhuilin.wang/2016/12/04/流式布局的使用/</id>
     <published>2016-12-04T14:57:35.000Z</published>
     <updated>2019-05-17T09:01:18.541Z</updated>
     
@@ -482,9 +482,9 @@
     </summary>
     
     
-      <category term="Android" scheme="blog.androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
     
-      <category term="自定义view" scheme="blog.androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+      <category term="自定义view" scheme="http://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
     
   </entry>
   
