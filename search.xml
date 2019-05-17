@@ -377,8 +377,8 @@
     <url>%2F2016%2F07%2F31%2FAndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[开发过程中熟练使用快捷键可以提高我们的效率还有我们的逼格。AS中提供了很多的快捷方式，我也在探索学习中，这里和大家分享一下我在开发中经常使用的快捷键，大家有好用的也可以推荐。mac系统使用将control替换成cmd键 此篇不定期更新 当初信誓旦旦说每周都写点东西，结果… ,哎！人总是想偷懒的。 编辑部分代码的整行复制control+D和删除control+Y通常我们可以通过shift+home或者shift+end来选中整行代码，再进行操作。control+D和control+Y可以快速的复制或者删除整行代码，在开发中使用还是比较多的。mac是 全局变量control+alt+F和局部变量的提取control+alt+V在提取变量的同时我们可以为变量命名 方法的提取 control+alt+M当我们写的代码段需要复用的时候，可以将他们提取成一个方法。这时候 control+alt+M就节省了我们的时间。 重命名shift+F6命名难免会更改，shift+F6可以快速重命名，收了吧。 窗口部分查看当前类的方法大纲control+F12、cmd+F12弹窗显示当前类中的方法和变量，便于了解该类的结构 查看当前类的继承树control+H显示当前类的继承关系，了解类的结构 重载父类的方法Mac:control + o/Win:ctrl + o 切换文件窗口Mac : control + tab/ win: ctrl + tab 查找部分类名查找control+N和文件名查找control+shift+N当工程较大时可以通过类名或者文件名快速查找指定文件。 代码的书签标记F11和书签的查看shift+F11书签功能还是很好用的，和看书的时候加书签一样使用就行了。 其他部分查看方法的参数control+p调用方法时通过control+p查看参数信息]]></content>
       <tags>
-        <tag>AndroidStudio</tag>
         <tag>Android</tag>
+        <tag>AndroidStudio</tag>
       </tags>
   </entry>
   <entry>
