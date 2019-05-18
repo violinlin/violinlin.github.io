@@ -1,0 +1,1077 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="a9HrGvK0gXBrLVVi7MeSWvHJNPlDYO7JIuMN4BFqeaI">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="22NgT9W2fl">
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Android,自定义view,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/pictures/icon.png?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="Android中为我们提供了很多的功能强大的视图控件，但是有些时候我们需要特定效果的控件。这时我们就需要自定义View来实现需要的效果。关于自定义视图的内容很多，我也在慢慢研究，这里绘制了一个简单的钟表视图和大家一起分享学习。">
+<meta name="keywords" content="Android,自定义view">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义View--绘制钟表">
+<meta property="og:url" content="http://androidhuilin.wang/2016/06/27/自定义View–绘制钟表/index.html">
+<meta property="og:site_name" content="violin的小窝">
+<meta property="og:description" content="Android中为我们提供了很多的功能强大的视图控件，但是有些时候我们需要特定效果的控件。这时我们就需要自定义View来实现需要的效果。关于自定义视图的内容很多，我也在慢慢研究，这里绘制了一个简单的钟表视图和大家一起分享学习。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://androidhuilin.wang/img/pictures/picture2.jpg">
+<meta property="og:updated_time" content="2019-05-17T23:16:26.674Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义View--绘制钟表">
+<meta name="twitter:description" content="Android中为我们提供了很多的功能强大的视图控件，但是有些时候我们需要特定效果的控件。这时我们就需要自定义View来实现需要的效果。关于自定义视图的内容很多，我也在慢慢研究，这里绘制了一个简单的钟表视图和大家一起分享学习。">
+<meta name="twitter:image" content="http://androidhuilin.wang/img/pictures/picture2.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9135039735618032",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+  <link rel="canonical" href="http://androidhuilin.wang/2016/06/27/自定义View–绘制钟表/">
+
+
+
+
+
+  <title> 自定义View--绘制钟表 | violin的小窝 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6debfd27647939545d16988c03b81be9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">violin的小窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://androidhuilin.wang/2016/06/27/自定义View–绘制钟表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huilin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/pictures/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="violin的小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自定义View--绘制钟表
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-27T22:28:30+08:00">
+                2016-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture2.jpg" rel="gallery_cjvstztx5003vn44onduwkrin" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture2.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>Android中为我们提供了很多的功能强大的视图控件，但是有些时候我们需要特定效果的控件。这时我们就需要自定义View来实现需要的效果。关于自定义视图的内容很多，我也在慢慢研究，这里绘制了一个简单的钟表视图和大家一起分享学习。</p>
+<a id="more"></a>
+<h2 id="关于自定义视图"><a href="#关于自定义视图" class="headerlink" title="关于自定义视图"></a>关于自定义视图</h2><p>一般来说自定义视图的方法主要有三种。每种方法都有他们特定的用处，自定义视图时我们需要根据视图的功能来考虑选择那种方法。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">自定义View</th>
+<th style="text-align:right">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">继承View重写onDraw()方法</td>
+<td style="text-align:right">一般用来绘制一些不规则的自定义的效果控件</td>
+</tr>
+<tr>
+<td style="text-align:left">继承ViewGrop</td>
+<td style="text-align:right">一般用来绘制自定义的布局，可以将多个控件封装在一起使用</td>
+</tr>
+<tr>
+<td style="text-align:left">继承Android提供的视图（如TextView）</td>
+<td style="text-align:right">一般用来扩展原有视图的一些自定义的功能</td>
+</tr>
+</tbody>
+</table>
+<h2 id="绘制钟表控件"><a href="#绘制钟表控件" class="headerlink" title="绘制钟表控件"></a>绘制钟表控件</h2><blockquote>
+<p>根据上面的分析可知绘制钟表这种不规则的视图控件需要采用继承View 重写onDraw()的方法来实现，在onDraw()方法中通过画笔绘制自定义的视图</p>
+</blockquote>
+<h4 id="视图属性的定义和使用"><a href="#视图属性的定义和使用" class="headerlink" title="视图属性的定义和使用"></a>视图属性的定义和使用</h4><p>在使用Android提供的一些控件时，会经常用到一些控件的特定属性例如TextView的text属性，ImageView的scaletype属性等。这些属性可以设置控件的显示效果。自定义View的同时需要自定义一些属性来更好的设置view的显示效果。</p>
+<h5 id="属性的定义"><a href="#属性的定义" class="headerlink" title="属性的定义"></a>属性的定义</h5><p>在res-values-styles文件中自定义view需要的属性，为每种属性定义合适的名称和类型。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"clock_view"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"clock_border_color"</span> <span class="attr">format</span>=<span class="string">"color"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"clock_border_width"</span> <span class="attr">format</span>=<span class="string">"dimension"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"clock_border_padding"</span> <span class="attr">format</span>=<span class="string">"dimension"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"clock_drawRect"</span> <span class="attr">format</span>=<span class="string">"boolean"</span> /&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"clock_back_color"</span> <span class="attr">format</span>=<span class="string">"color"</span>/&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>view属性的类型主要有下面几种</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:right">资源类型</th>
+<th style="text-align:center">样例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">reference</td>
+<td style="text-align:right">参考某一资源的ID</td>
+<td style="text-align:center">app:background = “@drawable/icon”</td>
+</tr>
+<tr>
+<td style="text-align:left">color</td>
+<td style="text-align:right">颜色类型</td>
+<td style="text-align:center">app:textColor = “#00FF00”</td>
+</tr>
+<tr>
+<td style="text-align:left">boolean</td>
+<td style="text-align:right">布尔类型true/false</td>
+<td style="text-align:center">app:focusable = “true”</td>
+</tr>
+<tr>
+<td style="text-align:left">demension</td>
+<td style="text-align:right">尺寸类型</td>
+<td style="text-align:center">app:layout_height = “42dp”</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:right">浮点类型</td>
+<td style="text-align:center">app:fromAlpha = “1.0”</td>
+</tr>
+<tr>
+<td style="text-align:left">integer</td>
+<td style="text-align:right">整型</td>
+<td style="text-align:center">app:framesCount = “12”</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:right">字符串类型</td>
+<td style="text-align:center">app:text=”hello world”</td>
+</tr>
+<tr>
+<td style="text-align:left">fraction</td>
+<td style="text-align:right">百分数类型</td>
+<td style="text-align:center">app:pivotY = “300%”</td>
+</tr>
+<tr>
+<td style="text-align:left">enum</td>
+<td style="text-align:right">枚举类型</td>
+<td style="text-align:center">app:orientation = “vertical”</td>
+</tr>
+<tr>
+<td style="text-align:left">flag</td>
+<td style="text-align:right">位或运算</td>
+<td style="text-align:center">app:windowSoftInputMode = “stateUnspecified \</td>
+<td>stateUnchanged　\</td>
+<td>　stateHidden”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong>属性的使用可以指定多种类型</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"clock_border_color"</span> <span class="attr">format</span>=<span class="string">"color|integer"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="属性的使用"><a href="#属性的使用" class="headerlink" title="属性的使用"></a>属性的使用</h5><p>使用自定义的属性需要添加自定义命名空间，名称可以自己取</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:app="http://schemas.android.com/apk/res-auto"</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">com.example.administrator.clockdemo.ClockView</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:id</span>=<span class="string">"@+id/clock_view"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">app:clock_border_color</span>=<span class="string">"#b510c7"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">app:clock_border_padding</span>=<span class="string">"10dp"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">app:clock_back_color</span>=<span class="string">"#000000"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">app:clock_border_width</span>=<span class="string">"3dp"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="重写onDraw-方法"><a href="#重写onDraw-方法" class="headerlink" title="重写onDraw()方法"></a>重写onDraw()方法</h4><p>View的工作流程主要包括measure、layout、draw三部分：</p>
+<ol>
+<li>measure 测量视图的大小</li>
+<li>layout 确定视图在父布局中的位置</li>
+<li>draw 执行onDraw()方法，绘制视图内容</li>
+</ol>
+<p>通过继承View实现自定义视图的方法，主要分析流程的第三部。</p>
+<h5 id="获取和使用自定义的视图属性"><a href="#获取和使用自定义的视图属性" class="headerlink" title="获取和使用自定义的视图属性"></a>获取和使用自定义的视图属性</h5><p>前面我们定义并在布局文件中使用了自定义的属性，下面介绍怎么在代码中使用使这些属性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取自定义视图的属性</span></span><br><span class="line">       TypedArray array = context.obtainStyledAttributes(attars, R.styleable.clock_view);</span><br><span class="line">       <span class="comment">//获取自定义的属性值，并为其设置默认值</span></span><br><span class="line">       mBorderColor = array.getColor</span><br><span class="line">               (R.styleable.clock_view_clock_border_color, Color.parseColor(<span class="string">"#ffffff"</span>));</span><br><span class="line">       senWidth = (<span class="keyword">int</span>) array.getDimension(R.styleable.clock_view_clock_border_width, <span class="number">6</span>);</span><br><span class="line">       minWidth = (<span class="keyword">int</span>) (senWidth * <span class="number">1.5</span>);</span><br><span class="line">       hourWidth = (<span class="keyword">int</span>) (minWidth * <span class="number">1.5</span>);</span><br><span class="line">       padding = (<span class="keyword">int</span>) array.getDimension(R.styleable.clock_view_clock_border_padding, <span class="number">10</span>);</span><br><span class="line">       isDrawRecr = array.getBoolean(R.styleable.clock_view_clock_drawRect, <span class="keyword">false</span>);</span><br><span class="line">       clockBackColor = array.getColor(R.styleable.clock_view_clock_back_color, Color.parseColor(<span class="string">"#281f1f"</span>));</span><br><span class="line">       array.recycle();<span class="comment">//回收TypedArray ，以便后面的资源使用</span></span><br></pre></td></tr></table></figure>
+<h5 id="适配横竖屏切换操作，在切屏时重新绘制"><a href="#适配横竖屏切换操作，在切屏时重新绘制" class="headerlink" title="适配横竖屏切换操作，在切屏时重新绘制"></a>适配横竖屏切换操作，在切屏时重新绘制</h5><blockquote>
+<p>每个视图其实都是一个矩形Rect，我们可以确定一个矩形范围，在其内部绘制我们的视图</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 屏幕旋转是重新计算钟表尺寸</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> w</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> h</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> oldw</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> oldh</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onSizeChanged</span><span class="params">(<span class="keyword">int</span> w, <span class="keyword">int</span> h, <span class="keyword">int</span> oldw, <span class="keyword">int</span> oldh)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.onSizeChanged(w, h, oldw, oldh);</span><br><span class="line">       mBounds = <span class="keyword">new</span> RectF(<span class="number">0</span>, <span class="number">0</span>, w, h);</span><br><span class="line">       width = w;</span><br><span class="line">       height = h;</span><br><span class="line">       <span class="keyword">if</span> (width &lt; height) &#123;</span><br><span class="line">           radius = width / <span class="number">2</span> - padding;</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           radius = height / <span class="number">2</span> - padding;</span><br><span class="line">       &#125;</span><br><span class="line">       smallLength = <span class="number">10</span>;</span><br><span class="line">       largeLength = <span class="number">20</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="绘制表盘"><a href="#绘制表盘" class="headerlink" title="绘制表盘"></a>绘制表盘</h5><p>表盘其实就是一个大的圆形，我们可以根据系统提供的方法直接绘制，圆心就是前面定义的矩形rect的中心</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">canvas.drawCircle(mBounds.centerX(), mBounds.centerY(), radius, mPaint);<span class="comment">//绘制表盘</span></span><br></pre></td></tr></table></figure>
+<h5 id="绘制刻度"><a href="#绘制刻度" class="headerlink" title="绘制刻度"></a>绘制刻度</h5><p>绘制表盘上的刻度线，这部关键是通过三角函数计算刻度线的起始位置坐标<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//绘制表盘刻度</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">60</span>; ++i) &#123;</span><br><span class="line">          start_x = radius * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>);</span><br><span class="line">          start_y = radius * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>);</span><br><span class="line">          <span class="keyword">if</span> (i % <span class="number">5</span> == <span class="number">0</span>) &#123;</span><br><span class="line">              end_x = start_x - largeLength * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>);</span><br><span class="line">              end_y = start_y - largeLength * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>);</span><br><span class="line">              drawTextView(canvas, i);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              end_x = start_x - smallLength * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>);</span><br><span class="line">              end_y = start_y - smallLength * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          start_x += mBounds.centerX();</span><br><span class="line">          end_x += mBounds.centerX();</span><br><span class="line">          start_y += mBounds.centerY();</span><br><span class="line">          end_y += mBounds.centerY();</span><br><span class="line">          mPaint.setStrokeWidth(senWidth);</span><br><span class="line">          canvas.drawLine(start_x, start_y, end_x, end_y, mPaint);</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      mPaint.setStrokeWidth(senWidth);</span><br><span class="line">      mPaint.setStyle(Paint.Style.FILL);</span><br><span class="line">      canvas.drawCircle(mBounds.centerX(), mBounds.centerY(), <span class="number">10</span>, mPaint);<span class="comment">//绘制表盘中心点</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="绘制刻度文本"><a href="#绘制刻度文本" class="headerlink" title="绘制刻度文本"></a>绘制刻度文本</h5><p>和刻度一样，利用三角函数计算文本的起点坐标<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 绘制表盘刻度文本</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> canvas</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawTextView</span><span class="params">(Canvas canvas, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">       String textTime;</span><br><span class="line">       <span class="keyword">float</span> textTranslate = textSize / <span class="number">2</span>;</span><br><span class="line">       <span class="keyword">float</span> text_x;</span><br><span class="line">       <span class="keyword">float</span> text_y;</span><br><span class="line">       <span class="comment">//钟表左右边刻度</span></span><br><span class="line">       <span class="keyword">if</span> (Math.sin(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">           text_x = (<span class="keyword">float</span>) (mBounds.centerX() + (radius * <span class="number">0.9</span> - textTranslate) * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>));</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Math.sin(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">           text_x = (<span class="keyword">float</span>) (mBounds.centerX() + (radius * <span class="number">0.9</span> + textTranslate) * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>));</span><br><span class="line"></span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           text_x = (<span class="keyword">float</span>) (mBounds.centerX() - textTranslate);</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//钟表上下刻度</span></span><br><span class="line">       <span class="keyword">if</span> (Math.cos(Math.PI / <span class="number">180</span> * <span class="number">6</span> * i) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">           text_y = (<span class="keyword">float</span>) (mBounds.centerY() + -(radius * <span class="number">0.9</span> - textTranslate) * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>));</span><br><span class="line"></span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Math.cos(Math.PI / <span class="number">180</span> * <span class="number">6</span> * i) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">           text_y = (<span class="keyword">float</span>) (mBounds.centerY() + -(radius * <span class="number">0.9</span> + textTranslate) * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * i * <span class="number">6</span>));</span><br><span class="line"></span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           text_y = (<span class="keyword">float</span>) (mBounds.centerY() - textTranslate);</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">       mPaint.setTextSize(textSize);</span><br><span class="line">       mPaint.setStrokeWidth(<span class="number">2</span>);</span><br><span class="line">       textTime = i == <span class="number">0</span> ? <span class="string">"12"</span> : i / <span class="number">5</span> + <span class="string">""</span>;</span><br><span class="line">       canvas.drawText(textTime, text_x, text_y, mPaint);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="绘制钟表走针"><a href="#绘制钟表走针" class="headerlink" title="绘制钟表走针"></a>绘制钟表走针</h5><p>绘制时分秒指针的原理其实是相同的，这里以秒针为例，将当前表盘分成60份，获取当前时间的秒数，绘制当前时间时指针的位置（当为时针是则将表盘分为类12份）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 绘制秒针</span></span><br><span class="line"><span class="comment">    *</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> canvas</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> second = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawSecLine</span><span class="params">(Canvas canvas)</span> </span>&#123;</span><br><span class="line">       second = getCurrentSec();</span><br><span class="line">       <span class="keyword">int</span> angle = second * <span class="number">6</span>;</span><br><span class="line">       <span class="keyword">float</span> endX = (<span class="keyword">float</span>) (mBounds.centerX() + (radius / <span class="number">1.2</span>) * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       <span class="keyword">float</span> endY = (<span class="keyword">float</span>) (mBounds.centerY() + -(radius / <span class="number">1.2</span>) * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       <span class="keyword">float</span> startX= (mBounds.centerX() - <span class="number">50</span> * (<span class="keyword">float</span>) Math.sin(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       <span class="keyword">float</span> startY=  (mBounds.centerY() + <span class="number">50</span> * (<span class="keyword">float</span>) Math.cos(Math.PI / <span class="number">180</span> * angle));</span><br><span class="line">       mPaint.setStrokeWidth(senWidth);</span><br><span class="line">       canvas.drawLine(startX,startY, endX, endY, mPaint);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="刷新界面"><a href="#刷新界面" class="headerlink" title="刷新界面"></a>刷新界面</h5><p>每个1s重新绘制界面更新指针的位置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">postInvalidateDelayed(<span class="number">1000</span>);<span class="comment">//每隔1s重新绘制，刷新界面</span></span><br></pre></td></tr></table></figure>
+<h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p><img src="/img/ClockView.gif" alt="效果图"><br><a href="https://github.com/violinlin/ClockDemo.git" target="_blank" rel="noopener">Git源码下载</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/自定义view/" rel="tag"># 自定义view</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/16/ADB-WIFI调试程序/" rel="prev" title="ADB--WIFI调试程序">
+                ADB--WIFI调试程序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI2OC8yMDgwMQ=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/pictures/icon.png" alt="huilin">
+          <p class="site-author-name" itemprop="name">huilin</p>
+           
+              <p class="site-description motion-element" itemprop="description">你想要的岁月都会给你！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/violinlin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于自定义视图"><span class="nav-number">1.</span> <span class="nav-text">关于自定义视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制钟表控件"><span class="nav-number">2.</span> <span class="nav-text">绘制钟表控件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#视图属性的定义和使用"><span class="nav-number">2.0.1.</span> <span class="nav-text">视图属性的定义和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#属性的定义"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">属性的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#属性的使用"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">属性的使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重写onDraw-方法"><span class="nav-number">2.0.2.</span> <span class="nav-text">重写onDraw()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取和使用自定义的视图属性"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">获取和使用自定义的视图属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#适配横竖屏切换操作，在切屏时重新绘制"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">适配横竖屏切换操作，在切屏时重新绘制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绘制表盘"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">绘制表盘</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绘制刻度"><span class="nav-number">2.0.2.4.</span> <span class="nav-text">绘制刻度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绘制刻度文本"><span class="nav-number">2.0.2.5.</span> <span class="nav-text">绘制刻度文本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绘制钟表走针"><span class="nav-number">2.0.2.6.</span> <span class="nav-text">绘制钟表走针</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#刷新界面"><span class="nav-number">2.0.2.7.</span> <span class="nav-text">刷新界面</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果图"><span class="nav-number">2.0.3.</span> <span class="nav-text">效果图</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">huilin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
