@@ -2,97 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://androidhuilin.wang/2016/06/27/%E8%87%AA%E5%AE%9A%E4%B9%89View%E2%80%93%E7%BB%98%E5%88%B6%E9%92%9F%E8%A1%A8/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.674Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/12/04/%E5%B9%B2%E8%B4%A7-%E7%9C%8B%E7%9C%8BAndroid%E5%BC%80%E5%8F%91%E8%80%85%E9%83%BD%E8%A3%85%E4%BA%86%E4%BB%80%E4%B9%88%E8%BD%AF%E4%BB%B6/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.673Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/12/04/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%BD%B1%E8%AE%AF/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.673Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2017/04/19/Toolbar%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.672Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2017/05/04/ShapeTextView/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.671Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2017/04/25/SystemBar/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.671Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/08/19/CheckBox%E5%92%8CRadioButton%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E6%A0%87%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.670Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2018/04/17/Charles-%E6%8A%93%E5%8F%96https%E6%8A%A5%E6%96%87/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.670Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/10/23/Charles-%E4%BF%AE%E6%94%B9%E8%BF%94%E5%9B%9E%E6%8A%A5%E6%96%87/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.669Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/07/18/Banner%E7%9A%84%E5%B0%81%E8%A3%85-%E5%AE%9E%E7%8E%B0ViewPager%E7%9A%84%E5%BE%AA%E7%8E%AF%E8%BD%AE%E6%92%AD%E6%95%88%E6%9E%9C/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.669Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/09/21/AndroidStudio%E7%9A%84Gradle%E6%8F%92%E4%BB%B6%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E7%AE%80%E4%BB%8B/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.668Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/07/31/AndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.668Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2016/07/16/ADB-WIFI%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F/</loc>
-    
-    <lastmod>2019-05-17T23:16:26.667Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://androidhuilin.wang/2019/04/24/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2019-05-17T09:01:18.555Z</lastmod>
@@ -145,13 +54,6 @@
     <loc>http://androidhuilin.wang/2016/09/17/%E5%85%B3%E4%BA%8EEditText%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2019-05-17T09:01:18.518Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://androidhuilin.wang/2018/03/14/RoundImageView/</loc>
-    
-    <lastmod>2019-05-17T09:01:18.514Z</lastmod>
     
   </url>
   
@@ -310,14 +212,14 @@
   </url>
   
   <url>
-    <loc>http://androidhuilin.wang/categories/index.html</loc>
+    <loc>http://androidhuilin.wang/tags/index.html</loc>
     
     <lastmod>2018-12-03T15:58:18.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://androidhuilin.wang/tags/index.html</loc>
+    <loc>http://androidhuilin.wang/categories/index.html</loc>
     
     <lastmod>2018-12-03T15:58:18.000Z</lastmod>
     
