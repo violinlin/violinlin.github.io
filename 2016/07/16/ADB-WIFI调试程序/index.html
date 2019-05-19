@@ -101,7 +101,7 @@
 <meta property="og:description" content="关于ADB在开发调试Android程序时我们需要通过adb工具在我们的手机和电脑之间建立连接，通常情况我们都是使用数据线，其实adb还提供了另外一种方式通过tcpip建立连接。这里给大家介绍两种wifi连接电脑的方法，其中第一种方法手机不用root权限。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture3.jpg">
-<meta property="og:updated_time" content="2019-05-18T23:36:06.403Z">
+<meta property="og:updated_time" content="2019-05-19T15:03:31.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ADB--WIFI调试程序">
 <meta name="twitter:description" content="关于ADB在开发调试Android程序时我们需要通过adb工具在我们的手机和电脑之间建立连接，通常情况我们都是使用数据线，其实adb还提供了另外一种方式通过tcpip建立连接。这里给大家介绍两种wifi连接电脑的方法，其中第一种方法手机不用root权限。">
@@ -397,7 +397,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvu7fu0v0003dz4oaab0s6hq" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture3.jpg" rel="gallery_cjvv4rh3x0000324odsldd6nr" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture3.jpg" itemprop="contentUrl">
               </a>
             
@@ -426,20 +426,20 @@
 <h1 id="通过wifi调试程序"><a href="#通过wifi调试程序" class="headerlink" title="通过wifi调试程序"></a>通过wifi调试程序</h1><p><strong>注意</strong> 使用wifi调试程序首先确保你的电脑和手机在同一个wifi环境下。同时后面会用到一些adb的命令，所以先给你的电脑配置adb的环境变量，配置完成后我们可以直接在AndroidStudio的Terminal中敲adb命令了。具体的配置方法这里就不做介绍了，你那么聪明肯定会配置的。</p>
 <h2 id="无需手机root权限的配置方法"><a href="#无需手机root权限的配置方法" class="headerlink" title="无需手机root权限的配置方法"></a>无需手机root权限的配置方法</h2><p>这种方法不需要手机有root权限，但是在第一次连接时需要数据线连接电脑，配置好之后数据线则可以断开。</p>
 <p>使用命令<code>adb devices</code>查看手机是否连接成功</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2352140-efc18e9904edf47e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="/img/adb-connect.png" alt></p>
 <p>使用命令<code>adb tcpip [port]</code>让手机的某个端口处于监听状态<br>端口后的范围为5555-5585的奇数端口。默认从5555开始，大家也可以和我一样配置该端口。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2352140-0e137c4c7c235c9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="/img/adb-tcpip.png" alt></p>
 <p><strong>返回<code>restarting in TCP mode port : 5555</code>代表端口已经处于了监听状态。这个时候就可以断开手机连接的数据线了</strong>。</p>
-<p>在手机的wifi设置中查看你的ip地址<strong>[ip-address]</strong>,使用命令行<code>adb connect [ip-address]：[port-num]</code>连接手机,adb connect 手机的ip地址：上面配置的端口号。<br><img src="http://upload-images.jianshu.io/upload_images/2352140-454c5b380c179614.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
-<p>返回<code>connected to [ip-address]：[port-num]</code>表示成功连接了手机，现在可以通过wifi在发布调试程序了。再次通过<code>adb-devices</code>查看连接设备的列表<br><img src="http://upload-images.jianshu.io/upload_images/2352140-b9170c4e2b8f9de3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>在手机的wifi设置中查看你的ip地址<strong>[ip-address]</strong>,使用命令行<code>adb connect [ip-address]：[port-num]</code>连接手机,adb connect 手机的ip地址：上面配置的端口号。<br><img src="/img/adb-connect.png" alt></p>
+<p>返回<code>connected to [ip-address]：[port-num]</code>表示成功连接了手机，现在可以通过wifi在发布调试程序了。再次通过<code>adb-devices</code>查看连接设备的列表<br><img src="/img/adb-devices-con.png" alt></p>
 <hr>
-<p>如果觉得敲命令行太麻烦也可以下载AndroidStudio的插件<strong>Android WiFi ADB</strong><br><img src="http://upload-images.jianshu.io/upload_images/2352140-4b342d21c1699203.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>通过数据线连接电脑，在插件显示的devices列表中选择连接的设备，点击<strong>connect</strong>按键，提示成功后拔掉数据线。<br><img src="http://upload-images.jianshu.io/upload_images/2352140-9206c6c18e639eb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>如果觉得敲命令行太麻烦也可以下载AndroidStudio的插件<strong>Android WiFi ADB</strong><br><img src="/img/adb-wifi.png" alt><br>通过数据线连接电脑，在插件显示的devices列表中选择连接的设备，点击<strong>connect</strong>按键，提示成功后拔掉数据线。<br><img src="/img/adb-wifidev-list.png" alt></p>
 <h2 id="需要手机root权限的配置方法"><a href="#需要手机root权限的配置方法" class="headerlink" title="需要手机root权限的配置方法"></a>需要手机root权限的配置方法</h2><blockquote>
 <p>上面所讲的方法在第一次连接时都需要数据线的连接，如果手边没有数据线就不能连接电脑了吗？当然不是，我们回顾一下，上面的方法中我们使用数据线的目的是执行<code>adb tcpip [port]</code>命令，如果手机自己执行这个命令不就行了！方法是可行的不过执行这个命令得获取到手机的root权限。</p>
 </blockquote>
-<p>这里给大家推荐一款软件<strong><a href="http://www.wandoujia.com/apps/me.meowo.adb" target="_blank" rel="noopener">WirelessADB</a></strong>方便连接，<strong>手机得获取root权限，不然软件无法运行</strong>。软件安装运行成功后直接根据界面的提示在AndroidStudio的Terminal中执行connect命令进行链接。<br><img src="http://upload-images.jianshu.io/upload_images/2352140-eb916c7a7fbd21c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>这里给大家推荐一款软件<strong><a href="http://www.wandoujia.com/apps/me.meowo.adb" target="_blank" rel="noopener">WirelessADB</a></strong>方便连接，<strong>手机得获取root权限，不然软件无法运行</strong>。软件安装运行成功后直接根据界面的提示在AndroidStudio的Terminal中执行connect命令进行链接。<br><img src="/img/adb-wireless.png" alt></p>
 <h1 id="断开wifi连接"><a href="#断开wifi连接" class="headerlink" title="断开wifi连接"></a>断开wifi连接</h1><p>停止wifi调试的时候可以通过<code>adb disconnect [ip-address]：[port-num]</code>来中断连接。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2352140-3ba4fbd6886d691e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="/img/adb-disconnect.png" alt></p>
 
       
     </div>

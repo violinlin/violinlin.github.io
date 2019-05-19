@@ -100,12 +100,12 @@
 <meta property="og:site_name" content="violin的小窝">
 <meta property="og:description" content="关于Banner很多的项目中都需要实现Banner位滚动展示图片的效果，我这里使用了ViewPager和RadioGroup封装了一个带指示器功能的Banner视图，大家一起交流学习。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture5.jpg">
-<meta property="og:updated_time" content="2019-05-18T23:36:06.405Z">
+<meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture15.jpg">
+<meta property="og:updated_time" content="2019-05-19T15:04:47.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Banner的封装--实现ViewPager的循环轮播效果">
 <meta name="twitter:description" content="关于Banner很多的项目中都需要实现Banner位滚动展示图片的效果，我这里使用了ViewPager和RadioGroup封装了一个带指示器功能的Banner视图，大家一起交流学习。">
-<meta name="twitter:image" content="https://androidhuilin.wang/img/pictures/picture5.jpg">
+<meta name="twitter:image" content="https://androidhuilin.wang/img/pictures/picture15.jpg">
 
 
 
@@ -397,8 +397,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture5.jpg" rel="gallery_cjvu7fu1v000wdz4of1ii2pf0" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/img/pictures/picture5.jpg" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture15.jpg" rel="gallery_cjvv4rh52000x324ofkuzn940" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture15.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -412,7 +412,7 @@
         <h1 id="关于Banner"><a href="#关于Banner" class="headerlink" title="关于Banner"></a>关于Banner</h1><p>很多的项目中都需要实现Banner位滚动展示图片的效果，我这里使用了ViewPager和RadioGroup封装了一个带指示器功能的Banner视图，大家一起交流学习。</p>
 <a id="more"></a>
 <p>先上效果图</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2352140-f5ef6bc5a797cb2a.gif?imageMogr2/auto-orient/strip" alt="banner.gif"></p>
+<p><img src="/img/BannerView.gif" alt="banner.gif"></p>
 <h1 id="自定义Banner视图"><a href="#自定义Banner视图" class="headerlink" title="自定义Banner视图"></a>自定义Banner视图</h1><p>自定义视图的方法一般来说有三种，这里使用了继承ViewGroup(Relativelayout)的方法封装ViewPager和RadioGroup</p>
 <h2 id="Banner布局文件的设置"><a href="#Banner布局文件的设置" class="headerlink" title="Banner布局文件的设置"></a>Banner布局文件的设置</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">merge</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">RelativeLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/viewpager"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">RadioGroup</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/radiogroup"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"10dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_marginBottom</span>=<span class="string">"15dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span>&gt;</span><span class="tag">&lt;/<span class="name">RadioGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">merge</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在构造方法中应用布局文件，初始化布局控件</p>
