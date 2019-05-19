@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://androidhuilin.wang/"/>
+  <link href="https://androidhuilin.wang/"/>
   <updated>2019-05-17T08:51:14.485Z</updated>
-  <id>http://androidhuilin.wang/</id>
+  <id>https://androidhuilin.wang/</id>
   
   <author>
     <name>huilin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Android插件化基本流程</title>
-    <link href="http://androidhuilin.wang/2019/05/08/Android%E6%8F%92%E4%BB%B6%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/"/>
-    <id>http://androidhuilin.wang/2019/05/08/Android插件化基本流程/</id>
+    <link href="https://androidhuilin.wang/2019/05/08/Android%E6%8F%92%E4%BB%B6%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/"/>
+    <id>https://androidhuilin.wang/2019/05/08/Android插件化基本流程/</id>
     <published>2019-05-08T08:40:38.000Z</published>
     <updated>2019-05-17T08:51:14.485Z</updated>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>开发一个Servlet项目</title>
-    <link href="http://androidhuilin.wang/2018/05/18/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAServlet%E9%A1%B9%E7%9B%AE/"/>
-    <id>http://androidhuilin.wang/2018/05/18/开发一个Servlet项目/</id>
+    <link href="https://androidhuilin.wang/2018/05/18/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAServlet%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://androidhuilin.wang/2018/05/18/开发一个Servlet项目/</id>
     <published>2018-05-18T07:01:54.000Z</published>
     <updated>2019-05-17T09:01:18.538Z</updated>
     
@@ -59,17 +59,17 @@
     
     </summary>
     
-      <category term="Server" scheme="http://androidhuilin.wang/categories/Server/"/>
+      <category term="Server" scheme="https://androidhuilin.wang/categories/Server/"/>
     
     
-      <category term="servlet" scheme="http://androidhuilin.wang/tags/servlet/"/>
+      <category term="servlet" scheme="https://androidhuilin.wang/tags/servlet/"/>
     
   </entry>
   
   <entry>
     <title>Charles--抓取https报文</title>
-    <link href="http://androidhuilin.wang/2018/04/17/Charles-%E6%8A%93%E5%8F%96https%E6%8A%A5%E6%96%87/"/>
-    <id>http://androidhuilin.wang/2018/04/17/Charles-抓取https报文/</id>
+    <link href="https://androidhuilin.wang/2018/04/17/Charles-%E6%8A%93%E5%8F%96https%E6%8A%A5%E6%96%87/"/>
+    <id>https://androidhuilin.wang/2018/04/17/Charles-抓取https报文/</id>
     <published>2018-04-17T08:27:42.000Z</published>
     <updated>2019-05-18T23:36:06.407Z</updated>
     
@@ -82,14 +82,14 @@
     </summary>
     
     
-      <category term="Charles" scheme="http://androidhuilin.wang/tags/Charles/"/>
+      <category term="Charles" scheme="https://androidhuilin.wang/tags/Charles/"/>
     
   </entry>
   
   <entry>
     <title>getter()模板技巧</title>
-    <link href="http://androidhuilin.wang/2018/04/08/getter-%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/"/>
-    <id>http://androidhuilin.wang/2018/04/08/getter-模板技巧/</id>
+    <link href="https://androidhuilin.wang/2018/04/08/getter-%E6%A8%A1%E6%9D%BF%E6%8A%80%E5%B7%A7/"/>
+    <id>https://androidhuilin.wang/2018/04/08/getter-模板技巧/</id>
     <published>2018-04-08T07:52:22.000Z</published>
     <updated>2019-05-17T09:01:18.551Z</updated>
     
@@ -104,14 +104,14 @@
     </summary>
     
     
-      <category term="AndroidStudio" scheme="http://androidhuilin.wang/tags/AndroidStudio/"/>
+      <category term="AndroidStudio" scheme="https://androidhuilin.wang/tags/AndroidStudio/"/>
     
   </entry>
   
   <entry>
     <title>build.gradle的常用配置</title>
-    <link href="http://androidhuilin.wang/2018/03/26/build-gradle%E7%9A%84%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
-    <id>http://androidhuilin.wang/2018/03/26/build-gradle的常用配置/</id>
+    <link href="https://androidhuilin.wang/2018/03/26/build-gradle%E7%9A%84%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
+    <id>https://androidhuilin.wang/2018/03/26/build-gradle的常用配置/</id>
     <published>2018-03-26T08:27:53.000Z</published>
     <updated>2019-05-17T09:01:18.523Z</updated>
     
@@ -125,17 +125,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="gradle" scheme="http://androidhuilin.wang/tags/gradle/"/>
+      <category term="gradle" scheme="https://androidhuilin.wang/tags/gradle/"/>
     
   </entry>
   
   <entry>
     <title>RoundImageView</title>
-    <link href="http://androidhuilin.wang/2018/03/14/RoundImageView/"/>
-    <id>http://androidhuilin.wang/2018/03/14/RoundImageView/</id>
+    <link href="https://androidhuilin.wang/2018/03/14/RoundImageView/"/>
+    <id>https://androidhuilin.wang/2018/03/14/RoundImageView/</id>
     <published>2018-03-14T03:21:06.000Z</published>
     <updated>2019-05-18T23:36:06.408Z</updated>
     
@@ -149,19 +149,19 @@
     
     </summary>
     
-      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
-      <category term="自定义view" scheme="http://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+      <category term="自定义view" scheme="https://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
     
   </entry>
   
   <entry>
     <title>布局优化</title>
-    <link href="http://androidhuilin.wang/2018/01/02/%E5%B8%83%E5%B1%80%E4%BC%98%E5%8C%96/"/>
-    <id>http://androidhuilin.wang/2018/01/02/布局优化/</id>
+    <link href="https://androidhuilin.wang/2018/01/02/%E5%B8%83%E5%B1%80%E4%BC%98%E5%8C%96/"/>
+    <id>https://androidhuilin.wang/2018/01/02/布局优化/</id>
     <published>2018-01-02T07:03:12.000Z</published>
     <updated>2019-05-17T09:01:18.508Z</updated>
     
@@ -175,17 +175,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>Activity启动模式</title>
-    <link href="http://androidhuilin.wang/2017/11/15/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://androidhuilin.wang/2017/11/15/Activity启动模式/</id>
+    <link href="https://androidhuilin.wang/2017/11/15/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://androidhuilin.wang/2017/11/15/Activity启动模式/</id>
     <published>2017-11-15T09:42:14.000Z</published>
     <updated>2019-05-17T08:47:59.749Z</updated>
     
@@ -197,17 +197,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Activity" scheme="http://androidhuilin.wang/tags/Activity/"/>
+      <category term="Activity" scheme="https://androidhuilin.wang/tags/Activity/"/>
     
   </entry>
   
   <entry>
     <title>简单聊聊Android程序的运行内存</title>
-    <link href="http://androidhuilin.wang/2017/10/09/%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8AAndroid%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E5%86%85%E5%AD%98/"/>
-    <id>http://androidhuilin.wang/2017/10/09/简单聊聊Android程序的运行内存/</id>
+    <link href="https://androidhuilin.wang/2017/10/09/%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8AAndroid%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E5%86%85%E5%AD%98/"/>
+    <id>https://androidhuilin.wang/2017/10/09/简单聊聊Android程序的运行内存/</id>
     <published>2017-10-09T09:41:17.000Z</published>
     <updated>2019-04-15T05:00:20.754Z</updated>
     
@@ -222,14 +222,14 @@
     </summary>
     
     
-      <category term="Android扩展" scheme="http://androidhuilin.wang/tags/Android%E6%89%A9%E5%B1%95/"/>
+      <category term="Android扩展" scheme="https://androidhuilin.wang/tags/Android%E6%89%A9%E5%B1%95/"/>
     
   </entry>
   
   <entry>
     <title>AS2.3后找不到SDKManager启动按钮解决方法</title>
-    <link href="http://androidhuilin.wang/2017/10/09/AS2-3%E5%90%8E%E6%89%BE%E4%B8%8D%E5%88%B0SDKManager%E5%90%AF%E5%8A%A8%E6%8C%89%E9%92%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://androidhuilin.wang/2017/10/09/AS2-3后找不到SDKManager启动按钮解决方法/</id>
+    <link href="https://androidhuilin.wang/2017/10/09/AS2-3%E5%90%8E%E6%89%BE%E4%B8%8D%E5%88%B0SDKManager%E5%90%AF%E5%8A%A8%E6%8C%89%E9%92%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://androidhuilin.wang/2017/10/09/AS2-3后找不到SDKManager启动按钮解决方法/</id>
     <published>2017-10-09T07:01:57.000Z</published>
     <updated>2019-04-15T04:57:22.745Z</updated>
     
@@ -244,14 +244,14 @@
     </summary>
     
     
-      <category term="AndroidStudio" scheme="http://androidhuilin.wang/tags/AndroidStudio/"/>
+      <category term="AndroidStudio" scheme="https://androidhuilin.wang/tags/AndroidStudio/"/>
     
   </entry>
   
   <entry>
     <title>云服务器配置Tomcat</title>
-    <link href="http://androidhuilin.wang/2017/09/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AETomcat/"/>
-    <id>http://androidhuilin.wang/2017/09/05/云服务器配置Tomcat/</id>
+    <link href="https://androidhuilin.wang/2017/09/05/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AETomcat/"/>
+    <id>https://androidhuilin.wang/2017/09/05/云服务器配置Tomcat/</id>
     <published>2017-09-05T03:35:20.000Z</published>
     <updated>2019-04-15T05:00:20.760Z</updated>
     
@@ -265,17 +265,17 @@
     
     </summary>
     
-      <category term="Server" scheme="http://androidhuilin.wang/categories/Server/"/>
+      <category term="Server" scheme="https://androidhuilin.wang/categories/Server/"/>
     
     
-      <category term="Server" scheme="http://androidhuilin.wang/tags/Server/"/>
+      <category term="Server" scheme="https://androidhuilin.wang/tags/Server/"/>
     
   </entry>
   
   <entry>
     <title>云服务器配置JDK</title>
-    <link href="http://androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/"/>
-    <id>http://androidhuilin.wang/2017/09/03/云服务器配置JDK/</id>
+    <link href="https://androidhuilin.wang/2017/09/03/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJDK/"/>
+    <id>https://androidhuilin.wang/2017/09/03/云服务器配置JDK/</id>
     <published>2017-09-02T16:29:45.000Z</published>
     <updated>2019-04-15T05:00:20.677Z</updated>
     
@@ -289,17 +289,17 @@
     
     </summary>
     
-      <category term="Server" scheme="http://androidhuilin.wang/categories/Server/"/>
+      <category term="Server" scheme="https://androidhuilin.wang/categories/Server/"/>
     
     
-      <category term="Server" scheme="http://androidhuilin.wang/tags/Server/"/>
+      <category term="Server" scheme="https://androidhuilin.wang/tags/Server/"/>
     
   </entry>
   
   <entry>
     <title>WebView使用总结</title>
-    <link href="http://androidhuilin.wang/2017/06/14/WebView%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
-    <id>http://androidhuilin.wang/2017/06/14/WebView使用总结/</id>
+    <link href="https://androidhuilin.wang/2017/06/14/WebView%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
+    <id>https://androidhuilin.wang/2017/06/14/WebView使用总结/</id>
     <published>2017-06-14T03:19:58.000Z</published>
     <updated>2019-05-17T09:01:18.495Z</updated>
     
@@ -317,17 +317,17 @@
     
     </summary>
     
-      <category term="Android" scheme="http://androidhuilin.wang/categories/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>ShapeTextView</title>
-    <link href="http://androidhuilin.wang/2017/05/04/ShapeTextView/"/>
-    <id>http://androidhuilin.wang/2017/05/04/ShapeTextView/</id>
+    <link href="https://androidhuilin.wang/2017/05/04/ShapeTextView/"/>
+    <id>https://androidhuilin.wang/2017/05/04/ShapeTextView/</id>
     <published>2017-05-04T05:46:22.000Z</published>
     <updated>2019-05-18T23:36:06.409Z</updated>
     
@@ -342,16 +342,16 @@
     </summary>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
-      <category term="自定义view" scheme="http://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+      <category term="自定义view" scheme="https://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
     
   </entry>
   
   <entry>
     <title>Android渠道打包</title>
-    <link href="http://androidhuilin.wang/2017/04/27/Android%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85/"/>
-    <id>http://androidhuilin.wang/2017/04/27/Android渠道打包/</id>
+    <link href="https://androidhuilin.wang/2017/04/27/Android%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85/"/>
+    <id>https://androidhuilin.wang/2017/04/27/Android渠道打包/</id>
     <published>2017-04-27T09:46:32.000Z</published>
     <updated>2019-05-17T08:51:14.475Z</updated>
     
@@ -366,14 +366,14 @@
     </summary>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>SystemBar</title>
-    <link href="http://androidhuilin.wang/2017/04/25/SystemBar/"/>
-    <id>http://androidhuilin.wang/2017/04/25/SystemBar/</id>
+    <link href="https://androidhuilin.wang/2017/04/25/SystemBar/"/>
+    <id>https://androidhuilin.wang/2017/04/25/SystemBar/</id>
     <published>2017-04-25T06:32:18.000Z</published>
     <updated>2019-05-18T23:36:06.410Z</updated>
     
@@ -388,16 +388,16 @@
     </summary>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
-      <category term="MD" scheme="http://androidhuilin.wang/tags/MD/"/>
+      <category term="MD" scheme="https://androidhuilin.wang/tags/MD/"/>
     
   </entry>
   
   <entry>
     <title>Toolbar的使用</title>
-    <link href="http://androidhuilin.wang/2017/04/19/Toolbar%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://androidhuilin.wang/2017/04/19/Toolbar的使用/</id>
+    <link href="https://androidhuilin.wang/2017/04/19/Toolbar%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://androidhuilin.wang/2017/04/19/Toolbar的使用/</id>
     <published>2017-04-19T12:44:39.000Z</published>
     <updated>2019-05-18T23:36:06.410Z</updated>
     
@@ -412,16 +412,16 @@
     </summary>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
-      <category term="MD" scheme="http://androidhuilin.wang/tags/MD/"/>
+      <category term="MD" scheme="https://androidhuilin.wang/tags/MD/"/>
     
   </entry>
   
   <entry>
     <title>Android 资源分包</title>
-    <link href="http://androidhuilin.wang/2017/04/06/Android-%E8%B5%84%E6%BA%90%E5%88%86%E5%8C%85/"/>
-    <id>http://androidhuilin.wang/2017/04/06/Android-资源分包/</id>
+    <link href="https://androidhuilin.wang/2017/04/06/Android-%E8%B5%84%E6%BA%90%E5%88%86%E5%8C%85/"/>
+    <id>https://androidhuilin.wang/2017/04/06/Android-资源分包/</id>
     <published>2017-04-06T07:36:57.000Z</published>
     <updated>2019-04-15T04:57:22.702Z</updated>
     
@@ -436,14 +436,14 @@
     </summary>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>流式布局的使用</title>
-    <link href="http://androidhuilin.wang/2016/12/04/%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://androidhuilin.wang/2016/12/04/流式布局的使用/</id>
+    <link href="https://androidhuilin.wang/2016/12/04/%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://androidhuilin.wang/2016/12/04/流式布局的使用/</id>
     <published>2016-12-04T14:57:35.000Z</published>
     <updated>2019-05-17T09:01:18.541Z</updated>
     
@@ -458,16 +458,16 @@
     </summary>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
-      <category term="自定义view" scheme="http://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
+      <category term="自定义view" scheme="https://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
     
   </entry>
   
   <entry>
     <title>关于shape,selector style</title>
-    <link href="http://androidhuilin.wang/2016/12/04/%E5%85%B3%E4%BA%8Eshape-selector-style/"/>
-    <id>http://androidhuilin.wang/2016/12/04/关于shape-selector-style/</id>
+    <link href="https://androidhuilin.wang/2016/12/04/%E5%85%B3%E4%BA%8Eshape-selector-style/"/>
+    <id>https://androidhuilin.wang/2016/12/04/关于shape-selector-style/</id>
     <published>2016-12-04T14:53:27.000Z</published>
     <updated>2019-05-18T23:47:30.974Z</updated>
     
@@ -485,7 +485,7 @@
     </summary>
     
     
-      <category term="Android" scheme="http://androidhuilin.wang/tags/Android/"/>
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
