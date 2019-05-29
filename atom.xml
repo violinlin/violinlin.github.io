@@ -43,6 +43,32 @@
   </entry>
   
   <entry>
+    <title>Android进入调试模式的三种技巧</title>
+    <link href="https://androidhuilin.wang/2018/05/29/Android%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7/"/>
+    <id>https://androidhuilin.wang/2018/05/29/Android调试技巧/</id>
+    <published>2018-05-29T09:36:22.000Z</published>
+    <updated>2019-05-29T13:14:38.253Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Android开发过程中难免会遇到各种问题，通常我们会通过打印Log日志或者Debug模式来分析问题。这里介绍下Android程序进入到Debug的多种方式，可以针对不同场景使用。<br>ps:当然只限于debug包，正式包进不了调试模式。<a href="https://developer.android.com/studio/debug" target="_blank" rel="noopener">官方文档</a></p></blockquote><a id="more"></a><h1 id="1-直接发布Debug包进入调试模式"><a href="#1-直接发布Debug包进入调试模式" class="headerlink" title="1. 直接发布Debug包进入调试模式"></a>1. 直接发布Debug包进入调试模式</h1><blockquote><p>首先可以直接通过 <code>Debug app</code> 按键发布包，安装成功后即进入调试模式。这种方式的问题就是每次进入调试模式都需要发布包，效率比较低。</p></blockquote><p><img src="/img/debug_run.png" alt></p><h1 id="2-Attach-debugger-to-Android-process-方式进入调试模式"><a href="#2-Attach-debugger-to-Android-process-方式进入调试模式" class="headerlink" title="2. Attach debugger to Android process 方式进入调试模式"></a>2. <code>Attach debugger to Android process</code> 方式进入调试模式</h1><blockquote><p>启动手机上安装好的待调试的debug包，在AS的工具栏上点击<code>Attach debugger to Android process</code>按键，选择待调试的进程即进入调试模式。这种方式较第一种效率比较高，但是attach时需要保证进程已经启动，<br>不方便调试<code>Application</code>中的一些初始化代码。</p></blockquote><p><img src="/img/debug_attach.png" alt></p><h1 id="3-将应用设置为待调试模式"><a href="#3-将应用设置为待调试模式" class="headerlink" title="3. 将应用设置为待调试模式"></a>3. 将应用设置为待调试模式</h1><blockquote><p>这种方式是将指定应用标志为调试模式，每次启动应用都会弹出<code>Waiting For Debugger</code>的弹窗。然后可以通过第二种方式<code>Attach debugger to Android process</code>连接应用进程进入调试模式。<br>这种方式可以解决第二种方式中<code>Application</code>的一些初始化代码不方便调试的问题，因为调试弹窗弹起的时候进程已经启动。有两种方式可以将目标应用标志为调试模式。</p></blockquote><h2 id="1-通过adb命令set-debug-app方式标志"><a href="#1-通过adb命令set-debug-app方式标志" class="headerlink" title="1. 通过adb命令set-debug-app方式标志"></a>1. 通过adb命令<code>set-debug-app</code>方式标志</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">adb shell am set-debug-app -w --persistent &lt;package_name&gt;</span><br><span class="line"></span><br><span class="line">//-w: 让程序等待被attach</span><br><span class="line">//--persistent: 让程序每次启动都等待被attach</span><br></pre></td></tr></table></figure><p>添加了<code>persistent</code> 参数后每次启动app都会弹出调试弹窗，完成调试后需要通过下面命令移除标志</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am clear-debug-app &lt;package_name&gt;</span><br></pre></td></tr></table></figure><h2 id="2-通过手机设置进行标志"><a href="#2-通过手机设置进行标志" class="headerlink" title="2. 通过手机设置进行标志"></a>2. 通过手机设置进行标志</h2><blockquote><p>在手机开发者选项中选择要调试的应用，勾选等待调试器（完成调试后需要关掉调试器，不然每次启动都会弹出调试弹窗）。如下图</p></blockquote><p><img src="/img/debug_device.png" alt></p><p>通过上面任意一种方式将app标志为调试模式后，启动应用会弹出调试弹窗.然后通过第二种方式attach到应用进程就可以进入调试模式了</p><p><img src="/img/debug_wait.png" alt></p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote><p>综上三种方式，开发中经常使用的应该是第二种，如果需要调试进程初始化部分的代码可以使用第三种方式。第一种方式因为每次都要打包发布效率较低，不建议使用<br>，或者只在第一次发布程序的时候使用。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Android开发过程中难免会遇到各种问题，通常我们会通过打印Log日志或者Debug模式来分析问题。这里介绍下Android程序进入到Debug的多种方式，可以针对不同场景使用。&lt;br&gt;ps:当然只限于debug包，正式包进不了调试模式。&lt;a href=&quot;https://developer.android.com/studio/debug&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
+    
+      <category term="adb" scheme="https://androidhuilin.wang/tags/adb/"/>
+    
+      <category term="AndroidStudio" scheme="https://androidhuilin.wang/tags/AndroidStudio/"/>
+    
+  </entry>
+  
+  <entry>
     <title>开发一个Servlet项目</title>
     <link href="https://androidhuilin.wang/2018/05/18/%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAServlet%E9%A1%B9%E7%9B%AE/"/>
     <id>https://androidhuilin.wang/2018/05/18/开发一个Servlet项目/</id>
@@ -454,28 +480,6 @@
       &lt;blockquote&gt;
 &lt;p&gt;流式布局的使用&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
-    
-      <category term="自定义view" scheme="https://androidhuilin.wang/tags/%E8%87%AA%E5%AE%9A%E4%B9%89view/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于MeasureSpec</title>
-    <link href="https://androidhuilin.wang/2016/12/04/%E5%85%B3%E4%BA%8EMeasureSpec/"/>
-    <id>https://androidhuilin.wang/2016/12/04/关于MeasureSpec/</id>
-    <published>2016-12-04T14:49:05.000Z</published>
-    <updated>2019-04-15T05:00:20.713Z</updated>
-    
-    <content type="html"><![CDATA[<p>视图view的大小是通过measure测量获取得到的,关于视图的测量我们有必要了解MeasureSpec这个类,官方API是这样描述的：</p><a id="more"></a><p>视图view的大小是通过measure测量获取得到的,关于视图的测量我们有必要了解MeasureSpec这个类,官方API是这样描述的：</p><blockquote><p>A MeasureSpec encapsulates the layout requirements passed from parent to child.Each MeasureSpec represents a requirement for either the width or the height. A MeasureSpec is comprised of a size and a mode. </p></blockquote><p>通过简单翻译我们可以了解到： MesaureSpec这个类封装了父视图对子视图的布局要求,每个MeasureSpec代表了一个宽度或者高度的要求。MeasureSpec由测量模式和测量大小组成。</p><p>其中测量模式有以下三种</p><table><thead><tr><th style="text-align:left">测量模式</th><th style="text-align:right">特性</th></tr></thead><tbody><tr><td style="text-align:left">UNSPECIFIED</td><td style="text-align:right">The parent has not imposed any constraint on the child. It can be whatever size it wants.</td></tr><tr><td style="text-align:left">EXACTLY</td><td style="text-align:right">The parent has determined an exact size for the child. The child is going to be given those bounds regardless of how big it wants to be.</td></tr><tr><td style="text-align:left">AT_MOST</td><td style="text-align:right">The child can be as large as it wants up to the specified size.</td></tr></tbody></table><p>为了节省内存MeasureSpec的设计也是很巧妙的</p><blockquote><p>MeasureSpecs are implemented as ints to reduce object allocation.This class is provided to pack and unpack the &lt;size, mode&gt; tuple into the int.</p></blockquote><p>MeasureSpec通过32位的int类型来表示，其中高两位用来表示测量模式，后面30位是测量大小</p><p>看一下MeasureSpec的代码片段：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MeasureSpec</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MODE_SHIFT = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MODE_MASK  = <span class="number">0x3</span> &lt;&lt; MODE_SHIFT;</span><br><span class="line"><span class="comment">//三种测量模式，用int类型的高两位表示</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> UNSPECIFIED = <span class="number">0</span> &lt;&lt; MODE_SHIFT;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> EXACTLY     = <span class="number">1</span> &lt;&lt; MODE_SHIFT;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> AT_MOST     = <span class="number">2</span> &lt;&lt; MODE_SHIFT;</span><br><span class="line">  <span class="comment">//通过传入测量尺寸和测量模式，自定义MeasureSpec      </span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">makeMeasureSpec</span><span class="params">(<span class="keyword">int</span> size, <span class="keyword">int</span> mode)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (sUseBrokenMakeMeasureSpec) &#123;</span><br><span class="line">                <span class="keyword">return</span> size + mode;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> (size &amp; ~MODE_MASK) | (mode &amp; MODE_MASK);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取MeasureSpec的测量模式</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMode</span><span class="params">(<span class="keyword">int</span> measureSpec)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> (measureSpec &amp; MODE_MASK);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取MeasureSpec的测量大小</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">(<span class="keyword">int</span> measureSpec)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> (measureSpec &amp; ~MODE_MASK);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;视图view的大小是通过measure测量获取得到的,关于视图的测量我们有必要了解MeasureSpec这个类,官方API是这样描述的：&lt;/p&gt;
     
     </summary>
     
