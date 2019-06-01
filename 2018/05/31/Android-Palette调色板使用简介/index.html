@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Charles,">
+  <meta name="keywords" content="Android,MD,">
 
 
 
@@ -92,20 +92,20 @@
 
 
 
-<meta name="description" content="为了适配ios和Android两端的开发需求，后台将原来的接口升级为了https接口，这里记录下配置Charles抓取https接口协议报文的方法。使用下面方法请保证可以正常抓取http请求报文。">
-<meta name="keywords" content="Charles">
+<meta name="description" content="Palette调色板可以提取出一张图片里面比较突出的颜色值，使用Palette提取颜色可以保证UI色彩上的统一性；另外遇到图文排列的布局，可以调整字体的颜色避免被背景颜色同化。这篇简单介绍下Palette的使用。">
+<meta name="keywords" content="Android,MD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Charles--抓取https报文">
-<meta property="og:url" content="https://androidhuilin.wang/2018/04/17/Charles-抓取https报文/index.html">
+<meta property="og:title" content="Android Palette调色板使用简介">
+<meta property="og:url" content="https://androidhuilin.wang/2018/05/31/Android-Palette调色板使用简介/index.html">
 <meta property="og:site_name" content="violin的小窝">
-<meta property="og:description" content="为了适配ios和Android两端的开发需求，后台将原来的接口升级为了https接口，这里记录下配置Charles抓取https接口协议报文的方法。使用下面方法请保证可以正常抓取http请求报文。">
+<meta property="og:description" content="Palette调色板可以提取出一张图片里面比较突出的颜色值，使用Palette提取颜色可以保证UI色彩上的统一性；另外遇到图文排列的布局，可以调整字体的颜色避免被背景颜色同化。这篇简单介绍下Palette的使用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture18.jpg">
-<meta property="og:updated_time" content="2019-05-19T14:44:32.006Z">
+<meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture1.jpg">
+<meta property="og:updated_time" content="2019-06-01T04:37:14.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charles--抓取https报文">
-<meta name="twitter:description" content="为了适配ios和Android两端的开发需求，后台将原来的接口升级为了https接口，这里记录下配置Charles抓取https接口协议报文的方法。使用下面方法请保证可以正常抓取http请求报文。">
-<meta name="twitter:image" content="https://androidhuilin.wang/img/pictures/picture18.jpg">
+<meta name="twitter:title" content="Android Palette调色板使用简介">
+<meta name="twitter:description" content="Palette调色板可以提取出一张图片里面比较突出的颜色值，使用Palette提取颜色可以保证UI色彩上的统一性；另外遇到图文排列的布局，可以调整字体的颜色避免被背景颜色同化。这篇简单介绍下Palette的使用。">
+<meta name="twitter:image" content="https://androidhuilin.wang/img/pictures/picture1.jpg">
 
 
 
@@ -141,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="https://androidhuilin.wang/2018/04/17/Charles-抓取https报文/">
+  <link rel="canonical" href="https://androidhuilin.wang/2018/05/31/Android-Palette调色板使用简介/">
 
 
 
 
 
-  <title> Charles--抓取https报文 | violin的小窝 </title>
+  <title> Android Palette调色板使用简介 | violin的小窝 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -318,7 +318,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://androidhuilin.wang/2018/04/17/Charles-抓取https报文/">
+    <link itemprop="mainEntityOfPage" href="https://androidhuilin.wang/2018/05/31/Android-Palette调色板使用简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huilin">
@@ -339,7 +339,7 @@
             
             
               
-                Charles--抓取https报文
+                Android Palette调色板使用简介
               
             
           </h1>
@@ -354,8 +354,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T16:27:42+08:00">
-                2018-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T17:42:39+08:00">
+                2018-05-31
               </time>
             
 
@@ -397,8 +397,8 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture18.jpg" rel="gallery_cjwcxx69j0019kuz6n2i2dt2e" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/img/pictures/picture18.jpg" itemprop="contentUrl">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_cjwcxx68p0008kuz6sr4pslxs" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/pictures/picture1.jpg" itemprop="contentUrl">
               </a>
             
           
@@ -409,47 +409,29 @@
       
 
       
-        <p>为了适配ios和Android两端的开发需求，后台将原来的接口升级为了https接口，这里记录下配置<code>Charles</code>抓取https接口协议报文的方法。使用下面方法请保证可以正常抓取http请求报文。</p>
+        <blockquote>
+<p>Palette调色板可以提取出一张图片里面比较突出的颜色值，使用Palette提取颜色可以保证UI色彩上的统一性；另外遇到图文排列的布局，可以调整字体的颜色避免被背景颜色同化。这篇简单介绍下Palette的使用。</p>
+</blockquote>
 <a id="more"></a>
-<h2 id="在pc端安装Charles的根证书"><a href="#在pc端安装Charles的根证书" class="headerlink" title="在pc端安装Charles的根证书"></a>在pc端安装<code>Charles</code>的根证书</h2><blockquote>
-<p>Help–&gt;SSL Proxying –&gt; Install Charles Root Certificate</p>
+<h1 id="引入Palette包"><a href="#引入Palette包" class="headerlink" title="引入Palette包"></a>引入Palette包</h1><blockquote>
+<p>Palette 是在v7的support包中使用前应该先导入依赖包</p>
 </blockquote>
-<p><img src="/img/https_help_proxy_setting.png" alt></p>
-<blockquote>
-<p>在钥匙串中将证书添加信任</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:palette-v7:27.1.1'</span></span><br></pre></td></tr></table></figure>
+<h1 id="通过指定图片的Bitmap获取Palette对象"><a href="#通过指定图片的Bitmap获取Palette对象" class="headerlink" title="通过指定图片的Bitmap获取Palette对象"></a>通过指定图片的Bitmap获取Palette对象</h1><blockquote>
+<p>获取Palette首先需要有图片的Bitmap对象，另外对象获取有同步和异步两种方式，建议使用异步获取Palette对象</p>
 </blockquote>
-<p><img src="/img/https_charles_proxy_ca.png" alt></p>
-<h2 id="在客户端安装Charles证书"><a href="#在客户端安装Charles证书" class="headerlink" title="在客户端安装Charles证书"></a>在客户端安装<code>Charles</code>证书</h2><blockquote>
-<p>请保证<code>Charles</code>可以正常抓取手机上的http报文，这里以小米5安装证书为例。<br>Help–&gt;SSL Proxying –&gt; Install Charles Root Certificate……mobile Device or RemoteBrower</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Palette.from(bitmap).generate(<span class="keyword">object</span> : Palette.PaletteAsyncListener&#123;</span><br><span class="line">                           <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onGenerated</span><span class="params">(palette: <span class="type">Palette</span>)</span></span> &#123;</span><br><span class="line">                                 <span class="comment">// 获取palette对象</span></span><br><span class="line">                               </span><br><span class="line">                               </span><br><span class="line">                           &#125;</span><br><span class="line"></span><br><span class="line">                       &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="通过Palette获取Swatch"><a href="#通过Palette获取Swatch" class="headerlink" title="通过Palette获取Swatch"></a>通过<code>Palette</code>获取<code>Swatch</code></h1><blockquote>
+<p>Palette的样本<code>Swatch</code>有柔和的<code>muted</code>、有活力的<code>vibrant</code>和<code>dominate</code>三种，其中<code>muted</code>和<code>vibrant</code>又包括正常、<code>dark</code>,<code>light</code>三种色调，所以如下总共有七种<code>swatch</code>样本</p>
 </blockquote>
-<p><img src="/img/https_help_device.png" alt></p>
-<blockquote>
-<p>获取证书的下载链接，在手机浏览器中输入链接下载证书</p>
+<p><strong>PS:除了<code>dominate</code>样本,其余六种样本有可能会拿空，所以最好做判空处理</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> mutedSwatch = palette.mutedSwatch <span class="comment">//柔和的</span></span><br><span class="line"><span class="keyword">val</span> darkMutedSwatch = palette.darkMutedSwatch <span class="comment">// 暗色柔和的</span></span><br><span class="line"><span class="keyword">val</span> lightMutedSwatch = palette.lightMutedSwatch <span class="comment">// 亮色柔和的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> vibrantSwatch = palette.vibrantSwatch <span class="comment">// 有活力的</span></span><br><span class="line"><span class="keyword">val</span> darkVibrantSwatch = palette.darkVibrantSwatch <span class="comment">// 暗色有活力的</span></span><br><span class="line"><span class="keyword">val</span> lightVibrantSwatch = palette.lightVibrantSwatch <span class="comment">// 亮色有活力的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> dominantSwatch = palette.dominantSwatch</span><br></pre></td></tr></table></figure>
+<h1 id="通过Swatch获取颜色值"><a href="#通过Swatch获取颜色值" class="headerlink" title="通过Swatch获取颜色值"></a>通过<code>Swatch</code>获取颜色值</h1><blockquote>
+<p>每种样本<code>swatch</code>可以获取下面的颜色值，通常可以通过<code>swatch.getRgb()</code>设置背景颜色，<code>swatch.getBodyTextColor()</code>设置字体颜色</p>
 </blockquote>
-<p><img src="/img/https_client_crt.png" alt></p>
-<p><img src="/img/https_android_down_crt.png" alt></p>
-<blockquote>
-<p>在手机上安装证书<br>设置–&gt;更多设置–&gt;系统安全–&gt; 从存储设备安装  选取刚刚下载的证书安装(名称可以随便取)</p>
-</blockquote>
-<p><img src="/img/https_android_crt_install.png" alt></p>
-<h3 id="证书安装失败问题"><a href="#证书安装失败问题" class="headerlink" title="证书安装失败问题"></a>证书安装失败问题</h3><blockquote>
-<p>最开始我是通过小米5自带的浏览器下载证书，并且直接安装的，但是提示下面错误</p>
-</blockquote>
-<p><img src="/img/https_android_crt_error.png" alt></p>
-<blockquote>
-<p>最终问题解决是通过UC浏览器下载证书，并通过上面的方式安装。</p>
-</blockquote>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><blockquote>
-<p>在Proxy–&gt; SSL Proxying Settins中添加抓取连接的代理</p>
-</blockquote>
-<p><img src="/img/https_proxy.png" alt></p>
-<blockquote>
-<p>以抓取简书的接口为例,在<code>Host</code>中配置域名，在<code>port</code>中配置端口。通常http的默认端口为80，https的默认端口为443。</p>
-</blockquote>
-<p><img src="/img/https_ssl_proxying_settings.png" alt></p>
-<blockquote>
-<p>抓取日志如下<br><img src="/img/https_charles_jiansu.png" alt></p>
-</blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">swatch.getPopulation(): 样本中的像素数量</span><br><span class="line">swatch.getRgb(): 颜色的RBG值</span><br><span class="line">swatch.getHsl(): 颜色的HSL值</span><br><span class="line">swatch.getBodyTextColor(): 主体文字的颜色值</span><br><span class="line">swatch.getTitleTextColor(): 标题文字的颜色值</span><br></pre></td></tr></table></figure>
+<p>效果图如下</p>
+<p><img src="/img/pallete_show.png" alt></p>
 
       
     </div>
@@ -479,7 +461,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Charles/" rel="tag"># Charles</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/MD/" rel="tag"># MD</a>
           
         </div>
       
@@ -492,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/08/getter-模板技巧/" rel="next" title="getter()模板技巧">
-                <i class="fa fa-chevron-left"></i> getter()模板技巧
+              <a href="/2018/05/29/Android调试技巧/" rel="next" title="Android进入调试模式的三种技巧">
+                <i class="fa fa-chevron-left"></i> Android进入调试模式的三种技巧
               </a>
             
           </div>
@@ -502,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/18/开发一个Servlet项目/" rel="prev" title="开发一个Servlet项目">
-                开发一个Servlet项目 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/08/Android插件化基本流程/" rel="prev" title="Android插件化基本流程">
+                Android插件化基本流程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -644,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在pc端安装Charles的根证书"><span class="nav-number">1.</span> <span class="nav-text">在pc端安装Charles的根证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在客户端安装Charles证书"><span class="nav-number">2.</span> <span class="nav-text">在客户端安装Charles证书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#证书安装失败问题"><span class="nav-number">2.1.</span> <span class="nav-text">证书安装失败问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置代理"><span class="nav-number">3.</span> <span class="nav-text">设置代理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引入Palette包"><span class="nav-number">1.</span> <span class="nav-text">引入Palette包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过指定图片的Bitmap获取Palette对象"><span class="nav-number">2.</span> <span class="nav-text">通过指定图片的Bitmap获取Palette对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Palette获取Swatch"><span class="nav-number">3.</span> <span class="nav-text">通过Palette获取Swatch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Swatch获取颜色值"><span class="nav-number">4.</span> <span class="nav-text">通过Swatch获取颜色值</span></a></li></ol></div>
             
 
           </div>
