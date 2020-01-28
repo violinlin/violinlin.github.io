@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://androidhuilin.wang/"/>
-  <updated>2019-05-19T14:45:45.689Z</updated>
+  <updated>2020-01-28T07:17:32.932Z</updated>
   <id>https://androidhuilin.wang/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kotlin中init方法简介</title>
+    <link href="https://androidhuilin.wang/2020/01/28/kotlin%E4%B8%ADinit%E6%96%B9%E6%B3%95%E7%AE%80%E4%BB%8B/"/>
+    <id>https://androidhuilin.wang/2020/01/28/kotlin中init方法简介/</id>
+    <published>2020-01-28T07:15:12.000Z</published>
+    <updated>2020-01-28T07:17:32.932Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="init方法"><a href="#init方法" class="headerlink" title="init方法"></a>init方法</h2><blockquote><p>刚开始学习Kotliln语法时一直没搞明白初始化代码块<code>init</code>方法的调用时机，当初看网上文章说<code>init</code>方法会比构造方法优先执行，类似<code>JAVA</code>中的构造代码块。</p></blockquote><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(<span class="string">"init invoke"</span>)</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">constructor</span>() &#123;</span><br><span class="line">           println(<span class="string">"constructor invoke"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><blockquote><p>代码结果如下,<code>init</code>确实要比构造器先执行</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">init invoke</span><br><span class="line">constructor invoke</span><br></pre></td></tr></table></figure><blockquote><p>但还有一种情况：<code>init</code>代码块可以访问主构造方法中的参数(当初一直纠结如果<code>init</code>比构造器先执行，那它怎么能访问构造器中的参数呢？)</p></blockquote><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>(name: String) &#123;</span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(name)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><blockquote><p>后来查了一些资料，了解了<code>init</code>方法的调用时机。虽然<code>Kotlin</code>兼容java,但他们毕竟是两种语言，不能用<code>java</code>中构造代码块的方式理解<code>init</code>方法。</p></blockquote><blockquote><p>Kotlin中分为主构造函数和次级构造函数两种，主构造造函数最多只有一个，次级构造函数可以有多个</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Student(var name: String) &#123; //主构造函数</span><br><span class="line">        // 次构造函数</span><br><span class="line">        constructor(name: String, age: Int) : this(name)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><blockquote><p><code>Kotlin</code>中主构造函数是类头部的一部分位于类名称之后，这种声明方式导致主构造函数没有初始化代码，<code>init</code>方法则为主构造函数的初始化代码。所以<code>init</code>代码中可以访问主构造函数的参数。另外<code>Kotlin</code>中要求次构造函数要委托给主构造函数方法（如果有主构造函数的话），所以<code>init</code>方法执行顺序上要早于次构造函数。</p></blockquote><blockquote><p>另外<code>Kotlin</code>中主构造函数也不是必须的，我的理解是虽然次构造函数不用显示委托给主构造函数，但是如果有主构造函数的代码块，即声明了<code>init</code>方法时，仍要先执行<code>init</code>方法</p></blockquote><p>下面贴一下<code>Kotlin</code>代码，以及反编译成<code>java</code>后的代码</p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>(<span class="keyword">var</span> name: String) &#123; <span class="comment">//主构造函数</span></span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(<span class="string">"init 1"</span>)</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(<span class="string">"init 2"</span>)</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 次构造函数</span></span><br><span class="line">       <span class="keyword">constructor</span>(name: String, age: <span class="built_in">Int</span>) : <span class="keyword">this</span>(name) &#123;</span><br><span class="line">           println(<span class="string">"constructor"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><p>反编译成<code>java</code>代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(@NotNull String name)</span> </span>&#123;</span><br><span class="line">        Intrinsics.checkParameterIsNotNull(name, <span class="string">"name"</span>);</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        String var2 = <span class="string">"init 1"</span>;</span><br><span class="line">        <span class="keyword">boolean</span> var3 = <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(var2);</span><br><span class="line">        var2 = <span class="string">"init 2"</span>;</span><br><span class="line">        var3 = <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(var2);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(@NotNull String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        Intrinsics.checkParameterIsNotNull(name, <span class="string">"name"</span>);</span><br><span class="line">        <span class="keyword">this</span>(name);</span><br><span class="line">        String var3 = <span class="string">"constructor"</span>;</span><br><span class="line">        <span class="keyword">boolean</span> var4 = <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(var3);</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure><blockquote><p>反编译成<code>java</code>代码也可以发现，<code>init</code>方法并不会编译成构造代码块。<code>Kotlin</code>中的主构造函数和次构造函数在<code>java</code>中都会编译成普通的构造函数，编译后的次级构造函数通过<code>this()</code>方法调用编译后的主构造函数（<code>Kotlin</code>中次构造函数需要委托给主构造函数）。<code>init</code>方法中的代码也会被添加到编译后的主构造函数中，添加的顺序则和在<code>Kotlin</code>中声明的顺序相关。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;init方法&quot;&gt;&lt;a href=&quot;#init方法&quot; class=&quot;headerlink&quot; title=&quot;init方法&quot;&gt;&lt;/a&gt;init方法&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;刚开始学习Kotliln语法时一直没搞明白初始化代码块&lt;code&gt;init&lt;/co
+      
+    
+    </summary>
+    
+      <category term="kotlin" scheme="https://androidhuilin.wang/categories/kotlin/"/>
+    
+    
+      <category term="kotlin" scheme="https://androidhuilin.wang/tags/kotlin/"/>
+    
+  </entry>
   
   <entry>
     <title>Android插件化基本流程</title>
@@ -86,9 +112,9 @@
     
       <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
-      <category term="AndroidStudio" scheme="https://androidhuilin.wang/tags/AndroidStudio/"/>
-    
       <category term="adb" scheme="https://androidhuilin.wang/tags/adb/"/>
+    
+      <category term="AndroidStudio" scheme="https://androidhuilin.wang/tags/AndroidStudio/"/>
     
   </entry>
   
@@ -465,28 +491,6 @@
       <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
       <category term="MD" scheme="https://androidhuilin.wang/tags/MD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android 资源分包</title>
-    <link href="https://androidhuilin.wang/2017/04/06/Android-%E8%B5%84%E6%BA%90%E5%88%86%E5%8C%85/"/>
-    <id>https://androidhuilin.wang/2017/04/06/Android-资源分包/</id>
-    <published>2017-04-06T07:36:57.000Z</published>
-    <updated>2019-04-15T04:57:22.702Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>一直以为Android项目中的资源文件只能放在<code>src/main/res</code>的各个固定目录中。项目中的<code>java</code>代码可以根据功能模块创建不同的包来划分层次，资源文件则一般都放在<code>res</code>目录下。虽然可以通过命名规则区别不同模块的资源文件，但是随着业务的增长，开发人员的变动<code>res</code>目录会变得越来越繁杂。今天看到了一种资源分包的做法，感觉还不错，所以记录分享一下。</p></blockquote><a id="more"></a><p>在<code>build.gradle</code>文件中可以配置资源文件的文件路径</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sourceSets</span> &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            manifest.srcFile <span class="string">'AndroidManifest.xml'</span></span><br><span class="line">            java.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            resources.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            aidl.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            renderscript.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            res.srcDirs = [<span class="string">'res'</span>, <span class="string">'res-ptr'</span>]</span><br><span class="line">            assets.srcDirs = [<span class="string">'assets'</span>]</span><br><span class="line">            jniLibs.srcDirs = [<span class="string">'libs'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>如上清单文件、jar等都可以自己指定目录，如下配置资源文件目录</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sourceSets</span> &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            res.srcDirs = [<span class="string">'src/main/res'</span>,<span class="string">'src/main/res/mylayouts'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><ul><li><strong>src/main/res</strong>为项目默认路径</li><li><strong>src/main/res/mylayout</strong>为自定义路径（文件夹标识系统自动识别）<blockquote><p> 这种方式可以指定资源等文件夹，不过子文件夹得跟原来保持一致。例如图片文件放在<code>mylayouts/drawable</code>下、布局文件放在<code>mylayout/layout</code>下。</p></blockquote></li></ul><p><img src="/img/packandroidrespack.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;一直以为Android项目中的资源文件只能放在&lt;code&gt;src/main/res&lt;/code&gt;的各个固定目录中。项目中的&lt;code&gt;java&lt;/code&gt;代码可以根据功能模块创建不同的包来划分层次，资源文件则一般都放在&lt;code&gt;res&lt;/code&gt;目录下。虽然可以通过命名规则区别不同模块的资源文件，但是随着业务的增长，开发人员的变动&lt;code&gt;res&lt;/code&gt;目录会变得越来越繁杂。今天看到了一种资源分包的做法，感觉还不错，所以记录分享一下。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="Android" scheme="https://androidhuilin.wang/tags/Android/"/>
     
   </entry>
   
