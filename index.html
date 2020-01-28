@@ -423,7 +423,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_ck5xjtg400029ztz6yqsiexfk" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_ck5xkcp1j001n6bz61uy8vufm" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture10.jpg" itemprop="contentUrl">
               </a>
             
@@ -436,41 +436,16 @@
 
       
         
-          
-            <h2 id="init方法"><a href="#init方法" class="headerlink" title="init方法"></a>init方法</h2><blockquote>
-<p>刚开始学习Kotliln语法时一直没搞明白初始化代码块<code>init</code>方法的调用时机，当初看网上文章说<code>init</code>方法会比构造方法优先执行，类似<code>JAVA</code>中的构造代码块。</p>
+          <h2 id="init方法"><a href="#init方法" class="headerlink" title="init方法"></a>init方法</h2><blockquote>
+<p>刚开始学习Kotliln语法时一直没搞明白初始化代码块<code>init</code>方法的调用时机，当初看网上文章说<code>init</code>方法会比构造方法优先执行，类似<code>JAVA</code>中的构造代码块。但是这种说法并不准确，下面介绍下init方法的调用时机。</p>
 </blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(<span class="string">"init invoke"</span>)</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">constructor</span>() &#123;</span><br><span class="line">           println(<span class="string">"constructor invoke"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>代码结果如下,<code>init</code>确实要比构造器先执行</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">init invoke</span><br><span class="line">constructor invoke</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>但还有一种情况：<code>init</code>代码块可以访问主构造方法中的参数(当初一直纠结如果<code>init</code>比构造器先执行，那它怎么能访问构造器中的参数呢？)</p>
-</blockquote>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>(name: String) &#123;</span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(name)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>后来查了一些资料，了解了<code>init</code>方法的调用时机。虽然<code>Kotlin</code>兼容java,但他们毕竟是两种语言，不能用<code>java</code>中构造代码块的方式理解<code>init</code>方法。</p>
-</blockquote>
-<blockquote>
-<p>Kotlin中分为主构造函数和次级构造函数两种，主构造造函数最多只有一个，次级构造函数可以有多个</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Student(var name: String) &#123; //主构造函数</span><br><span class="line">        // 次构造函数</span><br><span class="line">        constructor(name: String, age: Int) : this(name)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>Kotlin</code>中主构造函数是类头部的一部分位于类名称之后，这种声明方式导致主构造函数没有初始化代码，<code>init</code>方法则为主构造函数的初始化代码。所以<code>init</code>代码中可以访问主构造函数的参数。另外<code>Kotlin</code>中要求次构造函数要委托给主构造函数方法（如果有主构造函数的话），所以<code>init</code>方法执行顺序上要早于次构造函数。</p>
-</blockquote>
-<blockquote>
-<p>另外<code>Kotlin</code>中主构造函数也不是必须的，我的理解是虽然次构造函数不用显示委托给主构造函数，但是如果有主构造函数的代码块，即声明了<code>init</code>方法时，仍要先执行<code>init</code>方法</p>
-</blockquote>
-<p>下面贴一下<code>Kotlin</code>代码，以及反编译成<code>java</code>后的代码</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>(<span class="keyword">var</span> name: String) &#123; <span class="comment">//主构造函数</span></span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(<span class="string">"init 1"</span>)</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(<span class="string">"init 2"</span>)</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 次构造函数</span></span><br><span class="line">       <span class="keyword">constructor</span>(name: String, age: <span class="built_in">Int</span>) : <span class="keyword">this</span>(name) &#123;</span><br><span class="line">           println(<span class="string">"constructor"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>反编译成<code>java</code>代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(@NotNull String name)</span> </span>&#123;</span><br><span class="line">        Intrinsics.checkParameterIsNotNull(name, <span class="string">"name"</span>);</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        String var2 = <span class="string">"init 1"</span>;</span><br><span class="line">        <span class="keyword">boolean</span> var3 = <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(var2);</span><br><span class="line">        var2 = <span class="string">"init 2"</span>;</span><br><span class="line">        var3 = <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(var2);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(@NotNull String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        Intrinsics.checkParameterIsNotNull(name, <span class="string">"name"</span>);</span><br><span class="line">        <span class="keyword">this</span>(name);</span><br><span class="line">        String var3 = <span class="string">"constructor"</span>;</span><br><span class="line">        <span class="keyword">boolean</span> var4 = <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(var3);</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>反编译成<code>java</code>代码也可以发现，<code>init</code>方法并不会编译成构造代码块。<code>Kotlin</code>中的主构造函数和次构造函数在<code>java</code>中都会编译成普通的构造函数，编译后的次级构造函数通过<code>this()</code>方法调用编译后的主构造函数（<code>Kotlin</code>中次构造函数需要委托给主构造函数）。<code>init</code>方法中的代码也会被添加到编译后的主构造函数中，添加的顺序则和在<code>Kotlin</code>中声明的顺序相关。</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/28/kotlin中init方法简介/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -589,7 +564,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture18.jpg" rel="gallery_ck5xjtg34000zztz66b8rj2h2" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture18.jpg" rel="gallery_ck5xkcp11000l6bz667jdotzt" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture18.jpg" itemprop="contentUrl">
               </a>
             
@@ -736,7 +711,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_ck5xjtg2w000lztz6lyi4cl14" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture1.jpg" rel="gallery_ck5xkcp0p00096bz6ss9rmiun" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture1.jpg" itemprop="contentUrl">
               </a>
             
@@ -877,7 +852,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture19.jpg" rel="gallery_ck5xjtg380014ztz6dfy8k5nt" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture19.jpg" rel="gallery_ck5xkcp16000x6bz66c8obvcr" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture19.jpg" itemprop="contentUrl">
               </a>
             
@@ -1040,7 +1015,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture8.jpg" rel="gallery_ck5xjtg4h002sztz63u152yj4" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture8.jpg" rel="gallery_ck5xkcp1x002j6bz6y35n6dvm" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture8.jpg" itemprop="contentUrl">
               </a>
             
@@ -1181,7 +1156,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture18.jpg" rel="gallery_ck5xjtg3f001eztz6ej1230d9" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture18.jpg" rel="gallery_ck5xkcp1a00146bz6ohd5j226" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture18.jpg" itemprop="contentUrl">
               </a>
             
@@ -1320,7 +1295,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture20.jpg" rel="gallery_ck5xjtg3w001zztz6h4di10v5" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture20.jpg" rel="gallery_ck5xkcp1k001p6bz6yfmdldti" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture20.jpg" itemprop="contentUrl">
               </a>
             
@@ -1483,7 +1458,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture16.jpg" rel="gallery_ck5xjtg3v001wztz6ohbzermo" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture16.jpg" rel="gallery_ck5xkcp1l001s6bz67nl6i0ud" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture16.jpg" itemprop="contentUrl">
               </a>
             
@@ -1646,7 +1621,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture21.jpg" rel="gallery_ck5xjtg960041ztz6ex5i5k8n" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture21.jpg" rel="gallery_ck5xkcp6k003p6bz6yt1p9iue" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture21.jpg" itemprop="contentUrl">
               </a>
             
@@ -1809,7 +1784,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture6.jpg" rel="gallery_ck5xjtg4e002kztz63cwbqfdz" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture6.jpg" rel="gallery_ck5xkcp1v002f6bz6wmmz2c1l" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture6.jpg" itemprop="contentUrl">
               </a>
             

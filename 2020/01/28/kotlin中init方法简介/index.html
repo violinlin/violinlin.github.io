@@ -92,19 +92,19 @@
 
 
 
-<meta name="description" content="init方法 刚开始学习Kotliln语法时一直没搞明白初始化代码块init方法的调用时机，当初看网上文章说init方法会比构造方法优先执行，类似JAVA中的构造代码块。  123456789class Student &amp;#123;       init &amp;#123;           println(&quot;init invoke&quot;)       &amp;#125;       constructor()">
+<meta name="description" content="init方法 刚开始学习Kotliln语法时一直没搞明白初始化代码块init方法的调用时机，当初看网上文章说init方法会比构造方法优先执行，类似JAVA中的构造代码块。但是这种说法并不准确，下面介绍下init方法的调用时机。">
 <meta name="keywords" content="kotlin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kotlin中init方法简介">
 <meta property="og:url" content="https://androidhuilin.wang/2020/01/28/kotlin中init方法简介/index.html">
 <meta property="og:site_name" content="violin的小窝">
-<meta property="og:description" content="init方法 刚开始学习Kotliln语法时一直没搞明白初始化代码块init方法的调用时机，当初看网上文章说init方法会比构造方法优先执行，类似JAVA中的构造代码块。  123456789class Student &amp;#123;       init &amp;#123;           println(&quot;init invoke&quot;)       &amp;#125;       constructor()">
+<meta property="og:description" content="init方法 刚开始学习Kotliln语法时一直没搞明白初始化代码块init方法的调用时机，当初看网上文章说init方法会比构造方法优先执行，类似JAVA中的构造代码块。但是这种说法并不准确，下面介绍下init方法的调用时机。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture10.jpg">
-<meta property="og:updated_time" content="2020-01-28T07:17:32.932Z">
+<meta property="og:updated_time" content="2020-01-28T07:19:59.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kotlin中init方法简介">
-<meta name="twitter:description" content="init方法 刚开始学习Kotliln语法时一直没搞明白初始化代码块init方法的调用时机，当初看网上文章说init方法会比构造方法优先执行，类似JAVA中的构造代码块。  123456789class Student &amp;#123;       init &amp;#123;           println(&quot;init invoke&quot;)       &amp;#125;       constructor()">
+<meta name="twitter:description" content="init方法 刚开始学习Kotliln语法时一直没搞明白初始化代码块init方法的调用时机，当初看网上文章说init方法会比构造方法优先执行，类似JAVA中的构造代码块。但是这种说法并不准确，下面介绍下init方法的调用时机。">
 <meta name="twitter:image" content="https://androidhuilin.wang/img/pictures/picture10.jpg">
 
 
@@ -427,7 +427,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_ck5xjtg400029ztz6yqsiexfk" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture10.jpg" rel="gallery_ck5xkcp1j001n6bz61uy8vufm" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture10.jpg" itemprop="contentUrl">
               </a>
             
@@ -440,8 +440,9 @@
 
       
         <h2 id="init方法"><a href="#init方法" class="headerlink" title="init方法"></a>init方法</h2><blockquote>
-<p>刚开始学习Kotliln语法时一直没搞明白初始化代码块<code>init</code>方法的调用时机，当初看网上文章说<code>init</code>方法会比构造方法优先执行，类似<code>JAVA</code>中的构造代码块。</p>
+<p>刚开始学习Kotliln语法时一直没搞明白初始化代码块<code>init</code>方法的调用时机，当初看网上文章说<code>init</code>方法会比构造方法优先执行，类似<code>JAVA</code>中的构造代码块。但是这种说法并不准确，下面介绍下init方法的调用时机。</p>
 </blockquote>
+<a id="more"></a>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">       <span class="keyword">init</span> &#123;</span><br><span class="line">           println(<span class="string">"init invoke"</span>)</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">constructor</span>() &#123;</span><br><span class="line">           println(<span class="string">"constructor invoke"</span>)</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>代码结果如下,<code>init</code>确实要比构造器先执行</p>
