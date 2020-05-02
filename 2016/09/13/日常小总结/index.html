@@ -100,7 +100,7 @@
 <meta property="og:description" content="此篇博客用于日常的知识点的总结，不定时更新。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture9.jpg">
-<meta property="og:updated_time" content="2019-05-17T09:01:18.501Z">
+<meta property="og:updated_time" content="2020-02-10T04:50:52.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常小总结">
 <meta name="twitter:description" content="此篇博客用于日常的知识点的总结，不定时更新。">
@@ -404,7 +404,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture9.jpg" rel="gallery_ck5xkcp1z002n6bz601kujyzi" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture9.jpg" rel="gallery_ck9petr6v002l9rz6mgga42bs" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture9.jpg" itemprop="contentUrl">
               </a>
             
@@ -423,6 +423,13 @@
 <li>Mac上会默认下载到/Users/&lt;用户名&gt;/.gradle/wrapper/dists</li>
 <li>Windows会默认下载到C:\Documents and Settings\&lt;用户名&gt;.gradle\wrapper\dists</li>
 </ol>
+<h2 id="项目编译失败"><a href="#项目编译失败" class="headerlink" title="项目编译失败"></a>项目编译失败</h2><p>清单合并失败问题排查</p>
+<blockquote>
+<p>Manifest merger failed with multiple errors, see logs</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew processDebugManifest--stacktrace</span><br></pre></td></tr></table></figure>
+<p>如果上面命令编译通过，尝试下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew assembleDebug --stacktrace -info</span><br></pre></td></tr></table></figure>
 <h2 id="AS清除gradle-依赖缓存"><a href="#AS清除gradle-依赖缓存" class="headerlink" title="AS清除gradle 依赖缓存"></a>AS清除gradle 依赖缓存</h2><blockquote>
 <p>如果将依赖库上传到maven或者jcenter,开发过程中可能修改一些小问题重新上传到maven,如果版本号没有修改，项目在拉取依赖库时gradle会使用本地缓存的那一份<br>导致代码不能及时更新。如果有这种修改了代码但是不想升级版本号的需求可以使用下面命令清除本地缓存</p>
 </blockquote>
@@ -657,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Gradle"><span class="nav-number">1.</span> <span class="nav-text">关于Gradle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS清除gradle-依赖缓存"><span class="nav-number">2.</span> <span class="nav-text">AS清除gradle 依赖缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Git"><span class="nav-number">3.</span> <span class="nav-text">关于Git</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#已经被git管理的文件，重新添加到忽略中"><span class="nav-number"></span> <span class="nav-text">已经被git管理的文件，重新添加到忽略中</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些SDK工具"><span class="nav-number">1.</span> <span class="nav-text">一些SDK工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#证书信息查询"><span class="nav-number">2.</span> <span class="nav-text">证书信息查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ImageView"><span class="nav-number">3.</span> <span class="nav-text">ImageView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TextView"><span class="nav-number">4.</span> <span class="nav-text">TextView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-Expected-resource-of-type-styleable-ResourceType"><span class="nav-number">5.</span> <span class="nav-text">Error: Expected resource of type styleable [ResourceType]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软键盘问题"><span class="nav-number">6.</span> <span class="nav-text">软键盘问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出键盘遮住视图"><span class="nav-number">6.1.</span> <span class="nav-text">弹出键盘遮住视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出键盘把屏幕顶上去"><span class="nav-number">6.2.</span> <span class="nav-text">弹出键盘把屏幕顶上去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭软键盘方法"><span class="nav-number">6.3.</span> <span class="nav-text">关闭软键盘方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bitmap标签图片拉伸问题"><span class="nav-number">7.</span> <span class="nav-text">bitmap标签图片拉伸问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误：Error-Execution-failed-for-task-39-app-transformClassesWithDexForDebug-39"><span class="nav-number">8.</span> <span class="nav-text">错误：Error:Execution failed for task &#39;:app:transformClassesWithDexForDebug&#39;.</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Gradle"><span class="nav-number">1.</span> <span class="nav-text">关于Gradle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目编译失败"><span class="nav-number">2.</span> <span class="nav-text">项目编译失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS清除gradle-依赖缓存"><span class="nav-number">3.</span> <span class="nav-text">AS清除gradle 依赖缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Git"><span class="nav-number">4.</span> <span class="nav-text">关于Git</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#已经被git管理的文件，重新添加到忽略中"><span class="nav-number"></span> <span class="nav-text">已经被git管理的文件，重新添加到忽略中</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些SDK工具"><span class="nav-number">1.</span> <span class="nav-text">一些SDK工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#证书信息查询"><span class="nav-number">2.</span> <span class="nav-text">证书信息查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ImageView"><span class="nav-number">3.</span> <span class="nav-text">ImageView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TextView"><span class="nav-number">4.</span> <span class="nav-text">TextView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-Expected-resource-of-type-styleable-ResourceType"><span class="nav-number">5.</span> <span class="nav-text">Error: Expected resource of type styleable [ResourceType]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软键盘问题"><span class="nav-number">6.</span> <span class="nav-text">软键盘问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出键盘遮住视图"><span class="nav-number">6.1.</span> <span class="nav-text">弹出键盘遮住视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出键盘把屏幕顶上去"><span class="nav-number">6.2.</span> <span class="nav-text">弹出键盘把屏幕顶上去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭软键盘方法"><span class="nav-number">6.3.</span> <span class="nav-text">关闭软键盘方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bitmap标签图片拉伸问题"><span class="nav-number">7.</span> <span class="nav-text">bitmap标签图片拉伸问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误：Error-Execution-failed-for-task-39-app-transformClassesWithDexForDebug-39"><span class="nav-number">8.</span> <span class="nav-text">错误：Error:Execution failed for task &#39;:app:transformClassesWithDexForDebug&#39;.</span></a></li></ol></li></div>
             
 
           </div>

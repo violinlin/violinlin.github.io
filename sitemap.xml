@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://androidhuilin.wang/2016/09/18/Service/</loc>
+    
+    <lastmod>2020-05-02T09:14:08.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://androidhuilin.wang/2016/09/13/%E6%97%A5%E5%B8%B8%E5%B0%8F%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2020-02-10T04:50:52.100Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://androidhuilin.wang/2020/01/28/kotlin%E4%B8%ADinit%E6%96%B9%E6%B3%95%E7%AE%80%E4%BB%8B/</loc>
     
     <lastmod>2020-01-28T07:19:59.039Z</lastmod>
@@ -110,13 +124,6 @@
     <loc>https://androidhuilin.wang/2016/09/17/Volley/</loc>
     
     <lastmod>2019-05-19T14:44:32.017Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://androidhuilin.wang/2016/09/18/Service/</loc>
-    
-    <lastmod>2019-05-19T14:44:32.014Z</lastmod>
     
   </url>
   
@@ -243,13 +250,6 @@
     <loc>https://androidhuilin.wang/2018/01/02/%E5%B8%83%E5%B1%80%E4%BC%98%E5%8C%96/</loc>
     
     <lastmod>2019-05-17T09:01:18.508Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://androidhuilin.wang/2016/09/13/%E6%97%A5%E5%B8%B8%E5%B0%8F%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2019-05-17T09:01:18.501Z</lastmod>
     
   </url>
   

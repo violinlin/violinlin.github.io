@@ -101,7 +101,7 @@
 <meta property="og:description" content="认识Service无UI页面的，并长期处理后台运行，其所在的进程状态为服务进程 ,它本身在主线程执行。它的主要作用用于管理生命周期较长的组件，如带有子线程管理的MediaPlayer、定时器等。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://androidhuilin.wang/img/pictures/picture22.jpg">
-<meta property="og:updated_time" content="2019-05-19T14:44:32.014Z">
+<meta property="og:updated_time" content="2020-05-02T09:14:08.241Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Service">
 <meta name="twitter:description" content="认识Service无UI页面的，并长期处理后台运行，其所在的进程状态为服务进程 ,它本身在主线程执行。它的主要作用用于管理生命周期较长的组件，如带有子线程管理的MediaPlayer、定时器等。">
@@ -427,7 +427,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="/img/pictures/picture22.jpg" rel="gallery_ck5xkcp1c00196bz6ln92cy5b" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="/img/pictures/picture22.jpg" rel="gallery_ck9petrc2003r9rz65vl3uo36" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/pictures/picture22.jpg" itemprop="contentUrl">
               </a>
             
@@ -472,8 +472,8 @@
 <p>绑定服务成功后会回调<code>onServiceConnected()</code>方法，同时返回<code>Service</code>中的<code>MyBindler</code>对象。这时<code>Activity</code>就可以通过初始化好的<code>MyBinder</code>对象操控<code>Service</code>。</p>
 <p>通过<code>unBindService()</code>方法解绑服务</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unbindService(mServiceConnection);</span><br></pre></td></tr></table></figure>
-<p>context.bindService–&gt;onCreat()(只执行一次)–&gt;onBind()(只绑定一次)–&gt;ServiceRunning–&gt;onUnBind()–&gt;onDestory()(只执行一次)–&gt;Service Stop</p>
-<p><strong>PS:可以通过Service.stopSelf()方法或者Service.stopSelfResult()方法来停止自己，只要调用一次stopService()方法便可以停止服务，无论调用了多少次的启动服务方法</strong></p>
+<p>context.bindService–&gt;onCreat()(只执行一次)–&gt;onBind()(只绑定一次)–&gt;ServiceRunning–&gt;onUnBind()–&gt;onDestroy()(只执行一次)–&gt;Service Stop</p>
+<p><strong>PS:通过<code>startService()</code>启动的服务需要通过<code>stopService()</code>方法关闭，也可以通过<code>stopSelf()</code>方法，功能和<code>startService()</code>相同；<br>通过<code>bindService()</code>启动的服务需要通过<code>unindService()</code>方法关闭；当一个服务即通过<code>startService()</code>方法启动又通过<code>bindService()</code>方法启动，那么关闭时也需要调用两种方式的关闭方法才能停止服务。</strong></p>
 <h3 id="绑定的服务类型"><a href="#绑定的服务类型" class="headerlink" title="绑定的服务类型"></a>绑定的服务类型</h3><table>
 <thead>
 <tr>
@@ -542,6 +542,13 @@
 </tr>
 </tbody>
 </table>
+<h2 id="前台服务"><a href="#前台服务" class="headerlink" title="前台服务"></a>前台服务</h2><blockquote>
+<p>后台的服务进程是很容易被回收的，为了保证服务的稳定运行，可以使用前台服务。前台服务会有一个正在运行的图标在系统的状态栏显示，类似于通知效果。当服务取消时，图标会自动消失。</p>
+</blockquote>
+<p>和创建通知时的代码相似，不过不同于通知使用<code>NotificationManager</code>的<code>notify()</code>方法，使用前台服务需要使用<code>Service</code>的<code>startForeground()</code>方法。代码如下，可以在服务的<code>onCreate()</code>中设置前台服务</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">String notifyChannel = <span class="string">"service"</span>;</span><br><span class="line">       NotificationManager manager = (NotificationManager) getSystemService(</span><br><span class="line">               Context.NOTIFICATION_SERVICE);</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * 8.0及以上系统需要配置NotificationChannel</span></span><br><span class="line"><span class="comment">        * 如果没配置，&#123;<span class="doctag">@link</span> #startForeground(int, Notification)&#125;</span></span><br><span class="line"><span class="comment">        * 会抛出 invalid channel for service notification 异常</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= android.os.Build.VERSION_CODES.O) &#123;</span><br><span class="line">           <span class="comment">//channelname 用户可以在设置界面调整不同渠道的通知显示信息</span></span><br><span class="line">           NotificationChannel notificationChannel = new NotificationChannel(notifyChannel,</span><br><span class="line">                   <span class="string">"service"</span>, NotificationManager.IMPORTANCE_HIGH);</span><br><span class="line"></span><br><span class="line">           manager.createNotificationChannel(notificationChannel);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       Intent intent = new Intent(<span class="keyword">this</span>,ServiceActivity.<span class="keyword">class</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       PendingIntent pendingIntent = PendingIntent.getActivity(<span class="keyword">this</span>,<span class="number">0</span>,intent,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">       Notification preNTF = new NotificationCompat.Builder(getApplicationContext(),</span><br><span class="line">               notifyChannel)<span class="comment">//notifyChannel 需要和 NotificationChannel中设置相同，通知才会弹出</span></span><br><span class="line">               .setContentTitle(<span class="string">"service"</span> )</span><br><span class="line">               .setContentText(<span class="string">"message"</span>)</span><br><span class="line">               .setSmallIcon(getApplicationContext().getApplicationInfo().icon)</span><br><span class="line">               .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.test1))</span><br><span class="line">               .setContentIntent(pendingIntent)</span><br><span class="line">               .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.picture1)))</span><br><span class="line">               .setAutoCancel(<span class="literal">true</span>)</span><br><span class="line">               .build();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       startForeground(<span class="number">1000</span>, preNTF);<span class="comment">//每个notifyID 对应一条通知，如果id相同，会在原来通知面板上更新内容</span></span><br></pre></td></tr></table></figure>
+<p><strong>PS:使用前台服务需要在清单文件中申明<code>FOREGROUND_SERVICE</code>权限</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.FOREGROUND_SERVICE"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -738,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过startService-启动服务"><span class="nav-number">1.</span> <span class="nav-text">通过startService()启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过bindService-启动服务"><span class="nav-number">2.</span> <span class="nav-text">通过bindService()启动服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定的服务类型"><span class="nav-number">2.1.</span> <span class="nav-text">绑定的服务类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IntentService"><span class="nav-number">3.</span> <span class="nav-text">IntentService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粘性Service"><span class="nav-number">4.</span> <span class="nav-text">粘性Service</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过startService-启动服务"><span class="nav-number">1.</span> <span class="nav-text">通过startService()启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过bindService-启动服务"><span class="nav-number">2.</span> <span class="nav-text">通过bindService()启动服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定的服务类型"><span class="nav-number">2.1.</span> <span class="nav-text">绑定的服务类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IntentService"><span class="nav-number">3.</span> <span class="nav-text">IntentService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粘性Service"><span class="nav-number">4.</span> <span class="nav-text">粘性Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前台服务"><span class="nav-number">5.</span> <span class="nav-text">前台服务</span></a></li></ol></div>
             
 
           </div>
