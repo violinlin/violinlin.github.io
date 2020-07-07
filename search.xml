@@ -30,9 +30,9 @@
     <url>%2F2018%2F05%2F29%2FAndroid%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%2F</url>
     <content type="text"><![CDATA[Android开发过程中难免会遇到各种问题，通常我们会通过打印Log日志或者Debug模式来分析问题。这里介绍下Android程序进入到Debug的多种方式，可以针对不同场景使用。ps:当然只限于debug包，正式包进不了调试模式。官方文档 1. 直接发布Debug包进入调试模式 首先可以直接通过 Debug app 按键发布包，安装成功后即进入调试模式。这种方式的问题就是每次进入调试模式都需要发布包，效率比较低。 2. Attach debugger to Android process 方式进入调试模式 启动手机上安装好的待调试的debug包，在AS的工具栏上点击Attach debugger to Android process按键，选择待调试的进程即进入调试模式。这种方式较第一种效率比较高，但是attach时需要保证进程已经启动，不方便调试Application中的一些初始化代码。 3. 将应用设置为待调试模式 这种方式是将指定应用标志为调试模式，每次启动应用都会弹出Waiting For Debugger的弹窗。然后可以通过第二种方式Attach debugger to Android process连接应用进程进入调试模式。这种方式可以解决第二种方式中Application的一些初始化代码不方便调试的问题，因为调试弹窗弹起的时候进程已经启动。有两种方式可以将目标应用标志为调试模式。 1. 通过adb命令set-debug-app方式标志1234adb shell am set-debug-app -w --persistent &lt;package_name&gt;//-w: 让程序等待被attach//--persistent: 让程序每次启动都等待被attach 添加了persistent 参数后每次启动app都会弹出调试弹窗，完成调试后需要通过下面命令移除标志 1adb shell am clear-debug-app &lt;package_name&gt; 2. 通过手机设置进行标志 在手机开发者选项中选择要调试的应用，勾选等待调试器（完成调试后需要关掉调试器，不然每次启动都会弹出调试弹窗）。如下图 通过上面任意一种方式将app标志为调试模式后，启动应用会弹出调试弹窗.然后通过第二种方式attach到应用进程就可以进入调试模式了 总结 综上三种方式，开发中经常使用的应该是第二种，如果需要调试进程初始化部分的代码可以使用第三种方式。第一种方式因为每次都要打包发布效率较低，不建议使用，或者只在第一次发布程序的时候使用。]]></content>
       <tags>
-        <tag>AndroidStudio</tag>
         <tag>Android</tag>
         <tag>adb</tag>
+        <tag>AndroidStudio</tag>
       </tags>
   </entry>
   <entry>
@@ -385,8 +385,8 @@
     <url>%2F2016%2F07%2F31%2FAndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[开发过程中熟练使用快捷键可以提高我们的效率还有我们的逼格。AS中提供了很多的快捷方式，我也在探索学习中，这里和大家分享一下我在开发中经常使用的快捷键，大家有好用的也可以推荐。mac系统使用将control替换成cmd键 此篇不定期更新 当初信誓旦旦说每周都写点东西，结果… ,哎！人总是想偷懒的。 编辑部分代码的整行复制control+D和删除control+Y通常我们可以通过shift+home或者shift+end来选中整行代码，再进行操作。control+D和control+Y可以快速的复制或者删除整行代码，在开发中使用还是比较多的。mac是 全局变量control+alt+F和局部变量的提取control+alt+V在提取变量的同时我们可以为变量命名 方法的提取 control+alt+M当我们写的代码段需要复用的时候，可以将他们提取成一个方法。这时候 control+alt+M就节省了我们的时间。 重命名shift+F6命名难免会更改，shift+F6可以快速重命名，收了吧。 窗口部分查看当前类的方法大纲control+F12、cmd+F12弹窗显示当前类中的方法和变量，便于了解该类的结构 查看当前类的继承树control+H显示当前类的继承关系，了解类的结构 重载父类的方法Mac:control + o/Win:ctrl + o 切换文件窗口Mac : control + tab/ win: ctrl + tab 查找部分类名查找cmd+N和文件名查找cmd+shift+N当工程较大时可以通过类名或者文件名快速查找指定文件。 代码的书签标记F11和书签的查看shift+F11书签功能还是很好用的，和看书的时候加书签一样使用就行了。 其他部分查看方法的参数control+p调用方法时通过control+p查看参数信息]]></content>
       <tags>
-        <tag>AndroidStudio</tag>
         <tag>Android</tag>
+        <tag>AndroidStudio</tag>
       </tags>
   </entry>
   <entry>
